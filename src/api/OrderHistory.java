@@ -1,4 +1,6 @@
 package api;
 
-public class OrderHistory {
+import java.io.Serializable;
+
+public class OrderHistory implements Serializable {
 }

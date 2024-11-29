@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class STARTING_SCREEN {
     private Scanner scanner;
 
-    public STARTING_SCREEN() throws IOException {
+    public STARTING_SCREEN() throws IOException, ClassNotFoundException {
         scanner = new Scanner(System.in);
         Program_Initialization();
 
@@ -50,7 +50,7 @@ public class STARTING_SCREEN {
 
 
 
-    private void Program_Initialization()throws IOException{
+    private void Program_Initialization() throws IOException, ClassNotFoundException {
         String filename = "ProgramInitialized.txt";
 
         File initializer = new File(filename);
@@ -64,6 +64,7 @@ public class STARTING_SCREEN {
                 BufferedWriter writer = new BufferedWriter(new FileWriter(filename));
 
                 writer.write("True");
+                writer.close();
 
             } catch (IOException e) {
                 throw new RuntimeException(e);
@@ -91,19 +92,15 @@ public class STARTING_SCREEN {
             out.writeObject(customer1);
             out.writeObject(customer2);
 
-            Admin testadmin1 = null;
-            Admin testadmin2 = null;
-            Customer testcustomer1 = null;
-            Customer testcustomer2 = null;
+            ObjectInputStream in = new ObjectInputStream(new FileInputStream("credentials.bin"));
 
-            try (ObjectInputStream in = new ObjectInputStream(new FileInputStream("credentials.bin"))) {
-                testadmin1 = (Admin) in.readObject();
-                testadmin1 = (Admin) in.readObject();
-                testcustomer1 = (Customer) in.readObject();
-                testcustomer2 = (Customer) in.readObject();
-            }catch(Exception e){
-                System.err.println(e);
-            }
+            Admin testadmin1 = (Admin) in.readObject();
+            Admin testadmin2 = (Admin) in.readObject();
+            Customer testcustomer1 = (Customer) in.readObject();
+            Customer testcustomer2 = (Customer) in.readObject();
+
+
+
             /*
             System.out.printf("Admin1: Username-> %s, Password-> %s\n" +
                     "Admin2: Username-> %s, Password-> %s\n" +

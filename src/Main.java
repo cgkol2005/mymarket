@@ -11,7 +11,7 @@ import java.io.*;
  * ************* ΜΗ ΣΒΗΣΕΤΕ ΑΥΤΗ ΤΗΝ ΚΛΑΣΗ ************
  */
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
 
         STARTING_SCREEN Main_Screen = new STARTING_SCREEN();
 

@@ -1,6 +1,8 @@
 package api;
 
-public class Order {
+import java.io.Serializable;
+
+public class Order implements Serializable {
     private ShoppingCart Cart;
     private double OrderPrice;
     private int NumberOfProductsBought;

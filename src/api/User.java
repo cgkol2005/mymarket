@@ -1,8 +1,11 @@
 package api;
 
-public class User {
+import java.io.Serializable;
+
+public class User{
     protected String Username;
     protected String Password;
+    public User(){}
 
     public User(String Username, String Password){
         this.Username = Username;

@@ -1,6 +1,8 @@
 package api;
 
-public class Customer extends User{
+import java.io.Serializable;
+
+public class Customer extends User implements Serializable {
     protected String Firstname;
     protected String Lastname;
     private Order Order;
