@@ -5,6 +5,7 @@ public class Customer extends User{
     protected String Lastname;
     private Order Order;
     private OrderHistory OrderHistory;
+    private ShoppingCart ShoppingCart;
 
     public Customer(String Username, String Password, String Firstname, String Lastname){
 
@@ -15,6 +16,8 @@ public class Customer extends User{
 
         Order = new Order();
         OrderHistory = new OrderHistory();
+
+        ShoppingCart = new ShoppingCart();
     }
     public String getFirstname() {
         return Firstname;

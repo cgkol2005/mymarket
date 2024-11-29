@@ -11,6 +11,7 @@ public class Product
     private String sub_category;
     private double price;
     private int stock; // kilo or piece
+    private int times_ordered; //Variable to track how many times the product has been ordered. (For admins statistics)
 
     /** creates a product
      *
@@ -70,7 +71,15 @@ public class Product
             return true;
         }
     }
-    // print
+
+    public void ProductOrdered() {
+        times_ordered++;
+    }
+
+    public int getTimes_ordered() {
+        return times_ordered;
+    }
+
     @Override
     public String toString()
     {
