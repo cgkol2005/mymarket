@@ -5,9 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4962100c-d0a3-448f-8930-2e998309a824" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admins.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credentials.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/initializer.txt" beforeDir="false" afterPath="$PROJECT_DIR$/initializer.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/STARTING_SCREEN.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/STARTING_SCREEN.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/Admin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/Customer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/Order.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/OrderHistory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/OrderHistory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/Product.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/ShoppingCart.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/ShoppingCart.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/TODELETE.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/TODELETE.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/MyMarket/api/TestTODELETE.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/MyMarket/api/TestTODELETE.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/STARTING_SCREEN.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/STARTING_SCREEN.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/Customer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +49,12 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2XVC4ip36KyWLXXhPKCRj0t46sa" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -44,6 +65,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
     &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
     &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
     &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
@@ -52,7 +74,9 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit4&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;newfeature&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Program's__Starting__Screen&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/xaris/Desktop/Folders/Programming Files and Programs/JAVA/MyMarketRepository/mymarket-4573-4763&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
@@ -66,20 +90,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="api.Main" />
-      <module name="MyMarket" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="api.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager">
     <configuration name="All in MyMarket" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="MyMarket" />
       <option name="PACKAGE_NAME" value="" />
@@ -91,7 +102,6 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.All in MyMarket" />
-        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.All in MyMarket" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.All in MyMarket" />
@@ -128,7 +138,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="Classes" />
+                        <option value="Program's_Starting_Screen" />
                       </list>
                     </value>
                   </entry>
