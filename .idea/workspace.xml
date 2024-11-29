@@ -5,24 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4962100c-d0a3-448f-8930-2e998309a824" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/credentials.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/initializer.txt" beforeDir="false" afterPath="$PROJECT_DIR$/initializer.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/STARTING_SCREEN.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/STARTING_SCREEN.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/Admin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/Customer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/Order.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/OrderHistory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/OrderHistory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/Product.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/ShoppingCart.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/ShoppingCart.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/TODELETE.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/TODELETE.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/MyMarket/api/TestTODELETE.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/MyMarket/api/TestTODELETE.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/STARTING_SCREEN.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/STARTING_SCREEN.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/Customer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

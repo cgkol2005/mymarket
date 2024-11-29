@@ -2,18 +2,15 @@ import api.Admin;
 import api.Customer;
 import api.User;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.Scanner;
 
 public class STARTING_SCREEN {
     private Scanner scanner;
 
-    public STARTING_SCREEN(){
+    public STARTING_SCREEN() throws IOException {
         scanner = new Scanner(System.in);
-
+        Program_Initialization();
 
     }
     public void ProgramStart(){
@@ -55,23 +52,76 @@ public class STARTING_SCREEN {
 
     private void Program_Initialization()throws IOException{
         String filename = "ProgramInitialized.txt";
+
         File initializer = new File(filename);
+
         if (!initializer.exists()){
+
             try {
+
                 initializer.createNewFile();
+
                 BufferedWriter writer = new BufferedWriter(new FileWriter(filename));
+
                 writer.write("True");
+
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
+
             Admin admin1 = new Admin("admin1", "password1");
             Admin admin2 = new Admin("admin2", "password2");
+
             Customer customer1 = new Customer("user1", "password1");
             Customer customer2 = new Customer("user2", "password2");
+
             customer1.setFirstname("-");
             customer1.setLastname("-");
+
             customer2.setFirstname("-");
             customer2.setLastname("-");
+
+            File credentials = new File("credentials.bin");
+            credentials.createNewFile();
+
+            ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("credentials.bin",true));
+
+            out.writeObject(admin1);
+            out.writeObject(admin2);
+            out.writeObject(customer1);
+            out.writeObject(customer2);
+
+            Admin testadmin1 = null;
+            Admin testadmin2 = null;
+            Customer testcustomer1 = null;
+            Customer testcustomer2 = null;
+
+            try (ObjectInputStream in = new ObjectInputStream(new FileInputStream("credentials.bin"))) {
+                testadmin1 = (Admin) in.readObject();
+                testadmin1 = (Admin) in.readObject();
+                testcustomer1 = (Customer) in.readObject();
+                testcustomer2 = (Customer) in.readObject();
+            }catch(Exception e){
+                System.err.println(e);
+            }
+            /*
+            System.out.printf("Admin1: Username-> %s, Password-> %s\n" +
+                    "Admin2: Username-> %s, Password-> %s\n" +
+                    "Customer1: Username-> %s, Password-> %s\n" +
+                    "Customer2: Username-> %s, Password-> %s .",admin1.getUsername(),admin1.getPassword(),
+                    admin2.getUsername(),admin2.getPassword(),customer1.getUsername(),customer1.getPassword(),
+                    customer2.getUsername(),customer2.getPassword());
+
+             */
+
+            System.out.printf("Admin1: Username-> %s, Password-> %s\n" +
+                            "Admin2: Username-> %s, Password-> %s\n" +
+                            "Customer1: Username-> %s, Password-> %s\n" +
+                            "Customer2: Username-> %s, Password-> %s .",testadmin1.getUsername(),testadmin1.getPassword(),
+                    testadmin2.getUsername(),testadmin2.getPassword(),testcustomer1.getUsername(),testcustomer1.getPassword(),
+                    testcustomer2.getUsername(),testcustomer2.getPassword());
+
+
 
         }
     }
