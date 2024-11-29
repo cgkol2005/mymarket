@@ -81,9 +81,9 @@ public class Product
                 "title='" + title + '\'' +
                 ", description='" + description + '\'' +
                 ", category='" + category + '\'' +
-                ", subCategory='" + subCategory + '\'' +
+                ", subCategory='" + scategory + '\'' +
                 ", price=" + price +
-                ", availableQuantity=" + availableQuantity +
+                ", availableQuantity=" + stock+
                 '}';
     }
 
