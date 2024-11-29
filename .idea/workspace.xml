@@ -4,9 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4962100c-d0a3-448f-8930-2e998309a824" name="Changes" comment="">
+    <list default="true" id="4962100c-d0a3-448f-8930-2e998309a824" name="Changes" comment="initial classes">
+      <change afterPath="$PROJECT_DIR$/admins.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/credentials.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/initializer.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/api/Admin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/api/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/api/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/api/OrderHistory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/api/ShoppingCart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/api/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/TODELETE.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/TODELETE.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/Product.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,12 +27,17 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit4 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
@@ -29,6 +45,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2XVC4ip36KyWLXXhPKCRj0t46sa" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -57,7 +76,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="api.Main" />
       <module name="MyMarket" />
@@ -107,5 +126,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="initial classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="initial classes" />
   </component>
 </project>

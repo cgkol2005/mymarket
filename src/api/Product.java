@@ -8,7 +8,7 @@ public class Product
     private String title;
     private String description;
     private String category;
-    private String scategory;
+    private String sub_category;
     private double price;
     private int stock; // kilo or piece
 
@@ -17,21 +17,18 @@ public class Product
      * @param title
      * @param description
      * @param category
-     * @param scategory
+     * @param sub_category
      * @param price
      * @param stock
      */
-    public Product (String title,String description,String category,String scategory,double price,int stock)
+    public Product (String title,String description,String category,String sub_category,double price,int stock)
     {
-        if (price>0 && stock>=0) {
-
             this.title = title;
             this.description = description;
             this.category = category;
-            this.scategory = scategory;
+            this.sub_category = sub_category;
             this.price = price;
             this.stock = stock;
-        }
     }
     public String getTitle()
     {
@@ -45,9 +42,9 @@ public class Product
     {
         return category;
     }
-    public String getScategory()
+    public String getSub_category()
     {
-        return scategory;
+        return sub_category;
     }
     public double getPrice()
     {
@@ -81,7 +78,7 @@ public class Product
                 "title='" + title + '\'' +
                 ", description='" + description + '\'' +
                 ", category='" + category + '\'' +
-                ", subCategory='" + scategory + '\'' +
+                ", subCategory='" + sub_category + '\'' +
                 ", price=" + price +
                 ", availableQuantity=" + stock+
                 '}';
