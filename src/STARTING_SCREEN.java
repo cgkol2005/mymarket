@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class STARTING_SCREEN {
     private Scanner scanner;
 
-    public STARTING_SCREEN() throws IOException, ClassNotFoundException {
+    public STARTING_SCREEN(){
         scanner = new Scanner(System.in);
         Program_Initialization();
 
@@ -21,10 +21,14 @@ public class STARTING_SCREEN {
         int option = scanner.nextInt();
         switch (option){
             case 1:Browse();
+            break;
             case 2:Sign_In();
+                break;
             case 3:Sign_Up();
+                break;
             case 4:program_close();
         }
+        ProgramStart();
 
     }
 
@@ -39,92 +43,145 @@ public class STARTING_SCREEN {
         System.out.println("4. Exit");
     }
     private void Browse() {
-
+        System.out.println("BROWSER!");
     }
     private void Sign_In() {
+        scanner.nextLine();
+        System.out.println("Enter your Username: ");
+        String Username = scanner.nextLine();
+
+        System.out.println("Enter your password: ");
+        String Password = scanner.nextLine();
+        System.out.println("Username: "+Username);
+        System.out.println("Password: "+Password);
+
+        System.out.println("Beginning the search of an object with these credentials...");
+        ObjectInputStream in = null;
+        User authentication = null;
+        try{
+            in = new ObjectInputStream(new FileInputStream("credentials.ser"));
+            try{
+                while(true){
+                    authentication = (User) in.readObject();
+                    if (authentication.getUsername().equals(Username)){
+                        if (authentication.getPassword().equals(Password)){
+                            System.out.println("Authentication successful!");
+                            if (authentication instanceof Admin){
+                                System.out.println("You are an Admin of the e-shop");
+                            } else if (authentication instanceof Customer) {
+                                System.out.println("You are a Customer of the e-shop");
+                            }
+                            break;
+                        }
+                    }
+                }
+            }catch(ClassNotFoundException | EOFException eof){
+                System.out.println("File search ended, User not found");
+            }
+            in.close();
+        }catch(IOException ioE){
+            System.out.println("There was a problem reading from the credentials file!");
+        }finally {
+            if (in != null){
+                try{
+                    in.close();
+                }catch(IOException ioE){
+                    System.out.println("Problem closing the input stream.");
+                }
+            }
+        }
 
     }
     private void Sign_Up() {
+        System.out.println("IM THE SIGNUP!");
     }
 
 
 
 
-    private void Program_Initialization() throws IOException, ClassNotFoundException {
+    private void Program_Initialization(){
         String filename = "ProgramInitialized.txt";
 
         File initializer = new File(filename);
-
-        if (!initializer.exists()){
+        BufferedWriter writer = null;
+        if (!initializer.exists()) {
 
             try {
 
                 initializer.createNewFile();
 
-                BufferedWriter writer = new BufferedWriter(new FileWriter(filename));
+                writer = new BufferedWriter(new FileWriter(filename));
 
                 writer.write("True");
+
                 writer.close();
 
             } catch (IOException e) {
-                throw new RuntimeException(e);
+                System.out.println("An error occurred either with the file creation or with the file writer.");
+            } finally {
+                if (writer != null) {
+                    try {
+                        writer.close();
+                    } catch (IOException ioe) {
+                        System.out.println("Writer could not be closed properly!");
+                    }
+                }
+            }
+            System.out.println("The file was successfully created!");
+
+            User admin1 = new Admin("admin1", "password1");
+            User admin2 = new Admin("admin2", "password2");
+
+            User customer1 = new Customer("user1", "password1");
+            User customer2 = new Customer("user2", "password2");
+
+            ((Customer) customer1).setFirstname("-");
+            ((Customer) customer1).setLastname("-");
+
+            ((Customer) customer2).setFirstname("-");
+            ((Customer) customer2).setLastname("-");
+
+            File credentials = new File("credentials.ser");
+
+            ObjectOutputStream out = null;
+
+            try {
+                if (credentials.createNewFile()) {
+                    System.out.println("The credentials.ser file was successfully created!");
+                } else {
+                    System.out.println("The credentials.ser file was not created for some reason.");
+                }
+
+
+                out = new ObjectOutputStream(new FileOutputStream("credentials.ser"));
+
+                out.writeObject(admin1);
+                out.writeObject(admin2);
+                out.writeObject(customer1);
+                out.writeObject(customer2);
+
+                out.close();
+
+            } catch (IOException ioE) {
+                System.out.println("There was an error either with the credentials file or with the Objects output stream");
+            }finally {
+                if(out != null){
+                    try{
+                        out.close();
+                    }catch(IOException IoE){
+                        System.out.println("There as a problem closing the Object Output Stream");
+                    }
+                }
             }
 
-            Admin admin1 = new Admin("admin1", "password1");
-            Admin admin2 = new Admin("admin2", "password2");
-
-            Customer customer1 = new Customer("user1", "password1");
-            Customer customer2 = new Customer("user2", "password2");
-
-            customer1.setFirstname("-");
-            customer1.setLastname("-");
-
-            customer2.setFirstname("-");
-            customer2.setLastname("-");
-
-            File credentials = new File("credentials.bin");
-            credentials.createNewFile();
-
-            ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("credentials.bin",true));
-
-            out.writeObject(admin1);
-            out.writeObject(admin2);
-            out.writeObject(customer1);
-            out.writeObject(customer2);
-
-            ObjectInputStream in = new ObjectInputStream(new FileInputStream("credentials.bin"));
-
-            Admin testadmin1 = (Admin) in.readObject();
-            Admin testadmin2 = (Admin) in.readObject();
-            Customer testcustomer1 = (Customer) in.readObject();
-            Customer testcustomer2 = (Customer) in.readObject();
-
-
-
-            /*
-            System.out.printf("Admin1: Username-> %s, Password-> %s\n" +
-                    "Admin2: Username-> %s, Password-> %s\n" +
-                    "Customer1: Username-> %s, Password-> %s\n" +
-                    "Customer2: Username-> %s, Password-> %s .",admin1.getUsername(),admin1.getPassword(),
-                    admin2.getUsername(),admin2.getPassword(),customer1.getUsername(),customer1.getPassword(),
-                    customer2.getUsername(),customer2.getPassword());
-
-             */
-
-            System.out.printf("Admin1: Username-> %s, Password-> %s\n" +
-                            "Admin2: Username-> %s, Password-> %s\n" +
-                            "Customer1: Username-> %s, Password-> %s\n" +
-                            "Customer2: Username-> %s, Password-> %s .",testadmin1.getUsername(),testadmin1.getPassword(),
-                    testadmin2.getUsername(),testadmin2.getPassword(),testcustomer1.getUsername(),testcustomer1.getPassword(),
-                    testcustomer2.getUsername(),testcustomer2.getPassword());
-
-
-
+        }else{
+            System.out.println("The program has already been already initialized.");
         }
     }
 
     private void program_close(){
         System.out.println("Program closing. . .");
+        scanner.close();
         System.exit(0);
     }
 }

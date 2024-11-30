@@ -10,8 +10,8 @@ import java.io.*;
  * <p>
  * ************* ΜΗ ΣΒΗΣΕΤΕ ΑΥΤΗ ΤΗΝ ΚΛΑΣΗ ************
  */
-public class Main {
-    public static void main(String[] args) throws IOException, ClassNotFoundException {
+public class Main{
+    public static void main(String[] args){
 
         STARTING_SCREEN Main_Screen = new STARTING_SCREEN();
 
