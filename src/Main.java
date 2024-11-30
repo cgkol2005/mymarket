@@ -1,6 +1,4 @@
-import api.Admin;
-import api.Customer;
-import api.User;
+import api.*;
 
 import java.io.*;
 
@@ -12,6 +10,7 @@ import java.io.*;
  */
 public class Main{
     public static void main(String[] args){
+
 
         STARTING_SCREEN Main_Screen = new STARTING_SCREEN();
 

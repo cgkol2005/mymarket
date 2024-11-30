@@ -26,7 +26,7 @@ public class STARTING_SCREEN {
                 break;
             case 3:Sign_Up();
                 break;
-            case 4:program_close();
+            case 4:Program_Close();
         }
         ProgramStart();
 
@@ -46,16 +46,22 @@ public class STARTING_SCREEN {
         System.out.println("BROWSER!");
     }
     private void Sign_In() {
+        //scanner.nextLine();
+        System.out.println("Press 0 to exit, press 1 to enter credentials");
+        int choice = Integer.parseInt(scanner.next());
+        if (choice == 0){
+            ProgramStart();
+        }
         scanner.nextLine();
         System.out.println("Enter your Username: ");
         String Username = scanner.nextLine();
 
-        System.out.println("Enter your password: ");
+        System.out.println("Enter your Password: ");
         String Password = scanner.nextLine();
         System.out.println("Username: "+Username);
         System.out.println("Password: "+Password);
 
-        System.out.println("Beginning the search of an object with these credentials...");
+
         ObjectInputStream in = null;
         User authentication = null;
         try{
@@ -76,7 +82,8 @@ public class STARTING_SCREEN {
                     }
                 }
             }catch(ClassNotFoundException | EOFException eof){
-                System.out.println("File search ended, User not found");
+                System.out.println("The credentials you entered do not match any account. Try again: ");
+                Sign_In();
             }
             in.close();
         }catch(IOException ioE){
@@ -93,7 +100,78 @@ public class STARTING_SCREEN {
 
     }
     private void Sign_Up() {
-        System.out.println("IM THE SIGNUP!");
+        System.out.println("This is the sign-up process.");
+        System.out.println("Enter your firstname: ");
+        String FirstName = scanner.next();
+        System.out.println("Enter your lastname: ");
+        String LastName = scanner.next();
+        String Username = null;
+        ObjectInputStream in = null;
+        User user = null;
+        while (true) {
+            System.out.println("Enter your account's username: ");
+            Username = scanner.next();
+            try {
+                in = new ObjectInputStream(new FileInputStream("credentials.ser"));
+                try {
+                    while (true) {
+                        user = (User) in.readObject();
+                        if (user.getUsername().equals(Username)) {
+                            System.out.println("The Username you entered has been taken. Please enter a unique Username.");
+                            break;
+                        }
+                    }
+                    in.close();
+                } catch (ClassNotFoundException | EOFException eof) {
+                    System.out.println("Username successfully created.");
+                    break;
+                }finally {
+                    if (in!=null){
+                        try{
+                            in.close();
+                        }catch(IOException e){
+                            System.out.println("There was a problem closing the ObjectInput Stream. . .");
+                        }
+                    }
+                }
+            } catch (IOException e) {
+                System.out.println("An error occurred with initialization of the Stream Input");
+                System.out.println("Aborting . . .");
+                Program_Close();
+            }
+        }
+
+        String Password;
+        while(true){
+            System.out.println("Enter your account's password");
+            Password = scanner.next();
+            System.out.println("Confirm your password once again: ");
+            String Password2 = scanner.next();
+            if (Password.equals(Password2)){
+                break;
+            }else System.out.println("The passwords doesn't match! Please repeat the password process..");
+        }
+        System.out.println("Password confirmed!");
+        User User = new Customer(Username, Password, FirstName, LastName);
+        System.out.println("Object created. Proof: Here's the object's username: "+User.getUsername());
+        ObjectOutputStream out = null;
+        try{
+            out = new ObjectOutputStream(new FileOutputStream("credentials.ser",true));
+            out.writeObject(User);
+            out.close();
+        }catch(IOException e){
+            System.out.println("There was a problem. Couldn't write the object, or credentials.ser file not properly used.");
+        }finally{
+            if (out!= null){
+                try{
+                    out.close();
+                }catch(IOException e){
+                    System.out.println("Problem closing the Output Stream file!");
+                }
+            }
+        }
+        System.out.println("If everything worked correctly the new user has been assigned. Please try to sign-in to confirm!");
+        ProgramStart();
     }
 
 
@@ -132,14 +210,16 @@ public class STARTING_SCREEN {
             User admin1 = new Admin("admin1", "password1");
             User admin2 = new Admin("admin2", "password2");
 
-            User customer1 = new Customer("user1", "password1");
-            User customer2 = new Customer("user2", "password2");
-
+            User customer1 = new Customer("user1", "password1","-","-");
+            User customer2 = new Customer("user2", "password2","-","-");
+            /*
             ((Customer) customer1).setFirstname("-");
             ((Customer) customer1).setLastname("-");
 
             ((Customer) customer2).setFirstname("-");
             ((Customer) customer2).setLastname("-");
+
+             */
 
             File credentials = new File("credentials.ser");
 
@@ -179,7 +259,7 @@ public class STARTING_SCREEN {
         }
     }
 
-    private void program_close(){
+    private void Program_Close(){
         System.out.println("Program closing. . .");
         scanner.close();
         System.exit(0);

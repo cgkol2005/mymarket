@@ -59,18 +59,7 @@ public class Product
     {
         this.stock=stock;
     }
-    public boolean reduceStock(int quantity)
-    {
-        if (quantity>stock)
-        {
-            return false;
-        }
-        else
-        {
-            stock=stock-quantity;
-            return true;
-        }
-    }
+
 
     public void ProductOrdered() {
         times_ordered++;
