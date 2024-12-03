@@ -6,9 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="4962100c-d0a3-448f-8930-2e998309a824" name="Changes" comment="FIRST TRY TO DO THE SIGN-UP FUNCTIONALLITY. FULL OF BUGS. NEEDS WORK.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgramInitialized.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/credentials.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/STARTING_SCREEN.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/TODELETE.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/MyMarket/api/TestTODELETE.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/MyMarket/api/TestTODELETE.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/STARTING_SCREEN.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/STARTING_SCREEN.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/TODELETE.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/STARTING_SCREEN.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/STARTING_SCREEN.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,6 +92,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Testing_Class" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="api.testing_class" />
+      <module name="MyMarket" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="All in MyMarket" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="MyMarket" />
       <option name="PACKAGE_NAME" value="" />
@@ -95,6 +107,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.Testing_Class" />
+      <item itemvalue="Application.Main" />
+      <item itemvalue="JUnit.All in MyMarket" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
