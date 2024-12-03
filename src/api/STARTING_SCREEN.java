@@ -1,3 +1,5 @@
+package api;
+
 import api.Admin;
 import api.Customer;
 import api.User;
@@ -82,18 +84,18 @@ public class STARTING_SCREEN {
                     }
                 }
             }catch(ClassNotFoundException | EOFException eof){
-                System.out.println("The credentials you entered do not match any account. Try again: ");
+                System.out.println(eof + "FIle ended, the credentials you entered do not match any account. Try again: ");
                 Sign_In();
             }
             in.close();
         }catch(IOException ioE){
-            System.out.println("There was a problem reading from the credentials file!");
+            System.out.println(ioE + "There was a problem reading from the credentials file!");
         }finally {
             if (in != null){
                 try{
                     in.close();
                 }catch(IOException ioE){
-                    System.out.println("Problem closing the input stream.");
+                    System.out.println(ioE + "Problem closing the input stream.");
                 }
             }
         }
@@ -123,19 +125,19 @@ public class STARTING_SCREEN {
                     }
                     in.close();
                 } catch (ClassNotFoundException | EOFException eof) {
-                    System.out.println("Username successfully created.");
+                    System.out.println(eof + "Username successfully created.");
                     break;
                 }finally {
                     if (in!=null){
                         try{
                             in.close();
                         }catch(IOException e){
-                            System.out.println("There was a problem closing the ObjectInput Stream. . .");
+                            System.out.println(e + "There was a problem closing the ObjectInput Stream. . .");
                         }
                     }
                 }
             } catch (IOException e) {
-                System.out.println("An error occurred with initialization of the Stream Input");
+                System.out.println(e + "An error occurred with initialization of the Stream Input");
                 System.out.println("Aborting . . .");
                 Program_Close();
             }
@@ -160,13 +162,13 @@ public class STARTING_SCREEN {
             out.writeObject(User);
             out.close();
         }catch(IOException e){
-            System.out.println("There was a problem. Couldn't write the object, or credentials.ser file not properly used.");
+            System.out.println(e + "There was a problem. Couldn't write the object, or credentials.ser file not properly used.");
         }finally{
             if (out!= null){
                 try{
                     out.close();
                 }catch(IOException e){
-                    System.out.println("Problem closing the Output Stream file!");
+                    System.out.println(e + "Problem closing the Output Stream file!");
                 }
             }
         }
@@ -195,13 +197,13 @@ public class STARTING_SCREEN {
                 writer.close();
 
             } catch (IOException e) {
-                System.out.println("An error occurred either with the file creation or with the file writer.");
+                System.out.println(e + "An error occurred either with the file creation or with the file writer.");
             } finally {
                 if (writer != null) {
                     try {
                         writer.close();
                     } catch (IOException ioe) {
-                        System.out.println("Writer could not be closed properly!");
+                        System.out.println(ioe + "Writer could not be closed properly!");
                     }
                 }
             }
@@ -212,14 +214,7 @@ public class STARTING_SCREEN {
 
             User customer1 = new Customer("user1", "password1","-","-");
             User customer2 = new Customer("user2", "password2","-","-");
-            /*
-            ((Customer) customer1).setFirstname("-");
-            ((Customer) customer1).setLastname("-");
 
-            ((Customer) customer2).setFirstname("-");
-            ((Customer) customer2).setLastname("-");
-
-             */
 
             File credentials = new File("credentials.ser");
 
@@ -243,13 +238,13 @@ public class STARTING_SCREEN {
                 out.close();
 
             } catch (IOException ioE) {
-                System.out.println("There was an error either with the credentials file or with the Objects output stream");
+                System.out.println(ioE + "There was an error either with the credentials file or with the Objects output stream");
             }finally {
                 if(out != null){
                     try{
                         out.close();
                     }catch(IOException IoE){
-                        System.out.println("There as a problem closing the Object Output Stream");
+                        System.out.println(IoE + "There as a problem closing the Object Output Stream");
                     }
                 }
             }
