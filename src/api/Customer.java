@@ -9,9 +9,11 @@ public class Customer extends User implements Serializable {
     private OrderHistory OrderHistory;
     private ShoppingCart ShoppingCart;
 
-    public Customer(String Username, String Password){
+    public Customer(String Username, String Password,String Firstname, String Lastname){
 
         super(Username, Password);
+        this.Firstname = Firstname;
+        this.Lastname = Lastname;
 
         Order = new Order();
         OrderHistory = new OrderHistory();
