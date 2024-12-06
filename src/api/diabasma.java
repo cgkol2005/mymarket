@@ -10,62 +10,42 @@ public class diabasma
 
     public static void main(String[] args) throws IOException
     {
-        List<String> titlosarray=new ArrayList<>();
-        List<String[]> values = new ArrayList<>();
-        try (BufferedReader in = new BufferedReader(new FileReader("products.txt")))
+
+        List<Product> products=new ArrayList<>();
+        try (BufferedReader in =new BufferedReader(new FileReader("products.txt")))
         {
             String line;
-            while ((line = in.readLine()) != null)
+            while ((line=in.readLine()) != null)
             {
-                String[] parts = line.split(":");
-                if (parts.length > 1)
+                try
                 {
-                    String key = parts[0].trim();
-                    String value = parts[1].trim();
-                    values.add(new String[]{key, value});
-                    if (key.equals("Τίτλος"))
+                    if (line.trim().isEmpty())
                     {
-                        titlosarray.add(value);
+                        continue;
                     }
+                    String title = line.split(":")[1].trim();
+                    String description = in.readLine().split(":")[1].trim();
+                    String category = in.readLine().split(":")[1].trim();
+                    String sub_category = in.readLine().split(":")[1].trim();
+                    double price = Double.parseDouble(in.readLine().split(":")[1].trim().replace(",", "").replace("€",""));
+                    int stock = Integer.parseInt(in.readLine().split(":")[1].trim().replace("kg","").replace(" τεμάχια", ""));
+                    products.add(new Product(title, description, category, sub_category, price, stock));
                 }
-                else
+                catch (NumberFormatException | ArrayIndexOutOfBoundsException e)
                 {
-                    values.add(new String[]{line.trim(), ""});
+                    System.err.println("Λάθος στην επεξεργασία ενός προϊόντος: " + e.getMessage());
                 }
             }
-        } catch (IOException e)
+        }
+        catch (IOException e)
         {
             System.err.println("Παρουσιάστηκε σφάλμα κατά την ανάγνωση του αρχείου: ");
         }
-        for (String title : titlosarray)
+        for(Product product: products)
         {
-            System.out.println(title);
+            System.out.println(product);
         }
-        for (String[] pair : values)
-        {
-            System.out.println(pair[0] + ":" + pair[1]);
 
-        }
-        diabasma diabasmaInstance = new diabasma();
-        diabasmaInstance.searchProduct(titlosarray);
-    }
-    public String searchProduct(List<String> titlosarray)
-    {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Δώστε τον τίτλο που θέλετε να αναζητήσετε:");
-        String searchTitle = scanner.nextLine().trim();
-        for (String title : titlosarray)
-        {
-            if (title.equals(searchTitle))
-            {
-                String result="Βρέθηκε ο τίτλος: " + title;
-                System.out.println(result);
-                return result;
-            }
-        }
-        String notFoundMessage = "Ο τίτλος \"" + searchTitle + "\" δεν βρέθηκε.";
-        System.out.println(notFoundMessage);
-        return notFoundMessage;
     }
 
 }
