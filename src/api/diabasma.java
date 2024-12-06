@@ -41,11 +41,6 @@ public class diabasma
         {
             System.err.println("Παρουσιάστηκε σφάλμα κατά την ανάγνωση του αρχείου: ");
         }
-        for(Product product: products)
-        {
-            System.out.println(product);
-        }
-        
         Scanner scanner2 =new Scanner(System.in);
         System.out.println("Άν θέλεις αναζήτηση με τίτλος πάτα 1,εάν θέλεις αναζήτηση με κατηγορία πάτα 2 και εάν θέλεις και με τα δυό πάτα 3:");
         String methodos=scanner2.nextLine().trim();
@@ -106,6 +101,13 @@ public class diabasma
                 System.out.println("Δεν βρέθηκαν προϊόν με αυτόν τον τίτλο και αυτή την κατηγορία");
             }
 
+        }
+        else
+        {
+            for(Product product: products)
+            {
+                System.out.println(product);
+            }
         }
     }
 
