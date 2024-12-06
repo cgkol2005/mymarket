@@ -45,6 +45,22 @@ public class diabasma
         {
             System.out.println(product);
         }
+        Scanner scanner =new Scanner(System.in);
+        System.out.println("Δώστε τον τίτλο του προϊόντος:");
+        String titleInput=scanner.nextLine().trim();
+        boolean found=false;
+        for (Product product:products)
+        {
+            if (product.getTitle().equalsIgnoreCase(titleInput))
+            {
+                System.out.println(product);
+                found=true;
+            }
+        }
+        if (!found)
+        {
+            System.out.println("Δεν βρέθηκαν προϊόν με αυτόν τον τίτλο");
+        }
 
     }
 
