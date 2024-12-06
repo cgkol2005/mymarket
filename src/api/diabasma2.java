@@ -35,22 +35,7 @@ public class diabasma2
         } catch (IOException e) {
             System.err.println("Παρουσιάστηκε σφάλμα κατά την ανάγνωση του αρχείου:");
         }
-        Scanner scanner =new Scanner(System.in);
-        System.out.println("Δώστε την κατηγορία του προϊόντος:");
-        String categoryInput=scanner.nextLine().trim();
-        boolean found=false;
-        for (Product product: products)
-        {
-            if (product.getCategory().equalsIgnoreCase(categoryInput))
-            {
-                System.out.println(product);
-                found=true;
-            }
-        }
-        if (!found)
-        {
-            System.out.println("Δεν βρέθηκαν προϊόν με αυτή την κατηγορία");
-        }
+
 
     }
 }
