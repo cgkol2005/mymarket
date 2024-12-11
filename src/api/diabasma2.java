@@ -33,6 +33,7 @@ public class diabasma2
         } catch (IOException e) {
             System.err.println("Παρουσιάστηκε σφάλμα κατά την ανάγνωση του αρχείου:");
         }
+        System.out.println("asda");
     }
 }
 

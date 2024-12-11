@@ -4,8 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4962100c-d0a3-448f-8930-2e998309a824" name="Changes" comment="diabasma+titlos">
+    <list default="true" id="4962100c-d0a3-448f-8930-2e998309a824" name="Changes" comment="Program Initialization, the deserialized objects are null...">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_12_2024_12_53_____Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_12_2024_12_53_μ_μ__[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_12_2024_12_55_____Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_12_2024_12_55_μ_μ__[Changes]/shelved.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/diabasma2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/diabasma2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,10 +28,11 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="newfeaturegkolfos" />
+        <entry key="$PROJECT_DIR$" value="Xaris_Starting_Screen_Optimization" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -60,13 +66,19 @@
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/xaris/Desktop/Folders/Programming Files and Programs/JAVA/MyMarketRepository/mymarket-4573-4763&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\xaris\Desktop\Folders\Programming Files and Programs\JAVA\MyMarketRepository\mymarket-4573-4763" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="api" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="" />
@@ -80,6 +92,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Testing_Class" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="api.testing_class" />
+      <module name="MyMarket" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="All in MyMarket" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="MyMarket" />
       <option name="PACKAGE_NAME" value="" />
@@ -88,13 +107,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.Testing_Class" />
+      <item itemvalue="Application.Main" />
+      <item itemvalue="JUnit.All in MyMarket" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.All in MyMarket" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.All in MyMarket" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.All in MyMarket" />
-        <item itemvalue="JUnit.All in MyMarket" />
       </list>
     </recent_temporary>
   </component>
@@ -135,21 +159,7 @@
       <option name="project" value="LOCAL" />
       <updated>1732963130757</updated>
     </task>
-    <task id="LOCAL-00005" summary="transfering files from search branch">
-      <created>1733390933297</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1733390933297</updated>
-    </task>
-    <task id="LOCAL-00006" summary="transfering..">
-      <created>1733390983860</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1733390983860</updated>
-    </task>
-    <option name="localTasksCounter" value="7" />
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -163,7 +173,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="Program's_Starting_Screen" />
+                        <option value="StartingScreenAndApiCLasses" />
                       </list>
                     </value>
                   </entry>
@@ -180,9 +190,7 @@
     <MESSAGE value="Program's classes..Xaris" />
     <MESSAGE value="Program Initialization First Commit" />
     <MESSAGE value="Program Initialization, the deserialized objects are null..." />
-    <MESSAGE value="transfering files from search branch" />
-    <MESSAGE value="transfering.." />
-    <option name="LAST_COMMIT_MESSAGE" value="transfering.." />
+    <option name="LAST_COMMIT_MESSAGE" value="Program Initialization, the deserialized objects are null..." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
