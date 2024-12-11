@@ -15,7 +15,7 @@ public class Customer extends User implements Serializable {
         this.Firstname = Firstname;
         this.Lastname = Lastname;
 
-        Order = new Order();
+        //Order = new Order();
         OrderHistory = new OrderHistory();
 
         ShoppingCart = new ShoppingCart();
