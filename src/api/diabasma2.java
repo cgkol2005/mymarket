@@ -2,9 +2,11 @@ package api;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Scanner;
 
 public class diabasma2
 {
+
     public static void main(String[] args) throws IOException
     {
         try (BufferedReader in = new BufferedReader(new FileReader("categories_subcategories.txt"))) {
@@ -34,6 +36,8 @@ public class diabasma2
             System.err.println("Παρουσιάστηκε σφάλμα κατά την ανάγνωση του αρχείου:");
         }
         System.out.println("asda");
+
+
     }
 }
 

@@ -10,62 +10,105 @@ public class diabasma
 
     public static void main(String[] args) throws IOException
     {
-        List<String> titlosarray=new ArrayList<>();
-        List<String[]> values = new ArrayList<>();
-        try (BufferedReader in = new BufferedReader(new FileReader("products.txt")))
+
+        List<Product> products=new ArrayList<>();
+        try (BufferedReader in =new BufferedReader(new FileReader("products.txt")))
         {
             String line;
-            while ((line = in.readLine()) != null)
+            while ((line=in.readLine()) != null)
             {
-                String[] parts = line.split(":");
-                if (parts.length > 1)
+                try
                 {
-                    String key = parts[0].trim();
-                    String value = parts[1].trim();
-                    values.add(new String[]{key, value});
-                    if (key.equals("Τίτλος"))
+                    if (line.trim().isEmpty())
                     {
-                        titlosarray.add(value);
+                        continue;
                     }
+                    String title = line.split(":")[1].trim();
+                    String description = in.readLine().split(":")[1].trim();
+                    String category = in.readLine().split(":")[1].trim();
+                    String sub_category = in.readLine().split(":")[1].trim();
+                    double price = Double.parseDouble(in.readLine().split(":")[1].trim().replace(",", ".").replace("€",""));
+                    int stock = Integer.parseInt(in.readLine().split(":")[1].trim().replace("kg","").replace(" τεμάχια", ""));
+                    products.add(new Product(title, description, category, sub_category, price, stock));
                 }
-                else
+                catch (NumberFormatException | ArrayIndexOutOfBoundsException e)
                 {
-                    values.add(new String[]{line.trim(), ""});
+                    System.err.println("Λάθος στην επεξεργασία ενός προϊόντος: " + e.getMessage());
                 }
             }
-        } catch (IOException e)
+        }
+        catch (IOException e)
         {
             System.err.println("Παρουσιάστηκε σφάλμα κατά την ανάγνωση του αρχείου: ");
         }
-        for (String title : titlosarray)
+        Scanner scanner2 =new Scanner(System.in);
+        System.out.println("Άν θέλεις αναζήτηση με τίτλος πάτα 1,εάν θέλεις αναζήτηση με κατηγορία πάτα 2 και εάν θέλεις και με τα δυό πάτα 3:");
+        String methodos=scanner2.nextLine().trim();
+        if (methodos.equals("1"))
         {
-            System.out.println(title);
-        }
-        for (String[] pair : values)
-        {
-            System.out.println(pair[0] + ":" + pair[1]);
 
-        }
-        diabasma diabasmaInstance = new diabasma();
-        diabasmaInstance.searchProduct(titlosarray);
-    }
-    public String searchProduct(List<String> titlosarray)
-    {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Δώστε τον τίτλο που θέλετε να αναζητήσετε:");
-        String searchTitle = scanner.nextLine().trim();
-        for (String title : titlosarray)
-        {
-            if (title.equals(searchTitle))
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Δώστε τον τίτλο του προϊόντος:");
+            String titleInput = scanner.nextLine().trim();
+            boolean found = false;
+            for (Product product : products) {
+                if (product.getTitle().equalsIgnoreCase(titleInput)) {
+                    System.out.println(product);
+                    found = true;
+                }
+            }
+            if (!found)
             {
-                String result="Βρέθηκε ο τίτλος: " + title;
-                System.out.println(result);
-                return result;
+                System.out.println("Δεν βρέθηκαν προϊόν με αυτόν τον τίτλο");
             }
         }
-        String notFoundMessage = "Ο τίτλος \"" + searchTitle + "\" δεν βρέθηκε.";
-        System.out.println(notFoundMessage);
-        return notFoundMessage;
+
+        else if (methodos.equals("2"))
+        {
+            Scanner scanner1 = new Scanner(System.in);
+            System.out.println("Δώστε την κατηγορία του προϊόντος:");
+            String categoryInput = scanner1.nextLine().trim();
+            boolean found1 = false;
+            for (Product product : products) {
+                if (product.getCategory().equalsIgnoreCase(categoryInput)) {
+                    System.out.println(product);
+                    found1 = true;
+                }
+            }
+            if (!found1) {
+                System.out.println("Δεν βρέθηκαν προϊόν με αυτή την κατηγορία");
+            }
+        }
+        else if (methodos.equals("3"))
+        {
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Δώστε τον τίτλο του προϊόντος:");
+            String titleInput = scanner.nextLine().trim();
+            Scanner scanner1 = new Scanner(System.in);
+            System.out.println("Δώστε την κατηγορία του προϊόντος:");
+            String categoryInput = scanner1.nextLine().trim();
+            boolean found = false;
+            for (Product product : products)
+            {
+                if (product.getTitle().equalsIgnoreCase(titleInput)&& product.getCategory().equalsIgnoreCase(categoryInput))
+                {
+                    System.out.println(product);
+                    found =true;
+                }
+            }
+            if (!found)
+            {
+                System.out.println("Δεν βρέθηκαν προϊόν με αυτόν τον τίτλο και αυτή την κατηγορία");
+            }
+
+        }
+        else
+        {
+            for(Product product: products)
+            {
+                System.out.println(product);
+            }
+        }
     }
 
 }
