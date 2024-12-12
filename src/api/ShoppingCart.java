@@ -1,7 +1,8 @@
 package api;
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
-public class ShoppingCart
+public class ShoppingCart implements Serializable
 {
     private HashMap<Product, Integer> ShoppingCart;
     private int Products_count; //counts the total products in the Cart
