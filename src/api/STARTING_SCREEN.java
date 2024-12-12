@@ -46,10 +46,18 @@ public class STARTING_SCREEN {
     private void Sign_In() {
         while (true) {
             System.out.println("Press 0 to exit, press 1 to enter credentials");
-            int choice = Integer.parseInt(scanner.next());
-            if (choice == 0) {
-                ProgramStart();
-                return;
+            try{
+
+                int choice = Integer.parseInt(scanner.next());
+
+                if (choice == 0) {
+                    ProgramStart();
+                    return;
+                }
+
+            }catch(NumberFormatException nfe){
+                System.out.println(nfe+": Incorrect option. Try again.");
+                Sign_In();
             }
             scanner.nextLine();
             System.out.println("Enter your Username: ");
