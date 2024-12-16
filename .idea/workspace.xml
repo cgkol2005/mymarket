@@ -5,7 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4962100c-d0a3-448f-8930-2e998309a824" name="Changes" comment="ShoppingCart">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_12_2024_11_15_____Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_12_2024_11_15_π_μ__[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_12_2024_11_29_____Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_12_2024_11_29_____Changes_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_12_2024_11_29_π_μ__[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_12_2024_11_29_π_μ__[Changes]1/shelved.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/Customer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/Order.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/ShoppingCart.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/ShoppingCart.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/diabasma2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/diabasma2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/testing_class.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/testing_class.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/diabasma.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/diabasma.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +60,7 @@
     &quot;Application.Main.executor&quot;: &quot;Run&quot;,
     &quot;Application.diabasma.executor&quot;: &quot;Run&quot;,
     &quot;Application.diabasma2.executor&quot;: &quot;Run&quot;,
+    &quot;Application.testing_class.executor&quot;: &quot;Run&quot;,
     &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
     &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
     &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
@@ -168,7 +181,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733904941203</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="ShoppingCart">
+      <option name="closed" value="true" />
+      <created>1733908645165</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1733908645165</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
