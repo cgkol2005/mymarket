@@ -1,6 +1,8 @@
 package api;
 
 import java.io.*;
+import java.util.Scanner;
+import java.text.Normalizer;
 
 public class testing_class {
     /*
@@ -46,6 +48,7 @@ public class testing_class {
     }
 
      */
+    /* MAIN TO TEST SHOPPING CART AND ORDERS
     public static void main(String[] args) {
         ShoppingCart cart = new ShoppingCart();
 
@@ -67,4 +70,43 @@ public class testing_class {
 
 
     }
+
+     */
+    /*
+    public static String removeAccents(String text) {
+        // Κανονικοποίηση της συμβολοσειράς στη μορφή NFD
+        String normalized = Normalizer.normalize(text, Normalizer.Form.NFD);
+        // Αφαίρεση των διακριτικών χαρακτήρων
+        return normalized.replaceAll("\\p{M}", "");
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String portokalia = "Πορτοκάλια 1kg";
+        String portokalia2 = "Πορτοκαλια 1kg";
+        String portokalia3 = "ΠΟΡΤΟΚΆΛΙΑ 1kg";
+
+        String normalized = removeAccents(portokalia);
+
+        String normalized2 = removeAccents(scanner.nextLine());
+
+
+
+
+        System.out.println(normalized.toLowerCase().contains(normalized2.toLowerCase()));
+
+
+    }
+
+     */
+
+
+
+
+
+
+
+
+
+
 }
