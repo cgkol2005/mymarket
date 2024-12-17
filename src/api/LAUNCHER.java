@@ -31,6 +31,10 @@ public class LAUNCHER {
         ProgramStart();
 
     }
+    public static void CustomerStartingScreen(User customer){
+        customer.setPassword("asdasdasdasd");
+        System.out.println("new pass set.");
+    }
 
     private void ShowOptions(){
         System.out.println("Welcome to our e-shop!");
@@ -81,6 +85,23 @@ public class LAUNCHER {
         }
 
 
+    }
+    public static void print_credentials(){
+        User user = null;
+        try(ObjectInputStream in = new ObjectInputStream(new FileInputStream("credentials.ser"))){
+            while (true){
+                try{
+                    user = (User) in.readObject();
+                    System.out.printf("Username: %s, Password: %s%n", user.getUsername(),user.getPassword());
+                }catch(EOFException eof){
+                    System.err.println(eof);
+                    break;
+                }
+            }
+        }catch(IOException | ClassNotFoundException e){
+            System.err.println(e);
+            System.out.print(" ,problem in the print_credentials Class.");
+        }
     }
     private void Program_Close(){
         System.out.println("Program closing. . .");

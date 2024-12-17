@@ -27,7 +27,6 @@ public class Customer extends User implements Serializable {
     public void setLastname(String lastname) {
         Lastname = lastname;
     }
-
     public String getFirstname() {
         return Firstname;
     }
