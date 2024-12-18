@@ -1,0 +1,118 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+public class maingui {
+    private JFrame mainFrame;
+
+    public maingui() {
+        mainFrame = new JFrame("Σύνδεση");
+        mainFrame.setSize(500, 400);
+        mainFrame.setLayout(new FlowLayout());
+        mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        JLabel messageLabel1 = new JLabel("<html>Εάν έχεις λογαριασμό, πάτα Sign In.<br>Εάν θέλεις να δημιουργήσεις έναν, πάτα Sign Up.</html>");
+        mainFrame.add(messageLabel1);
+        JButton signinButton = new JButton("Sign In");
+        JButton signupButton = new JButton("Sign up");
+        signinButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new signingui();
+            }
+        });
+        signupButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new signupgui();
+            }
+        });
+        mainFrame.add(signinButton);
+        mainFrame.add(signupButton);
+        mainFrame.setLocationRelativeTo(null);
+        mainFrame.setVisible(true);
+    }
+
+    public class signingui {
+        private JFrame frame;
+        private JTextField usernameField, passwordField;
+        JButton signin, signup;
+
+        public signingui() {
+            frame = new JFrame("Συνδεση");
+            frame.setSize(500, 400);
+            frame.setLayout(new FlowLayout());
+            JLabel username = new JLabel("USERNAME");
+            frame.add(username);
+            usernameField = new JTextField();
+            usernameField.setPreferredSize(new Dimension(100, 20));
+            frame.add(usernameField);
+            ;
+            frame.setLocationRelativeTo(null);
+            JLabel password = new JLabel("PASSWORD");
+            frame.add(password);
+            passwordField = new JTextField();
+            passwordField.setPreferredSize(new Dimension(100, 20));
+            frame.add(passwordField);
+            ;
+            frame.setLocationRelativeTo(null);
+            frame.setVisible(true);
+
+
+        }
+    }
+        public class signupgui {
+            private JFrame frame;
+            private JTextField firstnameField, lastnameField, usernameField, passwordField;
+            public signupgui() {
+                frame = new JFrame("Δημιουργία λογαριασμού");
+                frame.setSize(500, 400);
+                frame.setLayout(new FlowLayout());
+
+                JLabel firstnameLabel = new JLabel("Όνομα:");
+                frame.add(firstnameLabel);
+                firstnameField = new JTextField();
+                firstnameField.setPreferredSize(new Dimension(100, 20));
+                frame.add(firstnameField);
+
+                JLabel lastnameLabel = new JLabel("Επίθετο:");
+                frame.add(lastnameLabel);
+                lastnameField = new JTextField();
+                lastnameField.setPreferredSize(new Dimension(100, 20));
+                frame.add(lastnameField);
+
+                JLabel usernameLabel = new JLabel("Όνομα χρήστη:");
+                frame.add(usernameLabel);
+                usernameField = new JTextField();
+                usernameField.setPreferredSize(new Dimension(100, 20));
+                frame.add(usernameField);
+
+                JLabel passwordLabel = new JLabel("Όνομα χρήστη:");
+                frame.add(passwordLabel);
+                passwordField = new JTextField();
+                passwordField.setPreferredSize(new Dimension(100, 20));
+                frame.add(passwordField);
+
+                JButton completeButton = new JButton("Ολοκλήρωση");
+                frame.add(completeButton);
+                completeButton.addActionListener(new ActionListener() {
+                    @Override
+                    public void actionPerformed(ActionEvent e) {
+                        JOptionPane.showMessageDialog(frame, "Επιτυχής δημιουργία λογαριασμού!", "Εγγραφή", JOptionPane.INFORMATION_MESSAGE);
+                        frame.dispose();
+                        mainFrame.setVisible(true);
+                    }
+                });
+
+                frame.setLocationRelativeTo(null);
+                mainFrame.setVisible(false);
+                frame.setVisible(true);
+
+
+            }
+        }
+
+    public static void main(String[] args) {
+        new maingui();
+    }
+}
+
