@@ -3,7 +3,7 @@ package api;
 import java.io.*;
 import java.util.Scanner;
 
-public class ACCOUNTS {
+public class AccountsManager {
     private static Scanner scanner = new Scanner(System.in);
     public static void Sign_In() {
         while (true) {

@@ -10,7 +10,7 @@ public class Main{
     public static void main(String[] args){
         //print_credentials.print();
 
-        LAUNCHER Program = new LAUNCHER();
+        Application_Controller_Manager Program = new Application_Controller_Manager();
 
         Program.ProgramStart();
 
