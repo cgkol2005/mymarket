@@ -46,14 +46,17 @@ public class maingui {
             usernameField = new JTextField();
             usernameField.setPreferredSize(new Dimension(100, 20));
             frame.add(usernameField);
-            ;
+
             frame.setLocationRelativeTo(null);
             JLabel password = new JLabel("PASSWORD");
             frame.add(password);
             passwordField = new JTextField();
             passwordField.setPreferredSize(new Dimension(100, 20));
             frame.add(passwordField);
-            ;
+
+            JButton submitButton = new JButton("Submit");
+            frame.add(submitButton);
+
             frame.setLocationRelativeTo(null);
             frame.setVisible(true);
 
