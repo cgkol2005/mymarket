@@ -15,6 +15,10 @@ public class Application_Controller_Manager {
         Program_Initialization();
         Logged_In = false;
     }
+
+    public static void CustomerStartingScreen(User authentication) {
+    }
+
     public void ProgramStart(){
         Options();
     }
@@ -31,7 +35,7 @@ public class Application_Controller_Manager {
             while(option != 1 && option != 4 && option != 5){
                 try{
                     option = Integer.parseInt(scanner.next());
-                    if (option < 1 || option > 4 ){
+                    if (option < 1 || option > 4 && option != 5){
                         System.out.println("Not an option. Please enter a valid number.");
                     }
                 }catch(NumberFormatException nfe){
@@ -75,6 +79,7 @@ public class Application_Controller_Manager {
                 AccountsManager.Sign_Up();
                 break;
             case 5: Logged_In = false;
+                break;
             case 4:Program_Close();
         }
         Options();

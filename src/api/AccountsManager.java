@@ -42,7 +42,6 @@ public class AccountsManager {
                                 System.out.println("You are an Admin of the e-shop");
                             } else if (authentication instanceof Customer) {
                                 System.out.println("You are a Customer of the e-shop");
-                                LAUNCHER.CustomerStartingScreen(authentication);
                             }
                             return;
                         }
