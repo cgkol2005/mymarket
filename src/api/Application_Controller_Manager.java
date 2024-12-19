@@ -3,46 +3,81 @@ package api;
 import java.io.*;
 import java.util.Scanner;
 
-public class LAUNCHER {
+/**
+ *
+ */
+public class Application_Controller_Manager {
     private Scanner scanner;
+    private boolean Logged_In;
 
-    public LAUNCHER(){
+    public Application_Controller_Manager(){
         scanner = new Scanner(System.in);
         Program_Initialization();
-
+        Logged_In = false;
     }
     public void ProgramStart(){
-        System.out.println();
-        ShowOptions();
-        System.out.println();
-        System.out.print("What would you like to do?\nOption: ");
-        int option = scanner.nextInt();
+        Options();
+    }
+
+    private void Options(){
+        int option = 0;
+        if (Logged_In){
+            System.out.println();
+            System.out.println("1.Browse the shop.");
+            System.out.println("5.Log-Out.");
+            System.out.println("4.Exit");
+            System.out.print("What would you like to do?\nOption: ");
+
+            while(option != 1 && option != 4 && option != 5){
+                try{
+                    option = Integer.parseInt(scanner.next());
+                    if (option < 1 || option > 4 ){
+                        System.out.println("Not an option. Please enter a valid number.");
+                    }
+                }catch(NumberFormatException nfe){
+                    System.err.println(nfe);
+                    System.out.println("Not an option. Please enter a valid number.");
+                }
+            }
+        }else{
+            System.out.println();
+            System.out.println("Welcome to our e-shop!");
+            System.out.println();
+            System.out.println("1. Browse the shop as guest / Περιήγηση ως επισκέπτης");
+            System.out.println("2. Sign-In / Σύνδεση");
+            System.out.println("3. Sign-Up / Εγγραφή");
+            System.out.println("4. Exit");
+            System.out.println();
+            System.out.print("What would you like to do?\nOption: ");
+
+            while(option < 1 || option>4){
+                try{
+                    option = Integer.parseInt(scanner.next());
+                    if (option < 1 || option > 4 ){
+                        System.out.println("Not an option. Please enter a valid number.");
+                    }
+                }catch(NumberFormatException nfe){
+                    System.err.println(nfe);
+                    System.out.println("Not an option. Please enter a valid number.");
+                }
+            }
+
+        }
+
         switch (option){
             case 1:Browse();
                 break;
             case 2:
-                ACCOUNTS.Sign_In();
+                AccountsManager.Sign_In();
+                Logged_In = true;
                 break;
             case 3:
-                ACCOUNTS.Sign_Up();
+                AccountsManager.Sign_Up();
                 break;
+            case 5: Logged_In = false;
             case 4:Program_Close();
         }
-        ProgramStart();
-
-    }
-    public static void CustomerStartingScreen(User customer){
-        customer.setPassword("asdasdasdasd");
-        System.out.println("new pass set.");
-    }
-
-    private void ShowOptions(){
-        System.out.println("Welcome to our e-shop!");
-        System.out.println();
-        System.out.println("1. Browse the shop as guest / Περιήγηση ως επισκέπτης");
-        System.out.println("2. Sign-In / Σύνδεση");
-        System.out.println("3. Sign-Up / Εγγραφή");
-        System.out.println("4. Exit");
+        Options();
     }
 
     private void Browse() {
@@ -85,23 +120,6 @@ public class LAUNCHER {
         }
 
 
-    }
-    public static void print_credentials(){
-        User user = null;
-        try(ObjectInputStream in = new ObjectInputStream(new FileInputStream("credentials.ser"))){
-            while (true){
-                try{
-                    user = (User) in.readObject();
-                    System.out.printf("Username: %s, Password: %s%n", user.getUsername(),user.getPassword());
-                }catch(EOFException eof){
-                    System.err.println(eof);
-                    break;
-                }
-            }
-        }catch(IOException | ClassNotFoundException e){
-            System.err.println(e);
-            System.out.print(" ,problem in the print_credentials Class.");
-        }
     }
     private void Program_Close(){
         System.out.println("Program closing. . .");
