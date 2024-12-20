@@ -55,6 +55,22 @@ public class Product
     {
         return stock;
     }
+    public void setDescription(String description)
+    {
+        this.description=description;
+    }
+    public void setCategory(String category)
+    {
+        this.category=category;
+    }
+    public void setSub_category(String sub_category)
+    {
+        this.sub_category=sub_category;
+    }
+    public void setPrice(double price)
+    {
+        this.price=price;
+    }
     public void setStock(int stock)
     {
         this.stock=stock;
