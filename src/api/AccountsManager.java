@@ -104,7 +104,7 @@ public class AccountsManager {
         }
         System.out.println("Password confirmed!");
         User User = new Customer(Username, Password, FirstName, LastName);
-        System.out.println("Object created. Proof: Here's the object's info: "+User.getUsername()+ User.getPassword());
+        System.out.println("Object created. Proof: Here's the object's info: " + User.getUsername() + " " + User.getPassword());
 
         try (FileOutputStream fos = new FileOutputStream("credentials.ser", true);
              AppendableObjectOutputStream out = new AppendableObjectOutputStream(fos)) {
@@ -116,7 +116,7 @@ public class AccountsManager {
         }
 
         System.out.println("If everything worked correctly the new user has been assigned. Please try to sign-in to confirm!");
-        print_credentials.print();
+        LAUNCHER.print_credentials();
     }
 
     private static void Program_Close(){
