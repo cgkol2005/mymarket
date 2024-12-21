@@ -10,7 +10,7 @@ public class diabasma
 
     public static void main(String[] args) throws IOException
     {
-
+        /*
         List<Product> products=new ArrayList<>();
         try (BufferedReader in =new BufferedReader(new FileReader("products.txt")))
         {
@@ -41,6 +41,8 @@ public class diabasma
         {
             System.err.println("Παρουσιάστηκε σφάλμα κατά την ανάγνωση του αρχείου: ");
         }
+         */
+        List<Product> products = Application_Controller.CreateProductsList();
         Scanner scanner2 =new Scanner(System.in);
         System.out.println("Άν θέλεις αναζήτηση με τίτλος πάτα 1,εάν θέλεις αναζήτηση με κατηγορία πάτα 2 και εάν θέλεις και με τα δυό πάτα 3:");
         String methodos=scanner2.nextLine().trim();

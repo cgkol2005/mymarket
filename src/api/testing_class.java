@@ -100,7 +100,7 @@ public class testing_class {
 
      */
     public static void main(String[] args) {
-        LAUNCHER.print_credentials();
+
     }
 
 

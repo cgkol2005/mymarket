@@ -1,10 +1,11 @@
 package api;
 
+import java.io.Serializable;
+
 /**
  * THIS CLASS CAN BE DELETED
  */
-public class Product
-{
+public class Product implements Serializable {
     private String title;
     private String description;
     private String category;
