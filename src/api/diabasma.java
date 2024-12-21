@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.text.Normalizer;
 public class diabasma
 {
 
@@ -48,13 +49,12 @@ public class diabasma
         String methodos=scanner2.nextLine().trim();
         if (methodos.equals("1"))
         {
-
             Scanner scanner = new Scanner(System.in);
             System.out.println("Δώστε τον τίτλο του προϊόντος:");
-            String titleInput = scanner.nextLine().trim();
+            String titleInput = normalizeInput(scanner.nextLine().trim());
             boolean found = false;
             for (Product product : products) {
-                if (product.getTitle().equalsIgnoreCase(titleInput)) {
+                if (normalizeInput(product.getTitle()).equalsIgnoreCase(titleInput)) {
                     System.out.println(product);
                     found = true;
                 }
@@ -69,10 +69,10 @@ public class diabasma
         {
             Scanner scanner1 = new Scanner(System.in);
             System.out.println("Δώστε την κατηγορία του προϊόντος:");
-            String categoryInput = scanner1.nextLine().trim();
+            String categoryInput = normalizeInput(scanner1.nextLine().trim());
             boolean found1 = false;
             for (Product product : products) {
-                if (product.getCategory().equalsIgnoreCase(categoryInput)) {
+                if (normalizeInput(product.getCategory()).equalsIgnoreCase(categoryInput)) {
                     System.out.println(product);
                     found1 = true;
                 }
@@ -85,14 +85,14 @@ public class diabasma
         {
             Scanner scanner = new Scanner(System.in);
             System.out.println("Δώστε τον τίτλο του προϊόντος:");
-            String titleInput = scanner.nextLine().trim();
+            String titleInput =normalizeInput(scanner.nextLine().trim());
             Scanner scanner1 = new Scanner(System.in);
             System.out.println("Δώστε την κατηγορία του προϊόντος:");
-            String categoryInput = scanner1.nextLine().trim();
+            String categoryInput = normalizeInput(scanner1.nextLine().trim());
             boolean found = false;
             for (Product product : products)
             {
-                if (product.getTitle().equalsIgnoreCase(titleInput)&& product.getCategory().equalsIgnoreCase(categoryInput))
+                if (normalizeInput(product.getTitle()).equalsIgnoreCase(titleInput)&& normalizeInput(product.getCategory()).equalsIgnoreCase(categoryInput))
                 {
                     System.out.println(product);
                     found =true;
@@ -112,5 +112,12 @@ public class diabasma
             }
         }
     }
+    private static String normalizeInput(String input)
+    {
+        return Normalizer.normalize(input, Normalizer.Form.NFD)
+                .replaceAll("\\p{M}", "")
+                .toLowerCase();
+    }
+
 
 }
