@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class Customer extends User implements Serializable {
     protected String Firstname;
     protected String Lastname;
-    private Order Order;
+    private Order order;
     private OrderHistory OrderHistory;
     private ShoppingCart ShoppingCart;
 
@@ -21,7 +21,8 @@ public class Customer extends User implements Serializable {
         ShoppingCart = new ShoppingCart();
     }
     public void CompleteOrder(){
-        Order = new Order(ShoppingCart, ShoppingCart.getTotalPrice(),ShoppingCart.getProducts_count());
+        order = new Order(ShoppingCart, ShoppingCart.getTotalPrice(),ShoppingCart.getProducts_count());
+        OrderHistory.addOrdertoHistoy(order);
         //Υλοποιηση: Οταν ολοκληρώνεται μια παραγγελία, πρεπει το stock των προϊόντων να μειώνεται ανάλογα.
     }
     public void setFirstname(String Firstname){
