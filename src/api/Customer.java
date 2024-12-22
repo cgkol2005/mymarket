@@ -20,6 +20,10 @@ public class Customer extends User implements Serializable {
 
         ShoppingCart = new ShoppingCart();
     }
+    public void CompleteOrder(){
+        Order = new Order(ShoppingCart, ShoppingCart.getTotalPrice(),ShoppingCart.getProducts_count());
+        //Υλοποιηση: Οταν ολοκληρώνεται μια παραγγελία, πρεπει το stock των προϊόντων να μειώνεται ανάλογα.
+    }
     public void setFirstname(String Firstname){
         this.Firstname = Firstname;
     }

@@ -136,8 +136,18 @@ public class Application_Controller {
                     String category = in.readLine().split(":")[1].trim();
                     String sub_category = in.readLine().split(":")[1].trim();
                     double price = Double.parseDouble(in.readLine().split(":")[1].trim().replace(",", ".").replace("€",""));
-                    int stock = Integer.parseInt(in.readLine().split(":")[1].trim().replace("kg","").replace(" τεμάχια", ""));
-                    products.add(new Product(title, description, category, sub_category, price, stock));
+                    String stockLine = in.readLine().split(":")[1].trim();
+                    if (stockLine.endsWith("kg")) {
+                        double weight = Double.parseDouble(stockLine.replace("kg", "").trim());
+                        Product product = new WeightedProduct(title, description, category, sub_category, price, weight);
+                        products.add(product);
+                    } else if (stockLine.endsWith("τεμάχια")) {
+                        int quantity = Integer.parseInt(stockLine.replace("τεμάχια", "").trim());
+                        Product product = new PackagedProduct(title, description, category, sub_category, price, quantity);
+                        products.add(product);
+                    } else {
+                        System.err.println("Άγνωστη μονάδα μέτρησης για το προϊόν: " + title);
+                    }
                 }
                 catch (NumberFormatException | ArrayIndexOutOfBoundsException e)
                 {
@@ -195,8 +205,6 @@ public class Application_Controller {
         }catch(IOException e) {
             System.out.println("Error reading the ProgramInitialized.txt file. : "+e);
         }
-
-
     }
     private void Program_Close(){
         System.out.println("Program closing. . .");

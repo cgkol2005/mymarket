@@ -62,7 +62,7 @@ public class testing_class {
         cart.removeProduct(mantarinia);
 
         cart.addProduct(new Product("mila", "portokali", "frouta", "dasda", 5.4, 40), 2);
-        //cart.updatestock();
+        //cart.UpdateStock();
 
         System.out.println("Total price: " + cart.getTotalPrice());
 

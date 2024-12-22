@@ -1,86 +1,111 @@
 package api;
+
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
-public class ShoppingCart implements Serializable
-{
-    private HashMap<Product, Integer> ShoppingCart;
+
+public class ShoppingCart implements Serializable {
+
+    private HashMap<Product, Quantity> ShoppingCart;
     private int Products_count; //counts the total products in the Cart
-    private double total_price;
-    public ShoppingCart()
-    {
-        ShoppingCart= new HashMap<>();
+    private double CartTotalPrice;
+
+    public ShoppingCart() {
+        ShoppingCart = new HashMap<>();
         Products_count = 0;
-        total_price = 0;
+        CartTotalPrice = 0;
     }
-    public void addProduct(Product product,int stock) // προσθήκη ενός προιόντος
-    {
-        if (product.getStock()<stock)
-        {
-            System.out.println("Μη διαθέσιμη ποσότητα για το προϊόν:");
+
+    public void addProduct(PackagedProduct product,int stock){
+        if (product.getStock() < stock){
+            System.out.println("! Product is out of stock. :( !");
+        }else if (ShoppingCart.containsKey(product)){
+            UpdateProductQuantityInCart(product, stock);
         }else{
-            int products_count=ShoppingCart.getOrDefault(product, 0); //counts the amount of a product in the cart.
-            ShoppingCart.put(product,products_count + stock);
-            total_price += product.getPrice() * stock;
-            System.out.println("Το προϊόν προστέθηκε/ενημερώθηκε στο καλάθι.");
-            Products_count++;
+            Quantity quantity = new Pieces(stock);
+            ShoppingCart.put(product,quantity);
         }
-
     }
-    //BUG, Πως θα εισαγουμε στο καλάθι προϊόντα με κιλα; (δεκαδικο μερος)
-    /*
-    public void addProduct(Product product,double stock) // προσθήκη ενός προιόντος
-    {
-        if (product.getStock()<stock)
-        {
-            System.out.println("Μη διαθέσιμη ποσότητα για το προϊόν:");
+
+    public void addProduct(WeightedProduct product,double stock){
+        if (product.getStock() < stock){
+            System.out.println("! Product is out of stock. :( !");
+        }else if (ShoppingCart.containsKey(product)){
+            UpdateProductQuantityInCart(product, stock);
         }else{
-            int products_count=ShoppingCart.getOrDefault(product, 0);
-            ShoppingCart.put(product,products_count + stock);
-            total_price += product.getPrice() * stock;
-            System.out.println("Το προϊόν προστέθηκε/ενημερώθηκε στο καλάθι.");
-            Products_count++;
+            Quantity quantity = new Kgs(stock);
+            ShoppingCart.put(product,quantity);
         }
-
     }
 
+
+    /**
+     * Method to update the quantity of a product that already exists in the Cart.
+     *
      */
-    public void removeProduct(Product product) //αφαίρεση ενός προιόντος
+    public void UpdateProductQuantityInCart(PackagedProduct product, int new_stock){
+        if (!ShoppingCart.containsKey(product)){
+            System.out.println("Το προϊόν δεν υπάρχει στο καλάθι.");
+        } else if (product.getStock() < new_stock) {
+            System.out.println("Quantity not available!");
+        }else{
+            ShoppingCart.get(product).addQuantity(new_stock);
+            System.out.println("Η ποσότητα ενημερώθηκε.");
+        }
+    }
+    public void UpdateProductQuantityInCart(WeightedProduct product, double new_stock){
+        if (!ShoppingCart.containsKey(product)){
+            System.out.println("Το προϊόν δεν υπάρχει στο καλάθι.");
+        } else if (product.getStock() < new_stock) {
+            System.out.println("Quantity not available!");
+        }else{
+            ShoppingCart.get(product).addQuantity(new_stock);
+            System.out.println("Η ποσότητα ενημερώθηκε.");
+        }
+    }
+
+    public void removeProduct(Product product)
     {
         if (!ShoppingCart.containsKey(product))
         {
             System.out.println("Το προϊόν δεν υπάρχει στο καλάθι.");
         }else{
-            int stock=ShoppingCart.get(product);
             ShoppingCart.remove(product);
-            total_price -=product.getPrice() *stock;
             System.out.println("Το προϊόν αφαιρέθηκε από το καλάθι.");
             Products_count--;
         }
-
     }
-    public void updatestock(Product product,int new_stock) // ενημέρωση προιόντος
-    //fix bugs for decimal values (some products are given in kgs)
 
-    {
-        if (!ShoppingCart.containsKey(product))
-        {
-            System.out.println("Το προϊόν δεν υπάρχει στο καλάθι.");
-
-        } else if (product.getStock() <new_stock) {
-            System.out.println("Η νέα ποσότητα δεν είναι διαθέσιμη για το προϊόν:");
-        }else{
-            int oldstock=ShoppingCart.get(product);
-            ShoppingCart.put(product, new_stock);
-            total_price += product.getPrice() * (new_stock- oldstock);
-            System.out.println("Η ποσότητα ενημερώθηκε.");
+    public void CalculateAndUpdateTotalPrice(){
+        BigDecimal total_price = new BigDecimal("0");
+        for (Map.Entry<Product,Quantity> entry : ShoppingCart.entrySet()){
+            if (entry.getValue() instanceof Kgs) {
+                String str1 = String.valueOf(entry.getKey().getPrice());
+                BigDecimal one = new BigDecimal(str1);
+                String str2 = String.valueOf(((Kgs) entry.getValue()).getQuantity());
+                BigDecimal two = new BigDecimal(str2);
+                total_price.add(one.multiply(two));
+            } else if (entry.getValue() instanceof Pieces) {
+                String str1 = String.valueOf(entry.getKey().getPrice());
+                BigDecimal one = new BigDecimal(str1);
+                String str2 = String.valueOf(((Pieces) entry.getValue()).getQuantity());
+                BigDecimal two = new BigDecimal(str2);
+                total_price.add(one.multiply(two));
+            }
         }
-
+        CartTotalPrice = total_price.doubleValue();
     }
+
     public double getTotalPrice()
     {
-        return total_price;
+        return CartTotalPrice;
     }
+
+    public int getProducts_count(){
+        return Products_count;
+    }
+
     public void printShoppingCart()
     {
         if (ShoppingCart.isEmpty())
@@ -88,18 +113,42 @@ public class ShoppingCart implements Serializable
             System.out.println("Το καλάθι είναι άδειο.");
         }else{
             System.out.println("Περιεχόμενα καλαθιού:");
-            for (HashMap.Entry<Product,Integer> entry :ShoppingCart.entrySet())
-            {
+            for (HashMap.Entry<Product,Quantity> entry :ShoppingCart.entrySet()) {
                 Product product=entry.getKey();
-                int stock=entry.getValue();
-                System.out.printf("Προϊόν: %s, Ποσότητα: %d, Συνολικό κόστος: %.2f%n",product.getTitle(), stock, product.getPrice() * stock);
+                if (entry.getValue() instanceof Pieces){
+                    int stock=entry.getValue().getPieces();
+                    System.out.printf("Προϊόν: %s, Ποσότητα: %d, Συνολικό κόστος: %.2f%n",product.getTitle(), stock, CalculateTotalPriceOfAProductInCart(product));
+                } else if (entry.getValue() instanceof Kgs) {
+                    double stock = entry.getValue().getKgs();
+                    System.out.printf("Προϊόν: %s, Ποσότητα: %d, Συνολικό κόστος: %.2f%n",product.getTitle(), stock, CalculateTotalPriceOfAProductInCart(product));
+                }
             }
-            System.out.printf("Συνολικό κόστος καλαθιού: %.2f%n", total_price);
+            CalculateAndUpdateTotalPrice();
+            System.out.printf("Συνολικό κόστος καλαθιού: %.2f%n", CartTotalPrice);
         }
+    }
+
+    /**
+     * Calculates the total price of the product in a ShoppingCart.
+     * Total price = Amount of product in Cart * Price of Product
+     *
+     * @author Charitwn Mavridis
+     * @return The total price of the product amount in the Cart.
+     */
+    private double CalculateTotalPriceOfAProductInCart(Product product){
+        BigDecimal Total_Price;
+        if (product instanceof WeightedProduct){
+            BigDecimal dec1 = new BigDecimal(String.valueOf(ShoppingCart.get(product).getKgs()));
+            BigDecimal dec2 = new BigDecimal(String.valueOf(product.getPrice()));
+            Total_Price = dec1.add(dec2);
+        }else{
+            BigDecimal dec1 = new BigDecimal(String.valueOf(ShoppingCart.get(product).getPieces()));
+            BigDecimal dec2 = new BigDecimal(String.valueOf(product.getPrice()));
+            Total_Price = dec1.add(dec2);
+        }
+        return Total_Price.doubleValue();
 
     }
-    public void CompleteOrder(){
-        Order order = new Order(this, total_price, Products_count);
-        //Υλοποιηση: Οταν ολοκληρώνεται μια παραγγελία, πρεπει το stock των προϊόντων να μειώνεται ανάλογα.
-    }
+
+
 }
