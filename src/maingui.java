@@ -1,3 +1,6 @@
+import api.Order;
+import api.OrderHistory;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -243,8 +246,79 @@ public class maingui {
             customerFrame.add(message);
             JLabel message1 = new JLabel("Καλωσήρθατε στο σύστημα για πελάτη");
             customerFrame.add(message1);
+            JLabel message2 = new JLabel("Τι ενέργεια επιθυμείς να κάνεις;");
+            customerFrame.add(message2);
+
+            JButton ShoppingCartButton=new JButton("Καλάθι");
+            JButton searchProductButton=new JButton("Αναζήτηση προιόντος");
+            JButton OrderHistoryButton=new JButton("Προβολή ιστορικού παραγγελιών");
+            JButton OrderButton=new JButton("Ολοκλήρωση παραγγελίας");
+            ShoppingCartButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    new ShoppingCartWindow();
+                }
+            });
+            OrderButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    new OrderWindow();
+                }
+            });
+            searchProductButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    new searchProductWindow();
+                }
+            });
+            OrderHistoryButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    new OrderHistoryWindow();
+                }
+            });
+            customerFrame.add(ShoppingCartButton);
+            customerFrame.add(OrderHistoryButton);
+            customerFrame.add(searchProductButton);
+            customerFrame.add(OrderButton);
             customerFrame.setLocationRelativeTo(null);
             customerFrame.setVisible(true);
+        }
+    }
+    public class ShoppingCartWindow {
+        public ShoppingCartWindow() {
+            JFrame frame=new JFrame("Καλάθι");
+            frame.setSize(500, 400);
+            frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+            JLabel label =new JLabel("Παράθυρο Καλαθιού");
+            frame.add(label);
+            frame.setLayout(new FlowLayout());
+            frame.setLocationRelativeTo(null);
+            frame.setVisible(true);
+        }
+    }
+    public class OrderWindow {
+        public OrderWindow() {
+            JFrame frame=new JFrame("Παραγγελία");
+            frame.setSize(500, 400);
+            frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+            JLabel label =new JLabel("Παράθυρο Παραγγελίας");
+            frame.add(label);
+            frame.setLayout(new FlowLayout());
+            frame.setLocationRelativeTo(null);
+            frame.setVisible(true);
+        }
+    }
+        public class OrderHistoryWindow {
+        public OrderHistoryWindow() {
+            JFrame frame=new JFrame("Ιστορικό");
+            frame.setSize(500, 400);
+            frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+            JLabel label =new JLabel("Παράθυρο Ιστορικού παραγγελιών");
+            frame.add(label);
+            frame.setLayout(new FlowLayout());
+            frame.setLocationRelativeTo(null);
+            frame.setVisible(true);
         }
     }
     public static void main(String[] args) {
