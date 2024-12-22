@@ -78,20 +78,20 @@ public class ShoppingCart implements Serializable {
     }
 
     public void CalculateAndUpdateTotalPrice(){
-        BigDecimal total_price = new BigDecimal("0");
+        BigDecimal total_price = BigDecimal.ZERO;
         for (Map.Entry<Product,Quantity> entry : ShoppingCart.entrySet()){
             if (entry.getValue() instanceof Kgs) {
                 String str1 = String.valueOf(entry.getKey().getPrice());
                 BigDecimal one = new BigDecimal(str1);
                 String str2 = String.valueOf(((Kgs) entry.getValue()).getQuantity());
                 BigDecimal two = new BigDecimal(str2);
-                total_price.add(one.multiply(two));
+                total_price = total_price.add(one.multiply(two));
             } else if (entry.getValue() instanceof Pieces) {
                 String str1 = String.valueOf(entry.getKey().getPrice());
                 BigDecimal one = new BigDecimal(str1);
                 String str2 = String.valueOf(((Pieces) entry.getValue()).getQuantity());
                 BigDecimal two = new BigDecimal(str2);
-                total_price.add(one.multiply(two));
+                total_price = total_price.add(one.multiply(two));
             }
         }
         CartTotalPrice = total_price.doubleValue();
@@ -99,6 +99,7 @@ public class ShoppingCart implements Serializable {
 
     public double getTotalPrice()
     {
+        CalculateAndUpdateTotalPrice();
         return CartTotalPrice;
     }
 
