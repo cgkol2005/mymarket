@@ -2,9 +2,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 public class maingui {
     private JFrame mainFrame;
-
     public maingui() {
         mainFrame = new JFrame("Σύνδεση");
         mainFrame.setSize(500, 400);
@@ -12,6 +12,7 @@ public class maingui {
         mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         JLabel messageLabel1 = new JLabel("<html>Εάν έχεις λογαριασμό, πάτα Sign In.<br>Εάν θέλεις να δημιουργήσεις έναν, πάτα Sign Up.</html>");
         mainFrame.add(messageLabel1);
+
         JButton signinButton = new JButton("Sign In");
         JButton signupButton = new JButton("Sign up");
         signinButton.addActionListener(new ActionListener() {
@@ -20,133 +21,153 @@ public class maingui {
                 new signingui();
             }
         });
+
         signupButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 new signupgui();
             }
         });
+
         mainFrame.add(signinButton);
         mainFrame.add(signupButton);
         mainFrame.setLocationRelativeTo(null);
         mainFrame.setVisible(true);
     }
 
-    public class signingui {
+    public class signingui
+    {
         private JFrame frame;
-        private JTextField usernameField, passwordField;
-        JButton signin, signup;
+        private JTextField usernameField;
+        private JPasswordField passwordField;
 
         public signingui() {
-            frame = new JFrame("Συνδεση");
+            frame = new JFrame("Σύνδεση");
             frame.setSize(500, 400);
             frame.setLayout(new FlowLayout());
+
             JLabel username = new JLabel("USERNAME");
             frame.add(username);
             usernameField = new JTextField();
             usernameField.setPreferredSize(new Dimension(100, 20));
             frame.add(usernameField);
 
-            frame.setLocationRelativeTo(null);
             JLabel password = new JLabel("PASSWORD");
             frame.add(password);
-            passwordField = new JTextField();
+            passwordField = new JPasswordField();
             passwordField.setPreferredSize(new Dimension(100, 20));
             frame.add(passwordField);
 
             JButton submitButton = new JButton("Submit");
             frame.add(submitButton);
+            submitButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    String username = usernameField.getText();
+                    String password = new String(passwordField.getPassword());
+                    if (username.equals("admin1") && password.equals("password1")) {
+                        frame.dispose();
+                        new admingui();
+                    } else if (username.equals("user1") && password.equals("password1")) {
+                        frame.dispose();
+                        new customergui();
+                    } else {
+                        JOptionPane.showMessageDialog(frame, "Λάθος username ή password!", "Σφάλμα", JOptionPane.ERROR_MESSAGE);
+                    }
+                }
+            });
 
             frame.setLocationRelativeTo(null);
             frame.setVisible(true);
-
-
         }
     }
-        public class signupgui {
-            private JFrame frame;
-            private JTextField firstnameField, lastnameField, usernameField, passwordField;
-            public signupgui() {
-                frame = new JFrame("Δημιουργία λογαριασμού");
-                frame.setSize(500, 400);
-                frame.setLayout(new FlowLayout());
 
-                JLabel firstnameLabel = new JLabel("Όνομα:");
-                frame.add(firstnameLabel);
-                firstnameField = new JTextField();
-                firstnameField.setPreferredSize(new Dimension(100, 20));
-                frame.add(firstnameField);
+    public class signupgui
+    {
+        private JFrame frame;
+        private JTextField firstnameField, lastnameField, usernameField;
+        private JPasswordField passwordField;
 
-                JLabel lastnameLabel = new JLabel("Επίθετο:");
-                frame.add(lastnameLabel);
-                lastnameField = new JTextField();
-                lastnameField.setPreferredSize(new Dimension(100, 20));
-                frame.add(lastnameField);
+        public signupgui() {
+            frame = new JFrame("Δημιουργία λογαριασμού");
+            frame.setSize(500, 400);
+            frame.setLayout(new FlowLayout());
 
-                JLabel usernameLabel = new JLabel("Όνομα χρήστη:");
-                frame.add(usernameLabel);
-                usernameField = new JTextField();
-                usernameField.setPreferredSize(new Dimension(100, 20));
-                frame.add(usernameField);
+            JLabel firstnameLabel = new JLabel("Όνομα:");
+            frame.add(firstnameLabel);
+            firstnameField = new JTextField();
+            firstnameField.setPreferredSize(new Dimension(100, 20));
+            frame.add(firstnameField);
 
-                JLabel passwordLabel = new JLabel("Όνομα χρήστη:");
-                frame.add(passwordLabel);
-                passwordField = new JTextField();
-                passwordField.setPreferredSize(new Dimension(100, 20));
-                frame.add(passwordField);
+            JLabel lastnameLabel = new JLabel("Επίθετο:");
+            frame.add(lastnameLabel);
+            lastnameField = new JTextField();
+            lastnameField.setPreferredSize(new Dimension(100, 20));
+            frame.add(lastnameField);
 
-                JButton completeButton = new JButton("Ολοκλήρωση");
-                frame.add(completeButton);
-                completeButton.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        JOptionPane.showMessageDialog(frame, "Επιτυχής δημιουργία λογαριασμού!", "Εγγραφή", JOptionPane.INFORMATION_MESSAGE);
-                        frame.dispose();
-                        mainFrame.setVisible(true);
-                    }
-                });
+            JLabel usernameLabel = new JLabel("Όνομα χρήστη:");
+            frame.add(usernameLabel);
+            usernameField = new JTextField();
+            usernameField.setPreferredSize(new Dimension(100, 20));
+            frame.add(usernameField);
 
-                frame.setLocationRelativeTo(null);
-                mainFrame.setVisible(false);
-                frame.setVisible(true);
+            JLabel passwordLabel = new JLabel("Κωδικός πρόσβασης:");
+            frame.add(passwordLabel);
+            passwordField = new JPasswordField();
+            passwordField.setPreferredSize(new Dimension(100, 20));
+            frame.add(passwordField);
 
-
-            }
-            public class admingui
-            {
-                private  JFrame adminFrame;
-                public admingui()
-                {
-                    adminFrame=new JFrame("Διαχειριστής");
-                    adminFrame.setSize(500,400);
-                    adminFrame.setLayout(new FlowLayout());
-                    adminFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                    JLabel message=new JLabel("Καλωσήρθατε στο σύστημα για διαχειριστή");
-                    adminFrame.add(message);
-                    adminFrame.setLocationRelativeTo(null);
-                    adminFrame.setVisible(true);
-
+            JButton completeButton = new JButton("Ολοκλήρωση");
+            frame.add(completeButton);
+            completeButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    JOptionPane.showMessageDialog(frame, "Επιτυχής δημιουργία λογαριασμού!", "Εγγραφή", JOptionPane.INFORMATION_MESSAGE);
+                    frame.dispose();
+                    mainFrame.setVisible(true);
                 }
-            }
-            public class customer
-            {
-                private JFrame customerFrame;
-                public customer()
-                {
-                    customerFrame=new JFrame("Διαχειριστής");
-                    customerFrame.setSize(500,400);
-                    customerFrame.setLayout(new FlowLayout());
-                    customerFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                    JLabel message=new JLabel("Καλωσήρθατε στο σύστημα για πελάτη");
-                    customerFrame.add(message);
-                    customerFrame.setLocationRelativeTo(null);
-                    customerFrame.setVisible(true);
-                }
-            }
+            });
+
+            frame.setLocationRelativeTo(null);
+            mainFrame.setVisible(false);
+            frame.setVisible(true);
         }
+    }
+
+    public class admingui {
+        private JFrame adminFrame;
+        public admingui() {
+            adminFrame = new JFrame("Διαχειριστής");
+            adminFrame.setSize(500, 400);
+            adminFrame.setLayout(new FlowLayout());
+            adminFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+            JLabel message = new JLabel("Καλωσήρθατε στο σύστημα για διαχειριστή");
+            adminFrame.add(message);
+
+            adminFrame.setLocationRelativeTo(null);
+            adminFrame.setVisible(true);
+        }
+    }
+
+    public class customergui {
+        private JFrame customerFrame;
+
+        public customergui() {
+            customerFrame = new JFrame("Πελάτης");
+            customerFrame.setSize(500, 400);
+            customerFrame.setLayout(new FlowLayout());
+            customerFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+            JLabel message = new JLabel("Καλωσήρθατε στο σύστημα για πελάτη");
+            customerFrame.add(message);
+
+            customerFrame.setLocationRelativeTo(null);
+            customerFrame.setVisible(true);
+        }
+    }
 
     public static void main(String[] args) {
         new maingui();
     }
 }
-
