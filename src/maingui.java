@@ -112,6 +112,37 @@ public class maingui {
 
 
             }
+            public class admingui
+            {
+                private  JFrame adminFrame;
+                public admingui()
+                {
+                    adminFrame=new JFrame("Διαχειριστής");
+                    adminFrame.setSize(500,400);
+                    adminFrame.setLayout(new FlowLayout());
+                    adminFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                    JLabel message=new JLabel("Καλωσήρθατε στο σύστημα για διαχειριστή");
+                    adminFrame.add(message);
+                    adminFrame.setLocationRelativeTo(null);
+                    adminFrame.setVisible(true);
+
+                }
+            }
+            public class customer
+            {
+                private JFrame customerFrame;
+                public customer()
+                {
+                    customerFrame=new JFrame("Διαχειριστής");
+                    customerFrame.setSize(500,400);
+                    customerFrame.setLayout(new FlowLayout());
+                    customerFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                    JLabel message=new JLabel("Καλωσήρθατε στο σύστημα για πελάτη");
+                    customerFrame.add(message);
+                    customerFrame.setLocationRelativeTo(null);
+                    customerFrame.setVisible(true);
+                }
+            }
         }
 
     public static void main(String[] args) {
