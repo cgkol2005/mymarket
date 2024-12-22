@@ -87,7 +87,6 @@ public class maingui {
         private JFrame frame;
         private JTextField firstnameField, lastnameField, usernameField;
         private JPasswordField passwordField;
-
         public signupgui() {
             frame = new JFrame("Δημιουργία λογαριασμού");
             frame.setSize(500, 400);
@@ -144,7 +143,41 @@ public class maingui {
 
             JLabel message = new JLabel("Καλωσήρθατε στο σύστημα για διαχειριστή");
             adminFrame.add(message);
+            JLabel message1 = new JLabel("Τι ενέργεια επιθυμείς να κάνεις;");
+            adminFrame.add(message1);
+            JButton addProductButton=new JButton("Καταχώρηση προιόντος");
+            JButton editProductButton=new JButton("Ενημέρωση προιόντος");
+            JButton searchProductButton=new JButton("Αναζήτηση προιόντος");
+            JButton statsButton=new JButton("Προβολή στατιστικών");
 
+            addProductButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    new addProductWindow();
+                }
+            });
+            editProductButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    new editProductWindow();
+                }
+            });
+            searchProductButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    new searchProductWindow();
+                }
+            });
+            statsButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    new statsWindow();
+                }
+            });
+            adminFrame.add(addProductButton);
+            adminFrame.add(editProductButton);
+            adminFrame.add(searchProductButton);
+            adminFrame.add(statsButton);
             adminFrame.setLocationRelativeTo(null);
             adminFrame.setVisible(true);
         }
@@ -158,15 +191,14 @@ public class maingui {
             customerFrame.setSize(500, 400);
             customerFrame.setLayout(new FlowLayout());
             customerFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-            JLabel message = new JLabel("Καλωσήρθατε στο σύστημα για πελάτη");
+            JLabel message = new JLabel("Καλωσήρθατε στο mymarket!!!");
             customerFrame.add(message);
-
+            JLabel message1 = new JLabel("Καλωσήρθατε στο σύστημα για πελάτη");
+            customerFrame.add(message1);
             customerFrame.setLocationRelativeTo(null);
             customerFrame.setVisible(true);
         }
     }
-
     public static void main(String[] args) {
         new maingui();
     }
