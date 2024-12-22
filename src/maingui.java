@@ -182,6 +182,54 @@ public class maingui {
             adminFrame.setVisible(true);
         }
     }
+    public class addProductWindow {
+        public addProductWindow() {
+            JFrame frame=new JFrame("Καταχώρηση Προϊόντος");
+            frame.setSize(500, 400);
+            frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+            JLabel label=new JLabel("Παράθυρο Καταχώρησης Προϊόντος");
+            frame.add(label);
+            frame.setLayout(new FlowLayout());
+            frame.setLocationRelativeTo(null);
+            frame.setVisible(true);
+        }
+    }
+    public class editProductWindow {
+        public editProductWindow() {
+            JFrame frame=new JFrame("Ενημέρωση Προϊόντος");
+            frame.setSize(500,400);
+            frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+            JLabel label=new JLabel("Παράθυρο Ενεμέρωσης Προϊόντος");
+            frame.add(label);
+            frame.setLayout(new FlowLayout());
+            frame.setLocationRelativeTo(null);
+            frame.setVisible(true);
+        }
+    }
+    public class searchProductWindow {
+        public searchProductWindow() {
+            JFrame frame=new JFrame("Αναζήτηση Προϊόντος");
+            frame.setSize(500,400);
+            frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+            JLabel label=new JLabel("Παράθυρο Αναζήτησης Προϊόντος");
+            frame.add(label);
+            frame.setLayout(new FlowLayout());
+            frame.setLocationRelativeTo(null);
+            frame.setVisible(true);
+        }
+    }
+    public class statsWindow {
+        public statsWindow() {
+            JFrame frame=new JFrame("Στατιστικά");
+            frame.setSize(500, 400);
+            frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+            JLabel label =new JLabel("Παράθυρο Στατιστικών");
+            frame.add(label);
+            frame.setLayout(new FlowLayout());
+            frame.setLocationRelativeTo(null);
+            frame.setVisible(true);
+        }
+    }
 
     public class customergui {
         private JFrame customerFrame;
