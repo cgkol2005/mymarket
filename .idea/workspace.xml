@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4962100c-d0a3-448f-8930-2e998309a824" name="Changes" comment="FIRST TRY TO DO THE SIGN-UP FUNCTIONALLITY. FULL OF BUGS. NEEDS WORK.">
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+    <list default="true" id="4962100c-d0a3-448f-8930-2e998309a824" name="Changes" comment="gui για login-signin-signup">
+      <change afterPath="$PROJECT_DIR$/src/api/Diaxeirhsths.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/Product.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,20 +25,16 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="newfeaturegkolfos" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectCodeStyleSettingsMigration">
-    <option name="version" value="2" />
-  </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 7
+  &quot;associatedIndex&quot;: 1
 }</component>
   <component name="ProjectId" id="2XVC4ip36KyWLXXhPKCRj0t46sa" />
   <component name="ProjectLevelVcsManager">
@@ -50,6 +47,11 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.diabasma.executor&quot;: &quot;Run&quot;,
+    &quot;Application.diabasma2.executor&quot;: &quot;Run&quot;,
+    &quot;Application.gui.executor&quot;: &quot;Run&quot;,
+    &quot;Application.maingui.executor&quot;: &quot;Run&quot;,
+    &quot;Application.testing_class.executor&quot;: &quot;Run&quot;,
     &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
     &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
     &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
@@ -58,11 +60,10 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit4&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Program's__Starting__Screen&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Golfos__Product__Search&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/xaris/Desktop/Folders/Programming Files and Programs/JAVA/MyMarketRepository/mymarket-4573-4763&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
 }</component>
@@ -70,24 +71,20 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="api" />
-    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
+      <option name="MAIN_CLASS_NAME" value="api.Main" />
       <module name="MyMarket" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Testing_Class" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="api.testing_class" />
-      <module name="MyMarket" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="api.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -101,7 +98,6 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Testing_Class" />
       <item itemvalue="Application.Main" />
       <item itemvalue="JUnit.All in MyMarket" />
     </list>
@@ -109,11 +105,15 @@
       <list>
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.All in MyMarket" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.All in MyMarket" />
-        <item itemvalue="JUnit.All in MyMarket" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-5cd809f4" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -124,35 +124,87 @@
       <option name="presentableId" value="Default" />
       <updated>1698704670560</updated>
     </task>
-    <task id="LOCAL-00001" summary="Program's classes..Xaris">
-      <created>1732907404963</created>
+    <task id="LOCAL-00001" summary="diabasma">
+      <option name="closed" value="true" />
+      <created>1733476362055</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1732907404963</updated>
+      <updated>1733476362055</updated>
     </task>
-    <task id="LOCAL-00002" summary="Program Initialization First Commit">
-      <created>1732914054886</created>
+    <task id="LOCAL-00002" summary="diabasma+anazhthsh me titlo">
+      <option name="closed" value="true" />
+      <created>1733479267415</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1732914054886</updated>
+      <updated>1733479267415</updated>
     </task>
-    <task id="LOCAL-00003" summary="Program Initialization, the deserialized objects are null...">
-      <created>1732915220714</created>
+    <task id="LOCAL-00003" summary="diabasma+anazhthsh me titlo,me kathgoria kai ta dyo tautoxrona">
+      <option name="closed" value="true" />
+      <created>1733480658981</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1732915220714</updated>
+      <updated>1733480658981</updated>
     </task>
-    <task id="LOCAL-00004" summary="Program Initialization, the deserialized objects are null...">
-      <created>1732963130757</created>
+    <task id="LOCAL-00004" summary="diabasma+anazhthsh me titlo,me kathgoria kai ta dyo tautoxrona">
+      <option name="closed" value="true" />
+      <created>1733482086588</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1732963130757</updated>
+      <updated>1733482086588</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="ShoppingCart1">
+      <option name="closed" value="true" />
+      <created>1733492465490</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1733492465490</updated>
+    </task>
+    <task id="LOCAL-00006" summary="ShoppingCart">
+      <option name="closed" value="true" />
+      <created>1733904941202</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1733904941203</updated>
+    </task>
+    <task id="LOCAL-00007" summary="ShoppingCart">
+      <option name="closed" value="true" />
+      <created>1733908645165</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1733908645165</updated>
+    </task>
+    <task id="LOCAL-00008" summary="normalize sthn anazhthsh">
+      <option name="closed" value="true" />
+      <created>1734361152397</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1734361152397</updated>
+    </task>
+    <task id="LOCAL-00009" summary="gui για login-signin-signup">
+      <option name="closed" value="true" />
+      <created>1734515485863</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1734515485863</updated>
+    </task>
+    <task id="LOCAL-00010" summary="gui για login-signin-signup">
+      <option name="closed" value="true" />
+      <created>1734515866871</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1734515866871</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -160,39 +212,20 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="StartingScreenAndApiCLasses" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="initial classes" />
-    <MESSAGE value="Program's classes..Xaris" />
-    <MESSAGE value="Program Initialization First Commit" />
-    <MESSAGE value="Program Initialization, the deserialized objects are null..." />
-    <option name="LAST_COMMIT_MESSAGE" value="Program Initialization, the deserialized objects are null..." />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="java.io.EOFException" package="java.io" />
-          <option name="timeStamp" value="1" />
-        </breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="diabasma" />
+    <MESSAGE value="diabasma+anazhthsh me titlo" />
+    <MESSAGE value="diabasma+anazhthsh me titlo,me kathgoria kai ta dyo tautoxrona" />
+    <MESSAGE value="ShoppingCart1" />
+    <MESSAGE value="ShoppingCart" />
+    <MESSAGE value="normalize sthn anazhthsh" />
+    <MESSAGE value="gui για login-signin-signup" />
+    <option name="LAST_COMMIT_MESSAGE" value="gui για login-signin-signup" />
   </component>
 </project>

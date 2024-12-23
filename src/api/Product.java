@@ -1,10 +1,9 @@
 package api;
 
-/**
- * THIS CLASS CAN BE DELETED
- */
-public class Product
-{
+import java.io.Serializable;
+
+
+public class Product implements Serializable{
     private String title;
     private String description;
     private String category;
@@ -13,15 +12,6 @@ public class Product
     private int stock; // kilo or piece
     private int times_ordered; //Variable to track how many times the product has been ordered. (For admins statistics)
 
-    /** creates a product
-     *
-     * @param title
-     * @param description
-     * @param category
-     * @param sub_category
-     * @param price
-     * @param stock
-     */
     public Product (String title,String description,String category,String sub_category,double price,int stock)
     {
             this.title = title;
@@ -31,6 +21,11 @@ public class Product
             this.price = price;
             this.stock = stock;
     }
+
+    public void ProductOrdered() {
+        times_ordered++;
+    }
+
     public String getTitle()
     {
         return title;
@@ -55,6 +50,22 @@ public class Product
     {
         return stock;
     }
+    public void setDescription(String description)
+    {
+        this.description=description;
+    }
+    public void setCategory(String category)
+    {
+        this.category=category;
+    }
+    public void setSub_category(String sub_category)
+    {
+        this.sub_category=sub_category;
+    }
+    public void setPrice(double price)
+    {
+        this.price=price;
+    }
     public void setStock(int stock)
     {
         this.stock=stock;
@@ -76,9 +87,9 @@ public class Product
                 "title='" + title + '\'' +
                 ", description='" + description + '\'' +
                 ", category='" + category + '\'' +
-                ", subCategory='" + sub_category + '\'' +
+                ", sub_category='" + sub_category + '\'' +
                 ", price=" + price +
-                ", availableQuantity=" + stock+
+                ", stock=" + stock+
                 '}';
     }
 
