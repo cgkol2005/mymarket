@@ -22,7 +22,7 @@ public class Customer extends User implements Serializable {
     }
     public void CompleteOrder(){
         order = new Order(ShoppingCart, ShoppingCart.getTotalPrice(),ShoppingCart.getProducts_count());
-        OrderHistory.addOrdertoHistoy(order);
+        OrderHistory.addOrderToHistoy(order);
         //Υλοποιηση: Οταν ολοκληρώνεται μια παραγγελία, πρεπει το stock των προϊόντων να μειώνεται ανάλογα.
     }
     public void setFirstname(String Firstname){
