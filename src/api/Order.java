@@ -9,6 +9,7 @@ public class Order implements Serializable {
     private double OrderPrice;
     private int NumberOfProductsBought;
     private String OrderDate;
+
     public Order(ShoppingCart Cart, double OrderPrice, int NumberOfProductsBought){
         this.Cart = Cart;
         this.OrderPrice = OrderPrice;
@@ -20,6 +21,10 @@ public class Order implements Serializable {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         // Format the LocalDateTime object to a string
         this.OrderDate = now.format(formatter);
+    }
+
+    public double getOrderPrice(){
+        return OrderPrice;
     }
 
     public void setCart(ShoppingCart cart) {
