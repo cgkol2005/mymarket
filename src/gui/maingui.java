@@ -1,10 +1,14 @@
-import api.Order;
-import api.OrderHistory;
+/*
+package gui;
+
+import api.*;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Arrays;
+import java.util.List;
 
 public class maingui {
     private JFrame mainFrame;
@@ -13,22 +17,29 @@ public class maingui {
         mainFrame.setSize(500, 400);
         mainFrame.setLayout(new FlowLayout());
         mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        JLabel messageLabel1 = new JLabel("<html>Εάν έχεις λογαριασμό, πάτα Sign In.<br>Εάν θέλεις να δημιουργήσεις έναν, πάτα Sign Up.</html>");
+        JLabel messageLabel1 = new JLabel("Εάν έχεις λογαριασμό, πάτα Sign In.");
+        JLabel messageLabel2 = new JLabel("Εάν θέλεις να δημιουργήσεις έναν, πάτα Sign Up.");
+
         mainFrame.add(messageLabel1);
+        mainFrame.add(messageLabel2);
 
         JButton signinButton = new JButton("Sign In");
         JButton signupButton = new JButton("Sign up");
         signinButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                mainFrame.dispose();
                 new signingui();
+
             }
         });
 
         signupButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                mainFrame.dispose();
                 new signupgui();
+
             }
         });
 
@@ -68,15 +79,21 @@ public class maingui {
                 public void actionPerformed(ActionEvent e) {
                     String username = usernameField.getText();
                     String password = new String(passwordField.getPassword());
-                    if (username.equals("admin1") && password.equals("password1")) {
-                        frame.dispose();
-                        new admingui();
-                    } else if (username.equals("user1") && password.equals("password1")) {
+                    Accounts_Manager manager = new Accounts_Manager();
+                    Data data = new Data();
+                    List<User> Credentials = data.getUsersList();
+                    User user = manager.Sign_In(username,password,Credentials);
+                    if (user instanceof Customer) {
                         frame.dispose();
                         new customergui();
+
+                    } else if (user instanceof Admin) {
+                        frame.dispose();
+                        new admingui();
                     } else {
                         JOptionPane.showMessageDialog(frame, "Λάθος username ή password!", "Σφάλμα", JOptionPane.ERROR_MESSAGE);
                     }
+
                 }
             });
 
@@ -87,6 +104,7 @@ public class maingui {
 
     public class signupgui
     {
+
         private JFrame frame;
         private JTextField firstnameField, lastnameField, usernameField;
         private JPasswordField passwordField;
@@ -119,14 +137,33 @@ public class maingui {
             passwordField.setPreferredSize(new Dimension(100, 20));
             frame.add(passwordField);
 
+
+
             JButton completeButton = new JButton("Ολοκλήρωση");
             frame.add(completeButton);
             completeButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    JOptionPane.showMessageDialog(frame, "Επιτυχής δημιουργία λογαριασμού!", "Εγγραφή", JOptionPane.INFORMATION_MESSAGE);
-                    frame.dispose();
-                    mainFrame.setVisible(true);
+
+                    String Username = usernameField.getText();
+                    String Password = Arrays.toString(passwordField.getPassword());
+                    String Firstname = firstnameField.getText();
+                    String Lastname = lastnameField.getText();
+
+                    Data data = new Data();
+                    Accounts_Manager manager = new Accounts_Manager();
+                    List<User> Users = data.getUsersList();
+                    List<User> UsersUpdated = manager.Sign_Up(Username,Password,Firstname,Lastname, Users);
+                    if (UsersUpdated == null){
+                        JOptionPane.showMessageDialog(frame, "Ο λογαριασμος δεν δημιουργηθηκε επειδη το username yparxei hdh.", "Εγγραφή", JOptionPane.INFORMATION_MESSAGE);
+                    }else{
+                        data.UpdateUserData(UsersUpdated);
+                        JOptionPane.showMessageDialog(frame, "Επιτυχής δημιουργία λογαριασμού!", "Εγγραφή", JOptionPane.INFORMATION_MESSAGE);
+                        frame.dispose();
+                        mainFrame.setVisible(true);
+                    }
+
+
                 }
             });
 
@@ -157,24 +194,28 @@ public class maingui {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     new addProductWindow();
+                    return null;
                 }
             });
             editProductButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     new editProductWindow();
+                    return null;
                 }
             });
             searchProductButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     new searchProductWindow();
+                    return null;
                 }
             });
             statsButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     new statsWindow();
+                    return null;
                 }
             });
             adminFrame.add(addProductButton);
@@ -257,24 +298,28 @@ public class maingui {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     new ShoppingCartWindow();
+                    return null;
                 }
             });
             OrderButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     new OrderWindow();
+                    return null;
                 }
             });
             searchProductButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     new searchProductWindow();
+                    return null;
                 }
             });
             OrderHistoryButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     new OrderHistoryWindow();
+                    return null;
                 }
             });
             customerFrame.add(ShoppingCartButton);
@@ -325,3 +370,5 @@ public class maingui {
         new maingui();
     }
 }
+
+ */

@@ -8,6 +8,7 @@ import java.util.Scanner;
 
 public class Accounts_Manager {
     private static Scanner scanner = new Scanner(System.in);
+
     public User Sign_In(List<User> UsersList) {
         while (true) {
             int choice = 5;
@@ -50,6 +51,23 @@ public class Accounts_Manager {
         }
     }
 
+
+
+    public User Sign_In(String Username, String Password,List<User> UsersList){
+
+            System.out.println("Username: " + Username);
+            System.out.println("Password: " + Password);
+
+            for (User user : UsersList){
+                if (user.getUsername().equals(Username) && user.getPassword().equals(Password)){
+                    System.out.println("Authentication complete!");
+                    return user;
+                }
+            }
+            System.out.println("The credentials you entered do not match any account. Please try again or go back.");
+            return null;
+    }
+
     public List<User> Sign_Up(List<User> UsersList) {
         System.out.println("This is the sign-up process.");
         System.out.println("Enter your firstname: ");
@@ -89,6 +107,29 @@ public class Accounts_Manager {
         System.out.println("Object created. Proof: Here's the object's info: " + NewUser.getUsername() + " " + NewUser.getPassword());
         UsersList.add(NewUser);
         System.out.println("If everything worked correctly the new user has been assigned. Please try to sign-in to confirm!");
+        return UsersList;
+    }
+
+
+
+    public List<User> Sign_Up(String Username, String Password, String Firstname, String Lastname, List<User> UsersList) {
+        System.out.println("This is the sign-up process.");
+
+            for (User user : UsersList){
+                if (user.getUsername().equals(Username)){
+                    System.out.println("The user name you entered already exists. Please enter a unique username.");
+                    return null;
+                }
+            }
+
+        System.out.println("Username successfully entered.");
+        System.out.println("Password confirmed!");
+
+        User NewUser = new Customer(Username, Password, Firstname, Lastname);
+        UsersList.add(NewUser);
+
+        System.out.println("If everything worked correctly the new user has been assigned. Please try to sign-in to confirm!");
+
         return UsersList;
     }
 }
