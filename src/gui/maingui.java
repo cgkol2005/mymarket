@@ -1,4 +1,4 @@
-/*
+
 package gui;
 
 import api.*;
@@ -194,28 +194,28 @@ public class maingui {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     new addProductWindow();
-                    return null;
+
                 }
             });
             editProductButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     new editProductWindow();
-                    return null;
+
                 }
             });
             searchProductButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     new searchProductWindow();
-                    return null;
+
                 }
             });
             statsButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     new statsWindow();
-                    return null;
+
                 }
             });
             adminFrame.add(addProductButton);
@@ -298,28 +298,28 @@ public class maingui {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     new ShoppingCartWindow();
-                    return null;
+
                 }
             });
             OrderButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     new OrderWindow();
-                    return null;
+
                 }
             });
             searchProductButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     new searchProductWindow();
-                    return null;
+
                 }
             });
             OrderHistoryButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     new OrderHistoryWindow();
-                    return null;
+
                 }
             });
             customerFrame.add(ShoppingCartButton);
@@ -371,4 +371,4 @@ public class maingui {
     }
 }
 
- */
+
