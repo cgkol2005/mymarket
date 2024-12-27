@@ -21,6 +21,10 @@ public class GUI_Main {
         mainFrame = new JFrame("MyMarket");
         mainFrame.setLayout(new FlowLayout());
         mainFrame.setSize(400,400);
+        JLabel messageLabel1 = new JLabel("Εάν έχεις λογαριασμό, πάτα Sign In.");
+        JLabel messageLabel2 = new JLabel("Εάν θέλεις να δημιουργήσεις έναν λογαριασμό, πάτα Sign Up.");
+        mainFrame.add(messageLabel1);
+        mainFrame.add(messageLabel2);
         mainFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         mainFrame.setLocationRelativeTo(null);
 
