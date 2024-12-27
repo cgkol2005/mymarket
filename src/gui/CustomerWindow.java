@@ -38,5 +38,12 @@ public class CustomerWindow {
 
             }
         });
+        OrderButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new OrderWindow();
+
+            }
+        });
     }
 }
