@@ -15,9 +15,9 @@ public class CustomerWindow {
         customerFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         JLabel message = new JLabel("Καλωσήρθατε στο mymarket!!!");
         customerFrame.add(message);
-        JLabel message1 = new JLabel("Καλωσήρθατε στο σύστημα για πελάτη");
+        JLabel message1 = new JLabel("Καλωσήρθατε στο σύστημα για πελάτη!!!");
         customerFrame.add(message1);
-        JLabel message2 = new JLabel("Τι ενέργεια επιθυμείς να κάνεις;");
+        JLabel message2 = new JLabel("      Τι ενέργεια επιθυμείς να κάνεις;  Κάνε επιλογή από τα παρακάτω          ");
         customerFrame.add(message2);
 
         JButton ShoppingCartButton=new JButton("Καλάθι");
@@ -31,5 +31,12 @@ public class CustomerWindow {
         customerFrame.add(OrderButton);
         customerFrame.setLocationRelativeTo(null);
         customerFrame.setVisible(true);
+        searchProductButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new SearchWindow();
+
+            }
+        });
     }
 }
