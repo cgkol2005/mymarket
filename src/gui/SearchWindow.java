@@ -12,7 +12,7 @@ public class SearchWindow {
         searchFrame.setSize(500, 400);
         searchFrame.setLayout(null);
 
-        JLabel label = new JLabel("Πληκτρολογήστε το όνομα του προϊόντος:");
+        JLabel label = new JLabel("Πληκτρολογήστε τον τίτλο του προϊόντος:");
         label.setBounds(20, 20, 300, 25);
         searchFrame.add(label);
 
