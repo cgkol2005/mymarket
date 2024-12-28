@@ -12,7 +12,7 @@ public class CustomerWindow {
         customerFrame = new JFrame("Πελάτης");
         customerFrame.setSize(500, 400);
         customerFrame.setLayout(new FlowLayout());
-        customerFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        customerFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         JLabel message = new JLabel("Καλωσήρθατε στο mymarket!!!");
         customerFrame.add(message);
         JLabel message1 = new JLabel("Καλωσήρθατε στο σύστημα για πελάτη");
