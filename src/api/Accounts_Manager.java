@@ -112,24 +112,24 @@ public class Accounts_Manager {
 
 
 
-    public List<User> Sign_Up(String Username, String Password, String Firstname, String Lastname, List<User> UsersList) {
+    public boolean Sign_Up(String Username, String Password, String Firstname, String Lastname, Data data) {
         System.out.println("This is the sign-up process.");
 
-            for (User user : UsersList){
+            for (User user : data.getUsersList()){
                 if (user.getUsername().equals(Username)){
                     System.out.println("The user name you entered already exists. Please enter a unique username.");
-                    return null;
+                    return false;
                 }
             }
 
+
+
+        User NewUser = new Customer(Username, Password, Firstname, Lastname);
+        data.AddUser(NewUser);
         System.out.println("Username successfully entered.");
         System.out.println("Password confirmed!");
 
-        User NewUser = new Customer(Username, Password, Firstname, Lastname);
-        UsersList.add(NewUser);
-
         System.out.println("If everything worked correctly the new user has been assigned. Please try to sign-in to confirm!");
-
-        return UsersList;
+        return true;
     }
 }

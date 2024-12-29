@@ -8,6 +8,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.util.List;
 import java.util.Stack;
 
@@ -39,19 +41,27 @@ public class GUI_Main {
         signUpButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                mainFrame.dispose();
-                SignUpWindow SignUpWin = new SignUpWindow(data, AccManager);
-                List<User> NewUser = SignUpWin.SignUp(mainFrame);
-                data.UpdateUserData(NewUser);
-                data.DataSave(); //giati den ftanei pote edw??
+                mainFrame.setVisible(false);
+                new SignUpWindow(data, AccManager,mainFrame);
             }
         });
         exitButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                data.DataSave();
+                System.exit(0);
             }
         });
+
+
+        mainFrame.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                data.DataSave();
+                System.exit(0);
+            }
+        });
+
     }
 
     private void buildUI() {
@@ -135,6 +145,8 @@ public class GUI_Main {
         box.add(Box.createVerticalGlue());
 
         mainFrame.add(box, BorderLayout.CENTER);
+
+
         mainFrame.setVisible(true);
     }
 

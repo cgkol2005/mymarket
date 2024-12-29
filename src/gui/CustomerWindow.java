@@ -1,18 +1,22 @@
 package gui;
 
+import api.Data;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 public class CustomerWindow {
     private JFrame customerFrame;
 
-    public CustomerWindow() {
+    public CustomerWindow(Data data) {
         customerFrame = new JFrame("Πελάτης");
         customerFrame.setSize(500, 400);
         customerFrame.setLayout(new FlowLayout());
-        customerFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        customerFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         JLabel message = new JLabel("Καλωσήρθατε στο mymarket!!!");
         customerFrame.add(message);
         JLabel message1 = new JLabel("Καλωσήρθατε στο σύστημα για πελάτη");
@@ -31,5 +35,13 @@ public class CustomerWindow {
         customerFrame.add(OrderButton);
         customerFrame.setLocationRelativeTo(null);
         customerFrame.setVisible(true);
+
+        customerFrame.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                data.DataSave();
+                System.exit(0);
+            }
+        });
     }
 }

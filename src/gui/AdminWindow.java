@@ -1,13 +1,17 @@
 package gui;
 
+import api.Data;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 public class AdminWindow {
     private JFrame adminFrame;
-    public AdminWindow() {
+    public AdminWindow(Data data) {
         adminFrame = new JFrame("Διαχειριστής");
         adminFrame.setSize(500, 400);
         adminFrame.setLayout(new FlowLayout());
@@ -29,5 +33,13 @@ public class AdminWindow {
         adminFrame.add(statsButton);
         adminFrame.setLocationRelativeTo(null);
         adminFrame.setVisible(true);
+
+        adminFrame.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                data.DataSave();
+                System.exit(0);
+            }
+        });
     }
 }

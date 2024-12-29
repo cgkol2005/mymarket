@@ -94,12 +94,32 @@ public class SignInWindow {
 
                 if (user instanceof Customer) {
                     frame.dispose();
-                    new CustomerWindow();
+                    new CustomerWindow(data);
                 } else if (user instanceof Admin) {
                     frame.dispose();
-                    new AdminWindow();
+                    new AdminWindow(data);
                 } else {
                     JOptionPane.showMessageDialog(frame, "Invalid username or password!", "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+        });
+        frame.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                int confirm = JOptionPane.showOptionDialog(
+                        frame,
+                        "Are you sure you want to exit the application now?",
+                        "Quit",
+                        JOptionPane.YES_NO_OPTION,
+                        JOptionPane.QUESTION_MESSAGE,
+                        null,
+                        new String[]{"Yes", "No"},
+                        "No"
+                );
+                if (confirm == JOptionPane.YES_OPTION) {
+                    frame.dispose();
+                    data.DataSave();
+                    System.exit(0);
                 }
             }
         });

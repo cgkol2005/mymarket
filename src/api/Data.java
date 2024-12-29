@@ -57,6 +57,9 @@ public class Data {
             System.out.println(ioe+"There was a problem with the writing of the Lists to the Products and Accounts files.");
         }
     }
+    public void AddUser(User user){
+        Users.add(user);
+    }
     public List<Product> getProductsList() {
         return Products;
     }
