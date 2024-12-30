@@ -41,5 +41,11 @@ public class AdminWindow {
                 System.exit(0);
             }
         });
+        addProductButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new RegisterWindow();
+            }
+        });
     }
 }
