@@ -4,19 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4962100c-d0a3-448f-8930-2e998309a824" name="Changes" comment="30/12 admin1">
+    <list default="true" id="4962100c-d0a3-448f-8930-2e998309a824" name="Changes" comment="30/12 admin2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/Accounts_Manager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/Accounts_Manager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/Admin.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/Application_Controller.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/Accounts_Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/Accounts_Manager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgramInitialized.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramInitialized.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/RegisterWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/RegisterWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/maingui.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +109,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.GUI_Main">
+  <component name="RunManager">
     <configuration name="GUI_Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="gui.GUI_Main" />
       <module name="MyMarket" />
@@ -286,7 +278,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735559736724</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="30/12 admin2">
+      <option name="closed" value="true" />
+      <created>1735563604465</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1735563604465</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -310,7 +310,8 @@
     <MESSAGE value="gui για login-signin-signup" />
     <MESSAGE value="30/12 admin" />
     <MESSAGE value="30/12 admin1" />
-    <option name="LAST_COMMIT_MESSAGE" value="30/12 admin1" />
+    <MESSAGE value="30/12 admin2" />
+    <option name="LAST_COMMIT_MESSAGE" value="30/12 admin2" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

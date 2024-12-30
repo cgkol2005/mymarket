@@ -38,6 +38,7 @@ public class Admin extends User implements Serializable {
         productList.add(newproduct);
         data.UpdateProductsData(productList);
         data.DataSave();
+
     }
 
     public void EditProducts(){}
