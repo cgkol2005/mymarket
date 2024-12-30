@@ -141,10 +141,10 @@ public class SignInWindow {
 
         frame.setVisible(true);
     }
-    /*
+
     public static void main(String[] args) {
         new SignInWindow(null, null, null);
     }
 
-     */
+
 }
