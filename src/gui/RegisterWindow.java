@@ -119,4 +119,8 @@ public class RegisterWindow {
         registerFrame.setVisible(true);
 
     }
+
+    public static void main(String[] args) {
+        new RegisterWindow(null,null);
+    }
 }

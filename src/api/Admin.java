@@ -43,7 +43,7 @@ public class Admin extends User implements Serializable {
             }
         }
         productList.add(newproduct);
-        data.UpdateProductsData(productList);
+        data.OverWriteProductsList(productList);
         data.DataSave();
         System.out.println("Product successfully registered.");
     }
