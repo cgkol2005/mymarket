@@ -1,13 +1,15 @@
 package gui;
-
+import api.Admin;
+import api.Data;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 public class RegisterWindow {
     private JFrame registerFrame;
     private JTextField nameField, descriptionField, categoryField, subcategoryField, priceField,stockField;
 
-    public RegisterWindow() {
+    public RegisterWindow(Data data,Admin admin) {
         registerFrame = new JFrame("Καταχώρηση προιόντος");
         registerFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         registerFrame.setSize(500, 400);
@@ -64,18 +66,41 @@ public class RegisterWindow {
         submitButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String name=nameField.getText();
-                String description= descriptionField.getText();
-                String category =categoryField.getText();
-                String subCategory=subcategoryField.getText();
-                String price=priceField.getText();
-                String availability=stockField.getText();
-                JOptionPane.showMessageDialog(registerFrame,
-                        "Title: " + name + "\nDescription: " + description + "\nCategory: " + category +
-                                "\nSubcategory: " + subCategory + "\nPrice: " + price + "\nStock: " + availability,
-                        "Πληροφορίες Προϊόντος", JOptionPane.INFORMATION_MESSAGE);
-                registerFrame.dispose();
+                try {
+                    String name = nameField.getText();
+                    String description = descriptionField.getText();
+                    String category = categoryField.getText();
+                    String subCategory = subcategoryField.getText();
+                    double price = Double.parseDouble(priceField.getText());
+                    String stockin = stockField.getText();
 
+                    Object stock;
+                    if (stockin.contains(".")) {
+                        stock = Double.parseDouble(stockin);
+                    } else {
+                        stock = Integer.parseInt(stockin);
+                    }
+
+                    admin.RegisterProduct(name, description, category, subCategory, price, stock,data);
+
+                    JOptionPane.showMessageDialog(registerFrame,
+                            "Product successfully registered!",
+                            "Success",
+                            JOptionPane.INFORMATION_MESSAGE);
+
+                    registerFrame.dispose();
+
+                } catch (NumberFormatException ex) {
+                    JOptionPane.showMessageDialog(registerFrame,
+                            "Invalid input! Please ensure price and stock are valid numbers.",
+                            "Input Error",
+                            JOptionPane.ERROR_MESSAGE);
+                } catch (Exception ex) {
+                    JOptionPane.showMessageDialog(registerFrame,
+                            "Error: " + ex.getMessage(),
+                            "Error",
+                            JOptionPane.ERROR_MESSAGE);
+                }
             }
         });
 
@@ -89,7 +114,6 @@ public class RegisterWindow {
                 registerFrame.dispose();
             }
         });
-
 
         registerFrame.setLocationRelativeTo(null);
         registerFrame.setVisible(true);

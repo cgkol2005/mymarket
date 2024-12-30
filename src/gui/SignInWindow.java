@@ -97,7 +97,7 @@ public class SignInWindow {
                     new CustomerWindow(data);
                 } else if (user instanceof Admin) {
                     frame.dispose();
-                    new AdminWindow(data);
+                    new AdminWindow(data,(Admin) user);
                 } else {
                     JOptionPane.showMessageDialog(frame, "Invalid username or password!", "Error", JOptionPane.ERROR_MESSAGE);
                 }
