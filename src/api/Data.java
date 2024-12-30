@@ -9,7 +9,6 @@ import java.util.List;
  *      processed and managed during the run and use of the program. What this means is simply that the Data
  *      class will be used to retrieve all the necessary information from the database (files), and will
  *      also store to the database all the appropriate information.
- *
  * Information that the Data class manages:
  *      E-shop's users (Credentials, Shopping Carts, Unfinished Orders, Order History)
  *      E-shop's products (Quantities, Availability, Product info, Categories - Subcategories )
