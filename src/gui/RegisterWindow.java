@@ -74,6 +74,8 @@ public class RegisterWindow {
                         "Title: " + name + "\nDescription: " + description + "\nCategory: " + category +
                                 "\nSubcategory: " + subCategory + "\nPrice: " + price + "\nStock: " + availability,
                         "Πληροφορίες Προϊόντος", JOptionPane.INFORMATION_MESSAGE);
+                registerFrame.dispose();
+
             }
         });
 

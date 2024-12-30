@@ -35,12 +35,18 @@ public class Admin extends User implements Serializable {
             throw new IllegalArgumentException("Stock must be of type Integer or Double");
         }
         List<Product> productList = data.getProductsList();
+        for (Product product : productList) {
+            if (product.getTitle().equalsIgnoreCase(name))
+            {
+                System.out.println("Product with the same name already exists.");
+                return;
+            }
+        }
         productList.add(newproduct);
         data.UpdateProductsData(productList);
         data.DataSave();
-
+        System.out.println("Product successfully registered.");
     }
-
     public void EditProducts(){}
     public void Statistics(){}
 }
