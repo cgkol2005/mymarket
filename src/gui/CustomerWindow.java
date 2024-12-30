@@ -6,8 +6,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 
 public class CustomerWindow {
     private JFrame customerFrame;
@@ -19,9 +17,9 @@ public class CustomerWindow {
         customerFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         JLabel message = new JLabel("Καλωσήρθατε στο mymarket!!!");
         customerFrame.add(message);
-        JLabel message1 = new JLabel("Καλωσήρθατε στο σύστημα για πελάτη");
+        JLabel message1 = new JLabel("Καλωσήρθατε στο σύστημα για πελάτη!!!");
         customerFrame.add(message1);
-        JLabel message2 = new JLabel("Τι ενέργεια επιθυμείς να κάνεις;");
+        JLabel message2 = new JLabel("      Τι ενέργεια επιθυμείς να κάνεις;  Κάνε επιλογή από τα παρακάτω          ");
         customerFrame.add(message2);
 
         JButton ShoppingCartButton=new JButton("Καλάθι");
@@ -35,12 +33,32 @@ public class CustomerWindow {
         customerFrame.add(OrderButton);
         customerFrame.setLocationRelativeTo(null);
         customerFrame.setVisible(true);
-
-        customerFrame.addWindowListener(new WindowAdapter() {
+        searchProductButton.addActionListener(new ActionListener() {
             @Override
-            public void windowClosing(WindowEvent e) {
-                data.DataSave();
-                System.exit(0);
+            public void actionPerformed(ActionEvent e) {
+                new SearchWindow();
+
+            }
+        });
+        OrderButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new OrderWindow();
+
+            }
+        });
+        OrderHistoryButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new HistoryWindow();
+
+            }
+        });
+        ShoppingCartButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new ShoppingCartWindow();
+
             }
         });
     }
