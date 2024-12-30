@@ -5,10 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4962100c-d0a3-448f-8930-2e998309a824" name="Changes" comment="gui για login-signin-signup">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyMarket.iml" beforeDir="false" afterPath="$PROJECT_DIR$/MyMarket.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/api/ShoppingCartTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/ShoppingCartTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/Admin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/Customer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/Order.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/OrderHistory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/OrderHistory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/Product.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/ShoppingCart.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/ShoppingCart.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/diabasma.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/diabasma.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/diabasma2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/diabasma2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/testing_class.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/testing_class.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +34,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="Golfos_Product_Search" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -72,6 +80,8 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.GUI_Main.executor": "Run",
+    "Application.Main (1).executor": "Run",
     "Application.Main.executor": "Run",
     "Application.diabasma.executor": "Run",
     "Application.diabasma2.executor": "Run",
@@ -86,7 +96,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit4",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4": "",
-    "git-widget-placeholder": "Xaris",
+    "git-widget-placeholder": "gui__connectTo__SignInandSignUp",
     "kotlin-language-version-configured": "true",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
@@ -94,14 +104,40 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\xaris\Desktop\Folders\Programming Files and Programs\JAVA\MyMarketRepository\mymarket-4573-4763\out\production\MyMarket\api" />
+    </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="api" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.GUI_Main">
+    <configuration name="GUI_Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="gui.GUI_Main" />
+      <module name="MyMarket" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="gui.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="MyMarket" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="api.Main" />
       <module name="MyMarket" />
@@ -124,11 +160,15 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.GUI_Main" />
+      <item itemvalue="Application.Main (1)" />
       <item itemvalue="Application.Main" />
       <item itemvalue="JUnit.All in MyMarket" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.GUI_Main" />
+        <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.All in MyMarket" />
       </list>
@@ -253,5 +293,12 @@
     <MESSAGE value="normalize sthn anazhthsh" />
     <MESSAGE value="gui για login-signin-signup" />
     <option name="LAST_COMMIT_MESSAGE" value="gui για login-signin-signup" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="Program.CurrentUser" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
