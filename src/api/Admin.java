@@ -1,14 +1,45 @@
+
 package api;
 
 import java.io.Serializable;
-
+import java.util.List;
 public class Admin extends User implements Serializable {
-    public Admin(){}
+    public Admin(){
+        super();
+    }
     public Admin(String Username, String Password){
         super(Username, Password);
     }
+    /**
+     * Register a new product into the system's product list.
+     *
+     * @param name        Name of the product
+     * @param description Description of the product
+     * @param category    Category of the product
+     * @param subcategory Subcategory of the product
+     * @param price       Price of the product (as String to allow for validation)
+     * @param stock       Stock quantity of the product (as String to allow for validation)
+     * @param data        The Data instance managing the system's data
+     */
 
-    public void RegisterProduct(){}
+    public void RegisterProduct(String name,String description,String category,String subcategory,double price,Object stock,Data data) {
+        Product newproduct;
+
+        if (stock instanceof Integer) {
+            int finalStock = (Integer) stock;
+            newproduct=new PackagedProduct(name, description, category, subcategory, price, finalStock);
+        } else if (stock instanceof Double) {
+            double finalStock = (Double) stock;
+            newproduct=new WeightedProduct(name, description, category, subcategory, price, finalStock);
+        } else {
+            throw new IllegalArgumentException("Stock must be of type Integer or Double");
+        }
+        List<Product> productList = data.getProductsList();
+        productList.add(newproduct);
+        data.UpdateProductsData(productList);
+        data.DataSave();
+    }
+
     public void EditProducts(){}
     public void Statistics(){}
 }

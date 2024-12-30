@@ -71,8 +71,8 @@ public class RegisterWindow {
                 String price=priceField.getText();
                 String availability=stockField.getText();
                 JOptionPane.showMessageDialog(registerFrame,
-                        "Όνομα: " + name + "\nΠεριγραφή: " + description + "\nΚατηγορία: " + category +
-                                "\nΥποκατηγορία: " + subCategory + "\nΤιμή: " + price + "\nΔιαθεσιμότητα: " + availability,
+                        "Title: " + name + "\nDescription: " + description + "\nCategory: " + category +
+                                "\nSubcategory: " + subCategory + "\nPrice: " + price + "\nStock: " + availability,
                         "Πληροφορίες Προϊόντος", JOptionPane.INFORMATION_MESSAGE);
             }
         });
