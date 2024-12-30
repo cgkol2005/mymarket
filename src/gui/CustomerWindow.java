@@ -4,8 +4,7 @@ import api.Data;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 
 public class CustomerWindow {
     private JFrame customerFrame;
@@ -61,6 +60,15 @@ public class CustomerWindow {
 
             }
         });
+
+       customerFrame.addWindowListener(new WindowAdapter() {
+           @Override
+           public void windowClosing(WindowEvent e) {
+               customerFrame.dispose();
+               data.DataSave();
+               System.exit(0);
+           }
+       });
     }
 
     public static void main(String[] args) {
