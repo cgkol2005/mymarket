@@ -3,7 +3,6 @@ package gui;
 import api.Accounts_Manager;
 import api.Application_Controller;
 import api.Data;
-import api.User;
 
 import javax.swing.*;
 import java.awt.*;
