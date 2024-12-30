@@ -1,6 +1,7 @@
 package gui;
 
 import api.Accounts_Manager;
+import api.Application_Controller;
 import api.Data;
 import api.User;
 
@@ -10,8 +11,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.util.List;
-import java.util.Stack;
 
 public class GUI_Main {
     private JFrame mainFrame;
@@ -21,14 +20,13 @@ public class GUI_Main {
     private JLabel welcomeLabel; // yellow-underlined because the label is only used in the buildUI and nowhere else. Resolve on the end of the development.
     private Data data;//same as above
     private Accounts_Manager AccManager;//same as above
-    private Stack<JFrame> frameStack;
+    Application_Controller AppController;
 
-    GUI_Main() {
-        frameStack = new Stack<>();
+    public GUI_Main() {
+        AppController = new Application_Controller();
         data = new Data();
         AccManager = new Accounts_Manager();
         buildUI();
-        frameStack.push(mainFrame);
 
         signInButton.addActionListener(new ActionListener() {
             @Override
@@ -66,7 +64,7 @@ public class GUI_Main {
 
     private void buildUI() {
         mainFrame = new JFrame("MyMarket");
-        mainFrame.setSize(1000, 1000);
+        mainFrame.setSize(1280, 720);
         mainFrame.setLayout(new BorderLayout());
         mainFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         mainFrame.setLocationRelativeTo(null);

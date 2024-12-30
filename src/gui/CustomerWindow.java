@@ -12,7 +12,7 @@ public class CustomerWindow {
 
     public CustomerWindow(Data data) {
         customerFrame = new JFrame("Πελάτης");
-        customerFrame.setSize(500, 400);
+        customerFrame.setSize(1280, 720);
         customerFrame.setLayout(new FlowLayout());
         customerFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         JLabel message = new JLabel("Καλωσήρθατε στο mymarket!!!");
@@ -61,5 +61,9 @@ public class CustomerWindow {
 
             }
         });
+    }
+
+    public static void main(String[] args) {
+        new CustomerWindow(null);
     }
 }

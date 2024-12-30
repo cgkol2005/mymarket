@@ -1,4 +1,5 @@
 import api.*;
+import gui.GUI_Main;
 
 /**
  * Το πρόγραμμά σας πρέπει να έχει μόνο μία main, η οποία πρέπει να είναι η παρακάτω.
@@ -8,12 +9,6 @@ import api.*;
  */
 public class Main{
     public static void main(String[] args){
-        //print_credentials.print();
-
-        Application_Controller Program = new Application_Controller();
-
-        Program.ProgramStart();
-
-
+        GUI_Main main = new GUI_Main();
     }
 }

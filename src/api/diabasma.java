@@ -1,8 +1,5 @@
 package api;
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import java.text.Normalizer;
@@ -43,7 +40,7 @@ public class diabasma
             System.err.println("Παρουσιάστηκε σφάλμα κατά την ανάγνωση του αρχείου: ");
         }
          */
-        List<Product> products = Application_Controller.CreateProductsList();
+        List<Product> products = Application_Controller.CreateProductsListFromTXT();
         Scanner scanner2 =new Scanner(System.in);
         System.out.println("Άν θέλεις αναζήτηση με τίτλος πάτα 1,εάν θέλεις αναζήτηση με κατηγορία πάτα 2 και εάν θέλεις και με τα δυό πάτα 3:");
         String methodos=scanner2.nextLine().trim();
