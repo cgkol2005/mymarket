@@ -58,12 +58,13 @@ public class Accounts_Manager {
             System.out.println("Username: " + Username);
             System.out.println("Password: " + Password);
 
-            for (User user : UsersList){
-                if (user.getUsername().equals(Username) && user.getPassword().equals(Password)){
-                    System.out.println("Authentication complete!");
-                    return user;
+                for (User user : UsersList) {
+                    if (user.getUsername().equals(Username) && user.getPassword().equals(Password)) {
+                        System.out.println("Authentication complete!");
+                        return user;
+                    }
                 }
-            }
+
             System.out.println("The credentials you entered do not match any account. Please try again or go back.");
             return null;
     }
