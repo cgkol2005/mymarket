@@ -9,7 +9,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.util.List;
 
 /**
  * @author Golfos Christos, Charitwn Mavridis
@@ -94,7 +93,7 @@ public class SignInWindow {
 
                 if (user instanceof Customer) {
                     frame.dispose();
-                    new CustomerWindow(data);
+                    new CustomerWindow(data, (Customer) user);
                 } else if (user instanceof Admin) {
                     frame.dispose();
                     new AdminWindow(data,(Admin) user);

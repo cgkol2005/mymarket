@@ -1,65 +1,130 @@
 package gui;
 
+import api.Customer;
 import api.Data;
+import api.User;
 
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.*;
 
 public class CustomerWindow {
     private JFrame customerFrame;
 
-    public CustomerWindow(Data data) {
-        customerFrame = new JFrame("Πελάτης");
+    public CustomerWindow(Data data, Customer user) {
+        customerFrame = new JFrame("MyMarketCustomer");
         customerFrame.setSize(1280, 720);
-        customerFrame.setLayout(new FlowLayout());
+        customerFrame.setLayout(new BorderLayout());
         customerFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        JLabel message = new JLabel("Καλωσήρθατε στο mymarket!!!");
-        customerFrame.add(message);
-        JLabel message1 = new JLabel("Καλωσήρθατε στο σύστημα για πελάτη!!!");
-        customerFrame.add(message1);
-        JLabel message2 = new JLabel("      Τι ενέργεια επιθυμείς να κάνεις;  Κάνε επιλογή από τα παρακάτω          ");
-        customerFrame.add(message2);
-
-        JButton ShoppingCartButton=new JButton("Καλάθι");
-        JButton searchProductButton=new JButton("Αναζήτηση προιόντος");
-        JButton OrderHistoryButton=new JButton("Προβολή ιστορικού παραγγελιών");
-        JButton OrderButton=new JButton("Ολοκλήρωση παραγγελίας");
-
-        customerFrame.add(ShoppingCartButton);
-        customerFrame.add(OrderHistoryButton);
-        customerFrame.add(searchProductButton);
-        customerFrame.add(OrderButton);
         customerFrame.setLocationRelativeTo(null);
-        customerFrame.setVisible(true);
-        searchProductButton.addActionListener(new ActionListener() {
+        JLabel message = new JLabel("Hello "+user.getUsername()+"!");
+        message.setPreferredSize(new Dimension(0,80));
+        message.setFont(new Font("Courier New",Font.BOLD,50));
+        message.setHorizontalAlignment(SwingConstants.CENTER);
+        message.setVerticalAlignment(SwingConstants.CENTER);
+        customerFrame.add(message, BorderLayout.NORTH);
+
+
+
+        JPanel redRight = new JPanel();
+        redRight.setPreferredSize(new Dimension(280,0));
+        //redRight.setBackground(Color.red);
+        customerFrame.add(redRight,BorderLayout.EAST);
+
+
+        JPanel blueLeft = new JPanel();
+        blueLeft.setPreferredSize(new Dimension(280,0));
+        //blueLeft.setBackground(Color.blue);
+
+        customerFrame.add(blueLeft, BorderLayout.WEST);
+
+
+
+        JPanel yellowSouth = new JPanel();
+        yellowSouth.setPreferredSize(new Dimension(0,80));
+        //yellowSouth.setBackground(Color.yellow);
+        customerFrame.add(yellowSouth,BorderLayout.SOUTH);
+
+        JPanel greenCenter = new JPanel();
+        greenCenter.setPreferredSize(new Dimension(50,50));
+        //greenCenter.setBackground(Color.green);
+        customerFrame.add(greenCenter,BorderLayout.CENTER);
+
+        BoxLayout buttonsBox = new BoxLayout(greenCenter, 1);
+        greenCenter.setLayout(buttonsBox);
+        Font buttonFont = new Font("Times New Roman", Font.PLAIN,18);
+        JButton browserButton = new JButton("Browse The Shop");
+        JButton shoppingCartButton=new JButton("Shopping Cart");
+        JButton orderHistoryButton = new JButton("Order History");
+        JButton logOutButton = new JButton("Log-Out");
+
+
+        Dimension buttonSize = new Dimension(300,100);
+
+        shoppingCartButton.setPreferredSize(buttonSize);
+        shoppingCartButton.setMinimumSize(buttonSize);
+        shoppingCartButton.setMaximumSize(buttonSize);
+        //shoppingCartButton.setBorderPainted(false);  // Disable the border
+        //shoppingCartButton.setContentAreaFilled(false); //Disable filling content area
+
+        shoppingCartButton.setFocusPainted(false);
+
+        browserButton.setPreferredSize(buttonSize);
+        browserButton.setMinimumSize(buttonSize);
+        browserButton.setMaximumSize(buttonSize);
+
+        browserButton.setFocusPainted(false);
+
+        orderHistoryButton .setPreferredSize(buttonSize);
+        orderHistoryButton .setMinimumSize(buttonSize);
+        orderHistoryButton .setMaximumSize(buttonSize);
+
+        orderHistoryButton.setFocusPainted(false);
+
+        logOutButton.setPreferredSize(buttonSize);
+        logOutButton.setMinimumSize(buttonSize);
+        logOutButton.setMaximumSize(buttonSize);
+
+        logOutButton.setFocusPainted(false);
+
+
+        shoppingCartButton.setFont(buttonFont);
+        browserButton.setFont(buttonFont);
+        orderHistoryButton.setFont(buttonFont);
+        logOutButton.setFont(buttonFont);
+
+
+
+
+        shoppingCartButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+        browserButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+        orderHistoryButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+        logOutButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+        greenCenter.add(Box.createRigidArea(new Dimension(0,50)));
+        greenCenter.add(browserButton );
+        greenCenter.add(Box.createRigidArea(new Dimension(0,10)));
+        greenCenter.add(shoppingCartButton);
+        greenCenter.add(Box.createRigidArea(new Dimension(0,10)));
+        greenCenter.add(orderHistoryButton );
+        greenCenter.add(Box.createRigidArea(new Dimension(0,10)));
+        greenCenter.add(logOutButton);
+
+        browserButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new SearchWindow();
-
+                new BrowseWindow(data);
             }
         });
-        OrderButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                new OrderWindow();
 
-            }
-        });
-        OrderHistoryButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                new HistoryWindow();
 
-            }
-        });
-        ShoppingCartButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                new ShoppingCartWindow();
 
-            }
-        });
+
+
+
+
+
 
        customerFrame.addWindowListener(new WindowAdapter() {
            @Override
@@ -69,9 +134,10 @@ public class CustomerWindow {
                System.exit(0);
            }
        });
+       customerFrame.setVisible(true);
     }
 
     public static void main(String[] args) {
-        new CustomerWindow(null);
+        new CustomerWindow(null,new Customer("Username","Password","Xaris","Mavridis"));
     }
 }

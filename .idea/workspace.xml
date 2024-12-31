@@ -4,22 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4962100c-d0a3-448f-8930-2e998309a824" name="Changes" comment="merge">
+    <list default="true" id="4962100c-d0a3-448f-8930-2e998309a824" name="Changes" comment="local commit">
+      <change afterPath="$PROJECT_DIR$/handPointRight.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/Accounts_Manager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/Accounts_Manager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/Data.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/Data.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/diabasma.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/diabasma.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/AdminWindow$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/AdminWindow$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/AdminWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/AdminWindow.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/CustomerWindow$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/CustomerWindow$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/CustomerWindow$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/CustomerWindow$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/CustomerWindow$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/CustomerWindow$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/CustomerWindow$5.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/CustomerWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/CustomerWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/GUI_Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/GUI_Main$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/GUI_Main$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/GUI_Main$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/GUI_Main$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/GUI_Main$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/GUI_Main$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/GUI_Main$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/GUI_Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/GUI_Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow$4.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/Accounts_Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/Accounts_Manager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/CustomerWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/CustomerWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/SignInWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/SignInWindow.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,11 +39,17 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main_admin" />
+        <entry key="$PROJECT_DIR$" value="main-remote-check" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Charitwn"
+  }
+}]]></component>
   <component name="GitToolBoxStore">
     <option name="recentBranches">
       <RecentBranches>
@@ -51,12 +59,16 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
-                    <option name="branchName" value="main_admin-to-merge" />
-                    <option name="lastUsedInstant" value="1735570802" />
+                    <option name="branchName" value="Customer" />
+                    <option name="lastUsedInstant" value="1735635368" />
                   </RecentBranch>
                   <RecentBranch>
-                    <option name="branchName" value="main_admin" />
-                    <option name="lastUsedInstant" value="1735570702" />
+                    <option name="branchName" value="main-remote-check" />
+                    <option name="lastUsedInstant" value="1735635353" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1735635254" />
                   </RecentBranch>
                 </list>
               </option>
@@ -67,6 +79,12 @@
       </RecentBranches>
     </option>
   </component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/auth-csd-oop-2024/mymarket-4573-4763.git",
+    "accountId": "6fb7e915-3246-47cf-be8a-566022a0c4e7"
+  }
+}]]></component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -83,6 +101,11 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.BasicFrame.executor": "Run",
+    "Application.BrowseWindow.executor": "Run",
+    "Application.CustomerWindow (1).executor": "Run",
+    "Application.CustomerWindow (2).executor": "Run",
+    "Application.CustomerWindow.executor": "Run",
     "Application.GUI_Main.executor": "Run",
     "Application.Main (1).executor": "Run",
     "Application.Main.executor": "Run",
@@ -100,11 +123,12 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit4",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4": "",
-    "git-widget-placeholder": "main__admin-to-merge",
+    "git-widget-placeholder": "Customer",
     "kotlin-language-version-configured": "true",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.keymap"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -114,6 +138,9 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\xaris\Desktop\Folders\Programming Files and Programs\JAVA\MyMarketRepository\mymarket-4573-4763" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="api" />
     </key>
@@ -121,9 +148,9 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main (1)">
-    <configuration name="GUI_Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="gui.GUI_Main" />
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="BasicFrame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="gui.BasicFrame" />
       <module name="MyMarket" />
       <extension name="coverage">
         <pattern>
@@ -135,70 +162,53 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="BrowseWindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="gui.BrowseWindow" />
+      <module name="MyMarket" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="gui.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CustomerWindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="gui.CustomerWindow" />
+      <module name="MyMarket" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="gui.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="MyMarket" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="api.Main" />
-      <module name="MyMarket" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value=".*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RegisterWindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="gui.RegisterWindow" />
-      <module name="MyMarket" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="gui.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="All in MyMarket" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="MyMarket" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
-      <item itemvalue="Application.RegisterWindow" />
-      <item itemvalue="Application.GUI_Main" />
-      <item itemvalue="Application.Main (1)" />
+      <item itemvalue="Application.BrowseWindow" />
+      <item itemvalue="Application.BasicFrame" />
+      <item itemvalue="Application.CustomerWindow" />
       <item itemvalue="Application.Main" />
-      <item itemvalue="JUnit.All in MyMarket" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main (1)" />
-        <item itemvalue="Application.GUI_Main" />
-        <item itemvalue="Application.RegisterWindow" />
-        <item itemvalue="JUnit.All in MyMarket" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.BrowseWindow" />
+        <item itemvalue="Application.BasicFrame" />
+        <item itemvalue="Application.CustomerWindow" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-5cd809f4" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -345,7 +355,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
