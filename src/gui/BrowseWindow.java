@@ -1,22 +1,18 @@
 package gui;
 
-import api.Application_Controller;
 import api.Data;
 import api.Product;
 
 import javax.swing.*;
-import javax.swing.plaf.basic.BasicOptionPaneUI;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 public class BrowseWindow {
-    private JTable productsTable;
-
     private Data data;
 
-    private JPanel greenCenter;
+    private JPanel centerPanel;
 
     public BrowseWindow(Data data){
         this.data = data;
@@ -46,16 +42,16 @@ public class BrowseWindow {
         yellowSouth.setBackground(Color.yellow);
         browseWindow.add(yellowSouth,BorderLayout.SOUTH);}
 
-        greenCenter = new JPanel(new GridLayout(0,4,5,5));{
+        centerPanel = new JPanel(new GridLayout(0,4,5,5));{
             for (int i = 0; i < data.getProductsList().size(); i++){
                 JButton productButton = new JButton(data.getProductsList().get(i).getTitle());
                 productButton.setActionCommand(data.getProductsList().get(i).getTitle());
                 productButton.setFont(new Font("Courier New", Font.PLAIN, 15));
                 productButton.setPreferredSize(new Dimension(155,111));
                 productButton.addActionListener(new ButtonClickListener());
-                greenCenter.add(productButton);
+                centerPanel.add(productButton);
             }
-            JScrollPane scroll = new JScrollPane(greenCenter);
+            JScrollPane scroll = new JScrollPane(centerPanel);
             browseWindow.add(scroll,BorderLayout.CENTER);
         }
 
@@ -65,18 +61,37 @@ public class BrowseWindow {
             browseWindow.add(magentaNorth,BorderLayout.NORTH);}
         }
 
+        browseWindow.setVisible(true);
 
-
-        productsTable = new JTable();
     }
 
-    static class ButtonClickListener implements ActionListener {
+    private class ButtonClickListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            String command = e.getActionCommand();
+            String command_ProductTitle = e.getActionCommand();
 
-            System.out.println("Button Pressed: " + command);
+            System.out.println("Button Pressed: " + command_ProductTitle);
 
+            String[] options = {"View Product", "Add to Cart", "Cancel"};
+            int choice = JOptionPane.showOptionDialog(null, "What would you like to do?", command_ProductTitle,
+                    JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE,
+                    null, options, options[0]);
+
+            if (choice >= 0){
+                System.out.println("User chose: " + options[choice]+", choice= "+choice);
+                if (choice == 0){
+                    //view product
+                    for (Product product: data.getProductsList()){
+                        if (product.getTitle().equals(command_ProductTitle)){
+                            new ViewProductWindow(product,data);
+                        }
+                    }
+                } else if (choice == 1) {
+                    //add product to cart
+                }
+            }else{
+                System.out.println("User closed the window with X, choice="+choice);
+            }
         }
     }
 

@@ -4,13 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4962100c-d0a3-448f-8930-2e998309a824" name="Changes" comment="Customer window, logic and options. Not finished yet.">
+    <list default="true" id="4962100c-d0a3-448f-8930-2e998309a824" name="Changes" comment="Customer window, logic, and options. Not finished yet.">
+      <change afterPath="$PROJECT_DIR$/src/gui/ViewProductWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/ACCOUNTS.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/Customer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/Data.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/Data.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/LAUNCHER.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/PackagedProduct.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/PackagedProduct.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/Product.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/WeightedProduct.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/WeightedProduct.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/BasicFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/BasicFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/BrowseWindow$ButtonClickListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/BrowseWindow$ButtonClickListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/BrowseWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/BrowseWindow.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow$5.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/Data.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/PackagedProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/PackagedProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/WeightedProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/WeightedProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/BasicFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/BasicFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/BrowseWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/BrowseWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/SignInWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/SignInWindow.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -92,6 +111,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.BasicFrame.executor": "Run",
+    "Application.BrowseWindow (1).executor": "Run",
     "Application.BrowseWindow.executor": "Run",
     "Application.CustomerWindow (1).executor": "Run",
     "Application.CustomerWindow (2).executor": "Run",
@@ -101,6 +121,12 @@
     "Application.Main.executor": "Run",
     "Application.RegisterWindow.executor": "Run",
     "Application.SignInWindow.executor": "Run",
+    "Application.ViewProductWindow (1).executor": "Run",
+    "Application.ViewProductWindow (2).executor": "Run",
+    "Application.ViewProductWindow (3).executor": "Run",
+    "Application.ViewProductWindow (4).executor": "Run",
+    "Application.ViewProductWindow (5).executor": "Run",
+    "Application.ViewProductWindow.executor": "Run",
     "Application.diabasma.executor": "Run",
     "Application.diabasma2.executor": "Run",
     "Application.gui.executor": "Run",
@@ -119,7 +145,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.keymap"
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -139,9 +165,9 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="BasicFrame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="gui.BasicFrame" />
+  <component name="RunManager" selected="Application.ViewProductWindow (2)">
+    <configuration name="ViewProductWindow (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="gui.ViewProductWindow" />
       <module name="MyMarket" />
       <extension name="coverage">
         <pattern>
@@ -153,8 +179,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BrowseWindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="gui.BrowseWindow" />
+    <configuration name="ViewProductWindow (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="gui.ViewProductWindow" />
       <module name="MyMarket" />
       <extension name="coverage">
         <pattern>
@@ -166,8 +192,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CustomerWindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="gui.CustomerWindow" />
+    <configuration name="ViewProductWindow (4)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="gui.ViewProductWindow" />
       <module name="MyMarket" />
       <extension name="coverage">
         <pattern>
@@ -179,15 +205,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
+    <configuration name="ViewProductWindow (5)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="gui.ViewProductWindow" />
       <module name="MyMarket" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="gui.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SignInWindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="gui.SignInWindow" />
+    <configuration name="ViewProductWindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="gui.ViewProductWindow" />
       <module name="MyMarket" />
       <extension name="coverage">
         <pattern>
@@ -200,19 +232,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.BrowseWindow" />
-      <item itemvalue="Application.SignInWindow" />
-      <item itemvalue="Application.BasicFrame" />
-      <item itemvalue="Application.CustomerWindow" />
-      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.ViewProductWindow" />
+      <item itemvalue="Application.ViewProductWindow (1)" />
+      <item itemvalue="Application.ViewProductWindow (2)" />
+      <item itemvalue="Application.ViewProductWindow (4)" />
+      <item itemvalue="Application.ViewProductWindow (5)" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Application.SignInWindow" />
-        <item itemvalue="Application.BrowseWindow" />
-        <item itemvalue="Application.BasicFrame" />
-        <item itemvalue="Application.CustomerWindow" />
+        <item itemvalue="Application.ViewProductWindow (2)" />
+        <item itemvalue="Application.ViewProductWindow (1)" />
+        <item itemvalue="Application.ViewProductWindow (5)" />
+        <item itemvalue="Application.ViewProductWindow" />
+        <item itemvalue="Application.ViewProductWindow (4)" />
       </list>
     </recent_temporary>
   </component>
@@ -361,7 +393,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735659208390</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Customer window, logic, and options. Not finished yet.">
+      <option name="closed" value="true" />
+      <created>1735660519644</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1735660519644</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -402,7 +442,8 @@
     <MESSAGE value="30/12 admin4" />
     <MESSAGE value="merge" />
     <MESSAGE value="Customer window, logic and options. Not finished yet." />
-    <option name="LAST_COMMIT_MESSAGE" value="Customer window, logic and options. Not finished yet." />
+    <MESSAGE value="Customer window, logic, and options. Not finished yet." />
+    <option name="LAST_COMMIT_MESSAGE" value="Customer window, logic, and options. Not finished yet." />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

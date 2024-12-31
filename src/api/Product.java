@@ -10,13 +10,27 @@ public class Product implements Serializable{
     private String sub_category;
     private double price;
     private int times_ordered; //Variable to track how many times the product has been ordered. (For admins statistics)
+    private boolean isAvailable;
 
-    public Product (String title,String description,String category,String sub_category,double price) {
+    public Product (String title,String description,String category,String sub_category,double price,double stock) {
             this.title = title;
             this.description = description;
             this.category = category;
             this.sub_category = sub_category;
             this.price = price;
+            if(stock > 0){
+                isAvailable = true;
+            }
+    }
+    public Product (String title,String description,String category,String sub_category,double price,int stock) {
+        this.title = title;
+        this.description = description;
+        this.category = category;
+        this.sub_category = sub_category;
+        this.price = price;
+        if (stock > 0){
+            isAvailable = true;
+        }
     }
 
     public void ProductOrdered() {
@@ -45,6 +59,9 @@ public class Product implements Serializable{
     }
     public int getTimes_ordered() {
         return times_ordered;
+    }
+    public boolean getAvailability(){
+        return isAvailable;
     }
     public void setDescription(String description)
     {

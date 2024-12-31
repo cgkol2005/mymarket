@@ -21,6 +21,8 @@ public class Data {
 
     private List<Product> Products;
 
+    private Customer currentCustomerUser;
+
     /**
      * Class Constructor: It loads the Data from the database (Products and Users files)
      */
@@ -60,6 +62,14 @@ public class Data {
 
     public List<User> getUsersList() {
         return Users;
+    }
+
+    public void setCurrentCustomerUser(Customer user){
+        this.currentCustomerUser = user;
+    }
+
+    public Customer getCurrentCustomerUser(){
+        return currentCustomerUser;
     }
 
     public void DataSave(){

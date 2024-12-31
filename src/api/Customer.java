@@ -28,9 +28,12 @@ public class Customer extends User implements Serializable {
     public void setFirstname(String Firstname){
         this.Firstname = Firstname;
     }
-
     public void setLastname(String lastname) {
         Lastname = lastname;
+    }
+
+    public ShoppingCart getShoppingCart(){
+        return ShoppingCart;
     }
     public String getFirstname() {
         return Firstname;
