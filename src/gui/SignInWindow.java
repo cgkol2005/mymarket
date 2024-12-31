@@ -5,10 +5,7 @@ import api.*;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
+import java.awt.event.*;
 
 /**
  * @author Golfos Christos, Charitwn Mavridis
@@ -130,6 +127,15 @@ public class SignInWindow {
                 mainFrame.setVisible(true);
             }
         });
+        submitButton.getInputMap(JPanel.WHEN_IN_FOCUSED_WINDOW).put(
+                javax.swing.KeyStroke.getKeyStroke("ENTER"), "submitAction"
+        );
+        submitButton.getActionMap().put("submitAction", new javax.swing.AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                submitButton.doClick();
+            }
+        });
 
         frame.addWindowListener(new WindowAdapter() {
             @Override
@@ -140,10 +146,10 @@ public class SignInWindow {
 
         frame.setVisible(true);
     }
-    /*
+
     public static void main(String[] args) {
         new SignInWindow(null, null, null);
     }
 
-     */
+
 }
