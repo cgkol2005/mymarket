@@ -91,7 +91,7 @@ public class SignInWindow {
                 if (user instanceof Customer) {
                     frame.dispose();
                     data.setCurrentCustomerUser((Customer) user);
-                    new CustomerWindow(data, (Customer) user);
+                    new CustomerWindowOptions(data, (Customer) user,mainFrame);
                 } else if (user instanceof Admin) {
                     frame.dispose();
                     new AdminWindow(data,(Admin) user);

@@ -72,6 +72,24 @@ public class Data {
         return currentCustomerUser;
     }
 
+    public void DataLoad(){
+        try(ObjectInputStream in = new ObjectInputStream(new FileInputStream("Accounts.ser"))){
+            Users = (List<User>) in.readObject();
+        }catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }catch(IOException ioe){
+            System.out.println("There was a problem reading from the Accounts.ser file.");
+        }
+
+        try(ObjectInputStream in = new ObjectInputStream(new FileInputStream("Products.ser"))){
+            Products = (List<Product>) in.readObject();
+        }catch(ClassNotFoundException e){
+            throw new RuntimeException(e);
+        }catch(IOException ioe){
+            System.out.println("There was a problem reading from the products file."+ioe);
+        }
+    }
+
     public void DataSave(){
         try(ObjectOutputStream ProductsOut = new ObjectOutputStream(new FileOutputStream("Products.ser"));
             ObjectOutputStream UsersOut = new ObjectOutputStream(new FileOutputStream("Accounts.ser"))){

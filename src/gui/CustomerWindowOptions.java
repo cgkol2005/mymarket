@@ -2,17 +2,15 @@ package gui;
 
 import api.Customer;
 import api.Data;
-import api.User;
 
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.*;
 
-public class CustomerWindow {
+public class CustomerWindowOptions {
     private JFrame customerFrame;
 
-    public CustomerWindow(Data data, Customer user) {
+    public CustomerWindowOptions(Data data, Customer user, JFrame mainFrame) {
         customerFrame = new JFrame("MyMarketCustomer");
         customerFrame.setSize(1280, 720);
         customerFrame.setLayout(new BorderLayout());
@@ -114,18 +112,37 @@ public class CustomerWindow {
         browserButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new BrowseWindow(data);
+                customerFrame.setVisible(false);
+                new BrowseWindow(data, customerFrame);
             }
         });
 
+        shoppingCartButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
 
+            }
+        });
 
+        orderHistoryButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
 
+            }
+        });
 
+        logOutButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                customerFrame.dispose();
+                data.DataSave();
+                mainFrame.setLocationRelativeTo(null);
+                mainFrame.setVisible(true);
+            }
+        });
 
-
-
-
+        //when closing the window:
+        {
        customerFrame.addWindowListener(new WindowAdapter() {
            @Override
            public void windowClosing(WindowEvent e) {
@@ -133,11 +150,11 @@ public class CustomerWindow {
                data.DataSave();
                System.exit(0);
            }
-       });
+       });}
        customerFrame.setVisible(true);
     }
 
     public static void main(String[] args) {
-        new CustomerWindow(null,new Customer("Username","Password","Xaris","Mavridis"));
+        new CustomerWindowOptions(null,new Customer("Username","Password","Xaris","Mavridis"),null);
     }
 }
