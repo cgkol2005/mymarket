@@ -1,6 +1,8 @@
 package api;
 
+import javax.swing.*;
 import java.io.*;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -23,25 +25,41 @@ public class Data {
 
     private Customer currentCustomerUser;
 
+    private Admin currentAdminUser;
+
+    private List<JFrame> listOfActiveFrames;
+
     /**
      * Class Constructor: It loads the Data from the database (Products and Users files)
      */
     public Data(){
-        try(ObjectInputStream in = new ObjectInputStream(new FileInputStream("Accounts.ser"))){
-            Users = (List<User>) in.readObject();
-        }catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }catch(IOException ioe){
-            System.out.println("There was a problem reading from the Accounts.ser file.");
-        }
+        listOfActiveFrames = new ArrayList<>();
+        DataLoad();
+    }
 
-        try(ObjectInputStream in = new ObjectInputStream(new FileInputStream("Products.ser"))){
-            Products = (List<Product>) in.readObject();
-        }catch(ClassNotFoundException e){
-            throw new RuntimeException(e);
-        }catch(IOException ioe){
-            System.out.println("There was a problem reading from the products file."+ioe);
+    public void addActiveFrame(JFrame frame){
+        listOfActiveFrames.add(frame);
+    }
+
+    public void removeActiveFrame(String frameName){
+        for (int i = 0;i<listOfActiveFrames.size();i++){
+            if (listOfActiveFrames.get(i).getName().equals(frameName)){
+                listOfActiveFrames.remove(i);
+            }
         }
+    }
+
+    public List<JFrame> getListOfActiveFrames() {
+        return listOfActiveFrames;
+    }
+
+    public JFrame getFrameFromActiveFramesList(String frameName){
+        for (JFrame frame2 : listOfActiveFrames){
+            if (frame2.getName().equals(frameName)){
+                return frame2;
+            }
+        }
+        return null; //return null if the frame wasn't found.
     }
 
     public void OverWriteUsersList(List<User> UsersList){
@@ -62,6 +80,15 @@ public class Data {
 
     public List<User> getUsersList() {
         return Users;
+    }
+
+    public Product getProductFromProductsList(String productName){
+        for (Product product : Products){
+            if (product.getTitle().equals(productName)){
+                return product;
+            }
+        }
+        return null; //return null if the program doesn't exist in the products list.
     }
 
     public void setCurrentCustomerUser(Customer user){
@@ -98,6 +125,7 @@ public class Data {
         }catch(IOException ioe){
             System.out.println(ioe+"There was a problem with the writing of the Lists to the Products and Accounts files.");
         }
+        System.out.println("Data saved!");
     }
 
 }

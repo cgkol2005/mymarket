@@ -1,8 +1,9 @@
 package api;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
-public class Quantity {
+public class Quantity implements Serializable {
     private int pieces;
     private double kgs;
 

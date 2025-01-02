@@ -1,6 +1,8 @@
 package api;
 
-public class Kgs extends Quantity{
+import java.io.Serializable;
+
+public class Kgs extends Quantity implements Serializable {
     Kgs(double kgs) {
         super(kgs);
     }

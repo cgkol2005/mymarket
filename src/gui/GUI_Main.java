@@ -13,12 +13,19 @@ import java.awt.event.WindowEvent;
 
 public class GUI_Main {
     private JFrame mainFrame;
+
     private JButton signInButton;
+
     private JButton signUpButton;
+
     private JButton exitButton;
+
     private JLabel welcomeLabel; // yellow-underlined because the label is only used in the buildUI and nowhere else. Resolve on the end of the development.
+
     private Data data;//same as above
+
     private Accounts_Manager AccManager;//same as above
+
     Application_Controller AppController;
 
     public GUI_Main() {
@@ -31,7 +38,7 @@ public class GUI_Main {
             @Override
             public void actionPerformed(ActionEvent e) {
                 mainFrame.setVisible(false);
-                new SignInWindow(data, AccManager,mainFrame);
+                new SignInWindow(data, AccManager);
             }
         });
 
@@ -42,6 +49,7 @@ public class GUI_Main {
                 new SignUpWindow(data, AccManager,mainFrame);
             }
         });
+
         exitButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -67,6 +75,8 @@ public class GUI_Main {
         mainFrame.setLayout(new BorderLayout());
         mainFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         mainFrame.setLocationRelativeTo(null);
+        mainFrame.setName("GUI_Main");
+        data.addActiveFrame(mainFrame);
 
 
         welcomeLabel = new JLabel("Welcome to MyMarket e-shop!");
@@ -87,7 +97,7 @@ public class GUI_Main {
         Font buttonFont = new Font("Arial", Font.BOLD, 30);
         Dimension buttonSize = new Dimension(300, 150);
 
-        // Create sign in button with text label
+        // Create sign-in button with text label
         signInButton = new JButton("Sign In");
         signInButton.setFont(buttonFont);
         signInButton.setPreferredSize(buttonSize);
@@ -101,7 +111,7 @@ public class GUI_Main {
         signInPanel.setMaximumSize(new Dimension(600, 150)); // Ensure uniform width
         signInPanel.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-        // Create sign up button with text label
+        // Create sign-up button with text label
         signUpButton = new JButton("Sign Up");
         signUpButton.setFont(buttonFont);
         signUpButton.setPreferredSize(buttonSize);
@@ -143,13 +153,6 @@ public class GUI_Main {
 
         mainFrame.add(box, BorderLayout.CENTER);
 
-
         mainFrame.setVisible(true);
-    }
-
-
-
-    public static void main(String[] args) {
-        GUI_Main main = new GUI_Main();
     }
 }

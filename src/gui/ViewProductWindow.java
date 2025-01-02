@@ -12,13 +12,14 @@ import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.math.BigDecimal;
 
 public class ViewProductWindow{
 
     public ViewProductWindow(Product product, Data data){
         BasicFrame viewProductWindow = new BasicFrame(new BorderLayout());
         viewProductWindow.setSize(800,720);
-
+        viewProductWindow.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         /*
         {JPanel redRight = new JPanel();
         redRight.setPreferredSize(new Dimension(100,0));
@@ -54,16 +55,16 @@ public class ViewProductWindow{
         centerPanel.setPreferredSize(new Dimension(0,0));
         viewProductWindow.add(centerPanel,BorderLayout.CENTER);
 
-        JPanel magentaNorth = new JPanel();{
-            magentaNorth.setPreferredSize(new Dimension(0,160));
-            //magentaNorth.setBackground(Color.magenta);
+        JPanel northPanel = new JPanel();{
+            northPanel.setPreferredSize(new Dimension(0,160));
+            //northPanel.setBackground(Color.magenta);
             JLabel productTitle = new JLabel(product.getTitle());
             productTitle.setHorizontalAlignment(SwingConstants.CENTER);
             productTitle.setVerticalAlignment(SwingConstants.CENTER);
             productTitle.setFont(new Font("Courier New",Font.ITALIC | Font.BOLD,35));
             productTitle.setBorder(new EmptyBorder(60,0,0,0));
-            magentaNorth.add(productTitle);
-            viewProductWindow.add(magentaNorth,BorderLayout.NORTH);}
+            northPanel.add(productTitle);
+            viewProductWindow.add(northPanel,BorderLayout.NORTH);}
 
 
         JPanel infoPanel = new JPanel();
@@ -87,9 +88,9 @@ public class ViewProductWindow{
         if (product instanceof WeightedProduct){
             String[] words = product.getTitle().split("\\s+");
             String lastWord = words[words.length - 1];
-            price = new JLabel("Price: "+ String.valueOf(product.getPrice())+" per "+lastWord);
+            price = new JLabel("Price: "+ String.valueOf(product.getPrice())+"€ per "+lastWord);
         }else{
-            price = new JLabel("Price: "+ String.valueOf(product.getPrice()));
+            price = new JLabel("Price: "+ String.valueOf(product.getPrice())+"€ per piece");
         }
 
 
@@ -100,7 +101,7 @@ public class ViewProductWindow{
         if (product.getAvailability()){
             availability = new JLabel("Availability: Available");
         }else {
-            availability = new JLabel("Availability: Not Available");
+            availability = new JLabel("Availability: Out of stock. :(");
         }
         availability.setVerticalAlignment(SwingConstants.CENTER);
         availability.setVerticalAlignment(SwingConstants.CENTER);
@@ -140,99 +141,165 @@ public class ViewProductWindow{
         addToCartButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JFrame sliderFrame = new JFrame("Quantity to be put in Shopping Cart");
-                sliderFrame.setLayout(new BorderLayout());
-                sliderFrame.setSize(500,220);
-                sliderFrame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-                sliderFrame.setLocationRelativeTo(null);
-
-                JLabel question = new JLabel("How much do you want to put in your shopping cart?");
-                question.setFont(new Font("Courier New", Font.ITALIC, 15));
-                question.setHorizontalAlignment(SwingConstants.CENTER);
-                question.setVerticalAlignment(SwingConstants.CENTER);
-                JPanel questionPanel = new JPanel(new BorderLayout());
-                questionPanel.setPreferredSize(new Dimension(0,80));
-                questionPanel.add(question,BorderLayout.CENTER);
-
-                sliderFrame.add(questionPanel, BorderLayout.NORTH);
-
-
-                JPanel sliderPanel = new JPanel(new BorderLayout());
-                sliderPanel.setPreferredSize(new Dimension(100,50));
-                JSlider slider;
-                if (product instanceof WeightedProduct){
-                    int max = (int) (((WeightedProduct) product).getStock())*100;
-                    slider = new JSlider(0, max,max/2);
-                } else{
-                    slider = new JSlider(0,((PackagedProduct) product).getStock(),((PackagedProduct) product).getStock()/2);
-                }
-
-                slider.setSize(100,50);
-                slider.setPaintTicks(true);
-                slider.setMinorTickSpacing(1);
-
-                slider.setPaintTrack(true);
-                slider.setMajorTickSpacing(50);
-                slider.setPaintLabels(true);
-
-
-
-                JLabel quantity = new JLabel(String.valueOf(slider.getValue())+" grams");
-                quantity.setFont(new Font("MV Boli",Font.PLAIN,13));
-                quantity.setVerticalAlignment(SwingConstants.CENTER);
-                quantity.setHorizontalAlignment(SwingConstants.CENTER);
-                sliderPanel.add(quantity,BorderLayout.NORTH);
-                sliderPanel.add(slider,BorderLayout.CENTER);
-
-
-                sliderFrame.add(sliderPanel, BorderLayout.CENTER);
-
-                JPanel buttonPanel = new JPanel(new FlowLayout());
-                buttonPanel.setPreferredSize(new Dimension(0,38));
-                JButton addButton = new JButton("Add");
-                addButton.setPreferredSize(new Dimension(60,30));
-                Font buttonFont = new Font("Cascadia mono", Font.ITALIC, 13);
-                addButton.setFont(buttonFont);
-
-                JButton cancelButton = new JButton("Cancel");
-                cancelButton.setPreferredSize(new Dimension(100,30));
-                cancelButton.setFont(buttonFont);
-
-                buttonPanel.add(addButton);
-                buttonPanel.add(cancelButton);
-
-                sliderFrame.add(buttonPanel,BorderLayout.SOUTH);
-
-
-                slider.addChangeListener(new ChangeListener() {
-                    @Override
-                    public void stateChanged(ChangeEvent e) {
-                        quantity.setText(String.valueOf(slider.getValue())+" grams");
-                    }
-                });
-
-                cancelButton.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        sliderFrame.dispose();
-                    }
-                });
-
-                addButton.addActionListener(new ActionListener() {
-                    @Override
-                    public void actionPerformed(ActionEvent e) {
-                        //TODO
-                    }
-                });
-
-
-                sliderFrame.setVisible(true);
+                addToCartDialog(product, data);
             }
         });
         viewProductWindow.setVisible(true);
     }
 
-    public static void main(String[] args) {
-        new ViewProductWindow(new WeightedProduct("Oranges 1kg","They are orange","Fruits", "Healthy Food",3.5,2.0),null);
+    public static void addToCartDialog(Product product,Data data){
+        if (product.getAvailability()) {
+            JFrame sliderFrame = new JFrame("Quantity to be put in Shopping Cart");
+            sliderFrame.setLayout(new BorderLayout());
+            sliderFrame.setSize(800, 220);
+            sliderFrame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+            sliderFrame.setLocationRelativeTo(null);
+
+            JLabel question = new JLabel("How much do you want to put in your shopping cart?");
+            question.setFont(new Font("Courier New", Font.ITALIC, 17));
+            question.setHorizontalAlignment(SwingConstants.CENTER);
+            question.setVerticalAlignment(SwingConstants.CENTER);
+            JPanel questionPanel = new JPanel(new BorderLayout());
+            questionPanel.setPreferredSize(new Dimension(0, 80));
+            questionPanel.add(question, BorderLayout.CENTER);
+
+            sliderFrame.add(questionPanel, BorderLayout.NORTH);
+
+
+            JPanel sliderPanel = new JPanel(new BorderLayout());
+            sliderPanel.setPreferredSize(new Dimension(100, 50));
+            JSlider slider;
+            if (product instanceof WeightedProduct) {
+                int max = (int) (((WeightedProduct) product).getStock()) * 100;
+                int quantityInCart = (int) data.getCurrentCustomerUser().getShoppingCart().getProductQuantityInShoppingCart(product.getTitle()) * 100;
+                if (quantityInCart > 0){
+                    max = max - quantityInCart;
+                }
+                slider = new JSlider(0, max, max / 2);
+            } else if(product instanceof PackagedProduct){
+                int max = ((PackagedProduct) product).getStock();
+                int quantityInCart = (int) data.getCurrentCustomerUser().getShoppingCart().getProductQuantityInShoppingCart(product.getTitle());
+                if (quantityInCart > 0){
+                    max = max - quantityInCart;
+                }
+                slider = new JSlider(0, max, max/ 2);
+            }else{
+                slider = new JSlider(0, 0, 0);
+            }
+
+            slider.setSize(100, 50);
+            slider.setPaintTicks(true);
+            slider.setMinorTickSpacing(1);
+
+            slider.setPaintTrack(true);
+            slider.setPaintLabels(true);
+            if (product instanceof WeightedProduct) {
+                slider.setMajorTickSpacing(50);
+            } else {
+                slider.setMajorTickSpacing(5);
+            }
+
+
+            //JLabel quantity = new JLabel(String.valueOf(slider.getValue())+" grams");
+            JLabel quantity = new JLabel();
+            quantity.setFont(new Font("MV Boli", Font.BOLD, 18));
+            quantity.setVerticalAlignment(SwingConstants.CENTER);
+            quantity.setHorizontalAlignment(SwingConstants.CENTER);
+            sliderPanel.add(quantity, BorderLayout.NORTH);
+            sliderPanel.add(slider, BorderLayout.CENTER);
+
+            if (product instanceof WeightedProduct) {
+                quantity.setText(String.valueOf(slider.getValue()) + " grams");
+            } else {
+                quantity.setText(String.valueOf(slider.getValue()) + " pieces");
+            }
+
+
+            sliderFrame.add(sliderPanel, BorderLayout.CENTER);
+
+            JPanel buttonPanel = new JPanel(new FlowLayout());
+            buttonPanel.setPreferredSize(new Dimension(0, 38));
+            JButton addButton = new JButton("Add");
+            addButton.setPreferredSize(new Dimension(60, 30));
+            Font buttonFont = new Font("Cascadia mono", Font.ITALIC, 13);
+            addButton.setFont(buttonFont);
+
+            JButton cancelButton = new JButton("Cancel");
+            cancelButton.setPreferredSize(new Dimension(100, 30));
+            cancelButton.setFont(buttonFont);
+
+            buttonPanel.add(addButton);
+            buttonPanel.add(cancelButton);
+
+            sliderFrame.add(buttonPanel, BorderLayout.SOUTH);
+
+
+            slider.addChangeListener(new ChangeListener() {
+                @Override
+                public void stateChanged(ChangeEvent e) {
+                    if(product instanceof WeightedProduct) {
+                        quantity.setText(String.valueOf(slider.getValue()) + " grams");
+                    }else{
+                        quantity.setText(String.valueOf(slider.getValue()) + " pieces");
+                    }
+                    addButton.setEnabled(slider.getValue() != 0);
+                }
+            });
+
+            cancelButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    sliderFrame.dispose();
+                }
+            });
+            if(slider.getValue() == 0){
+                question.setText("All of the shop's stock of this product is already in your cart!");
+                addButton.setEnabled(false);
+            }
+
+            addButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    int choice = 0;
+                    if (product instanceof WeightedProduct){
+                        choice = JOptionPane.showConfirmDialog(null, "Are you sure that you want to add "+slider.getValue()+" grams of "+product.getTitle()+" in your cart? Cost: "+calculateTotalPrice(product, slider.getValue())+"€", "Confirmation", JOptionPane.YES_NO_OPTION);
+                    }else{
+                        choice = JOptionPane.showConfirmDialog(null, "Are you sure that you want to add "+slider.getValue()+" pieces of "+product.getTitle()+" in your cart? Cost: "+calculateTotalPrice(product,slider.getValue())+"€", "Confirmation", JOptionPane.YES_NO_OPTION);
+                    }
+                    if (choice == JOptionPane.YES_OPTION) {
+                        System.out.println("User chose YES");
+                        if (product instanceof WeightedProduct){
+                            data.getCurrentCustomerUser().getShoppingCart().addProduct((WeightedProduct) product,slider.getValue());
+                            JOptionPane.showMessageDialog(null, "Product added to your shopping Cart!", "Product added!", JOptionPane.INFORMATION_MESSAGE);
+                        }else if(product instanceof PackagedProduct){
+                            data.getCurrentCustomerUser().getShoppingCart().addProduct((PackagedProduct) product,slider.getValue());
+                            JOptionPane.showMessageDialog(null, "Product added to your shopping Cart!", "Product added!", JOptionPane.INFORMATION_MESSAGE);
+                        }
+                        sliderFrame.dispose();
+                    } else {
+                        System.out.println("User chose NO");
+                    }
+
+                }
+            });
+            sliderFrame.setVisible(true);
+        }else{
+            JOptionPane.showMessageDialog(null, "We're sorry. "+product.getTitle()+" is currently out of stock!", "Out of stock. :(", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }
+
+    public static double calculateTotalPrice(Product product,int quantity){
+        BigDecimal Total_Price;
+        BigDecimal dec1 = new BigDecimal(quantity);
+        BigDecimal dec2 = BigDecimal.valueOf(product.getPrice());
+        Total_Price = dec1.multiply(dec2);
+        return Total_Price.doubleValue();
+    }
+    public static double calculateTotalPrice(Product product,double quantity){
+        BigDecimal Total_Price;
+        BigDecimal dec1 = new BigDecimal(quantity);
+        BigDecimal dec2 = BigDecimal.valueOf(product.getPrice());
+        Total_Price = dec1.multiply(dec2);
+        return Total_Price.divide(new BigDecimal(1000)).doubleValue();
     }
 }

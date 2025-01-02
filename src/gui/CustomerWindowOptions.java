@@ -10,47 +10,49 @@ import java.awt.event.*;
 public class CustomerWindowOptions {
     private JFrame customerFrame;
 
-    public CustomerWindowOptions(Data data, Customer user, JFrame mainFrame) {
+    public CustomerWindowOptions(Data data) {
         customerFrame = new JFrame("MyMarketCustomer");
         customerFrame.setSize(1280, 720);
         customerFrame.setLayout(new BorderLayout());
         customerFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         customerFrame.setLocationRelativeTo(null);
-        JLabel message = new JLabel("Hello "+user.getUsername()+"!");
-        message.setPreferredSize(new Dimension(0,80));
-        message.setFont(new Font("Courier New",Font.BOLD,50));
-        message.setHorizontalAlignment(SwingConstants.CENTER);
-        message.setVerticalAlignment(SwingConstants.CENTER);
-        customerFrame.add(message, BorderLayout.NORTH);
+        customerFrame.setName("CustomerWindowOptions");
+        data.addActiveFrame(customerFrame);
+        JLabel helloMessage = new JLabel("Hello "+data.getCurrentCustomerUser().getUsername()+"!");
+        helloMessage.setPreferredSize(new Dimension(0,80));
+        helloMessage.setFont(new Font("Courier New",Font.BOLD,50));
+        helloMessage.setHorizontalAlignment(SwingConstants.CENTER);
+        helloMessage.setVerticalAlignment(SwingConstants.CENTER);
+        customerFrame.add(helloMessage, BorderLayout.NORTH);
 
 
 
-        JPanel redRight = new JPanel();
-        redRight.setPreferredSize(new Dimension(280,0));
-        //redRight.setBackground(Color.red);
-        customerFrame.add(redRight,BorderLayout.EAST);
+        JPanel rightPanel = new JPanel();
+        rightPanel.setPreferredSize(new Dimension(280,0));
+        //rightPanel.setBackground(Color.red);
+        customerFrame.add(rightPanel,BorderLayout.EAST);
 
 
-        JPanel blueLeft = new JPanel();
-        blueLeft.setPreferredSize(new Dimension(280,0));
-        //blueLeft.setBackground(Color.blue);
+        JPanel leftPanel = new JPanel();
+        leftPanel.setPreferredSize(new Dimension(280,0));
+        //leftPanel.setBackground(Color.blue);
 
-        customerFrame.add(blueLeft, BorderLayout.WEST);
+        customerFrame.add(leftPanel, BorderLayout.WEST);
 
 
 
-        JPanel yellowSouth = new JPanel();
-        yellowSouth.setPreferredSize(new Dimension(0,80));
-        //yellowSouth.setBackground(Color.yellow);
-        customerFrame.add(yellowSouth,BorderLayout.SOUTH);
+        JPanel southPanel = new JPanel();
+        southPanel.setPreferredSize(new Dimension(0,80));
+        //southPanel.setBackground(Color.yellow);
+        customerFrame.add(southPanel,BorderLayout.SOUTH);
 
-        JPanel greenCenter = new JPanel();
-        greenCenter.setPreferredSize(new Dimension(50,50));
-        //greenCenter.setBackground(Color.green);
-        customerFrame.add(greenCenter,BorderLayout.CENTER);
+        JPanel centerPanel = new JPanel();
+        centerPanel.setPreferredSize(new Dimension(50,50));
+        //centerPanel.setBackground(Color.green);
+        customerFrame.add(centerPanel,BorderLayout.CENTER);
 
-        BoxLayout buttonsBox = new BoxLayout(greenCenter, 1);
-        greenCenter.setLayout(buttonsBox);
+        BoxLayout buttonsBox = new BoxLayout(centerPanel, 1);
+        centerPanel.setLayout(buttonsBox);
         Font buttonFont = new Font("Times New Roman", Font.PLAIN,18);
         JButton browserButton = new JButton("Browse The Shop");
         JButton shoppingCartButton=new JButton("Shopping Cart");
@@ -100,20 +102,20 @@ public class CustomerWindowOptions {
         orderHistoryButton.setAlignmentX(Component.CENTER_ALIGNMENT);
         logOutButton.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-        greenCenter.add(Box.createRigidArea(new Dimension(0,50)));
-        greenCenter.add(browserButton );
-        greenCenter.add(Box.createRigidArea(new Dimension(0,10)));
-        greenCenter.add(shoppingCartButton);
-        greenCenter.add(Box.createRigidArea(new Dimension(0,10)));
-        greenCenter.add(orderHistoryButton );
-        greenCenter.add(Box.createRigidArea(new Dimension(0,10)));
-        greenCenter.add(logOutButton);
+        centerPanel.add(Box.createRigidArea(new Dimension(0,50)));
+        centerPanel.add(browserButton );
+        centerPanel.add(Box.createRigidArea(new Dimension(0,10)));
+        centerPanel.add(shoppingCartButton);
+        centerPanel.add(Box.createRigidArea(new Dimension(0,10)));
+        centerPanel.add(orderHistoryButton );
+        centerPanel.add(Box.createRigidArea(new Dimension(0,10)));
+        centerPanel.add(logOutButton);
 
         browserButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 customerFrame.setVisible(false);
-                new BrowseWindow(data, customerFrame);
+                new BrowseWindow(data);
             }
         });
 
@@ -134,15 +136,15 @@ public class CustomerWindowOptions {
         logOutButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                data.removeActiveFrame("CustomerWindowOptions");
+                data.getFrameFromActiveFramesList("GUI_Main").setLocationRelativeTo(null);
+                data.getFrameFromActiveFramesList("GUI_Main").setVisible(true);
                 customerFrame.dispose();
-                data.DataSave();
-                mainFrame.setLocationRelativeTo(null);
-                mainFrame.setVisible(true);
             }
         });
 
         //when closing the window:
-        {
+
        customerFrame.addWindowListener(new WindowAdapter() {
            @Override
            public void windowClosing(WindowEvent e) {
@@ -150,11 +152,8 @@ public class CustomerWindowOptions {
                data.DataSave();
                System.exit(0);
            }
-       });}
+       });
        customerFrame.setVisible(true);
     }
 
-    public static void main(String[] args) {
-        new CustomerWindowOptions(null,new Customer("Username","Password","Xaris","Mavridis"),null);
-    }
 }

@@ -1,6 +1,8 @@
 package api;
 
-public class Pieces extends Quantity{
+import java.io.Serializable;
+
+public class Pieces extends Quantity implements Serializable {
     Pieces(int pieces) {
         super(pieces);
     }

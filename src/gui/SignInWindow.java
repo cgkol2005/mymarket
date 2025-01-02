@@ -15,7 +15,7 @@ public class SignInWindow {
     private JTextField usernameField;
     private JPasswordField passwordField;
 
-    public SignInWindow(Data data, Accounts_Manager AccManager, JFrame mainFrame) {
+    public SignInWindow(Data data, Accounts_Manager AccManager) {
         frame = new JFrame("Sign-In");
         frame.setLayout(new BorderLayout());
         frame.setSize(500, 500);
@@ -87,11 +87,10 @@ public class SignInWindow {
                 String Password = new String(passwordField.getPassword());
 
                 User user = AccManager.Sign_In(Username, Password, data.getUsersList());
-
                 if (user instanceof Customer) {
                     frame.dispose();
                     data.setCurrentCustomerUser((Customer) user);
-                    new CustomerWindowOptions(data, (Customer) user,mainFrame);
+                    new CustomerWindowOptions(data);
                 } else if (user instanceof Admin) {
                     frame.dispose();
                     new AdminWindow(data,(Admin) user);
@@ -125,7 +124,7 @@ public class SignInWindow {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.dispose();
-                mainFrame.setVisible(true);
+                data.getFrameFromActiveFramesList("GUI_Main").setVisible(true);
             }
         });
         submitButton.getInputMap(JPanel.WHEN_IN_FOCUSED_WINDOW).put(
@@ -141,15 +140,11 @@ public class SignInWindow {
         frame.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
-                mainFrame.setVisible(true);
+                data.getFrameFromActiveFramesList("GUI_Main").setVisible(true);
             }
         });
 
         frame.setVisible(true);
-    }
-
-    public static void main(String[] args) {
-        new SignInWindow(null, null, null);
     }
 
 
