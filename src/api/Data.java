@@ -5,6 +5,7 @@ import api.WeightedProduct;
 import api.PackagedProduct;
 import java.io.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -19,7 +20,7 @@ import java.util.Map;
  *      E-shop's products (Quantities, Availability, Product info, Categories - Subcategories )
  *
  *
- * @author Mavridis Xaris
+ * @author Mavridis Xaris ,Golfos Christos
  */
 public class Data {
     private List<User> Users;
@@ -36,21 +37,22 @@ public class Data {
 
     private List<JFrame> listOfActiveFrames;
 
+
     /**
      * Class Constructor: It loads the Data from the database (Products and Users files)
      */
-    public Data(){
+    public Data() {
         listOfActiveFrames = new ArrayList<>();
         DataLoad();
     }
 
-    public void addActiveFrame(JFrame frame){
+    public void addActiveFrame(JFrame frame) {
         listOfActiveFrames.add(frame);
     }
 
-    public void removeActiveFrame(String frameName){
-        for (int i = 0;i<listOfActiveFrames.size();i++){
-            if (listOfActiveFrames.get(i).getName().equals(frameName)){
+    public void removeActiveFrame(String frameName) {
+        for (int i = 0; i < listOfActiveFrames.size(); i++) {
+            if (listOfActiveFrames.get(i).getName().equals(frameName)) {
                 listOfActiveFrames.remove(i);
             }
         }
@@ -60,24 +62,24 @@ public class Data {
         return listOfActiveFrames;
     }
 
-    public JFrame getFrameFromActiveFramesList(String frameName){
-        for (JFrame frame2 : listOfActiveFrames){
-            if (frame2.getName().equals(frameName)){
+    public JFrame getFrameFromActiveFramesList(String frameName) {
+        for (JFrame frame2 : listOfActiveFrames) {
+            if (frame2.getName().equals(frameName)) {
                 return frame2;
             }
         }
         return null; //return null if the frame wasn't found.
     }
 
-    public void OverWriteUsersList(List<User> UsersList){
+    public void OverWriteUsersList(List<User> UsersList) {
         Users = UsersList;
     }
 
-    public void OverWriteProductsList(List<Product> ProductsList){
+    public void OverWriteProductsList(List<Product> ProductsList) {
         Products = ProductsList;
     }
 
-    public void AddUser(User user){
+    public void AddUser(User user) {
         Users.add(user);
     }
 
@@ -89,54 +91,54 @@ public class Data {
         return Users;
     }
 
-    public Product getProductFromProductsList(String productName){
-        for (Product product : Products){
-            if (product.getTitle().equals(productName)){
+    public Product getProductFromProductsList(String productName) {
+        for (Product product : Products) {
+            if (product.getTitle().equals(productName)) {
                 return product;
             }
         }
         return null; //return null if the program doesn't exist in the products list.
     }
 
-    public void setCurrentCustomerUser(Customer user){
+    public void setCurrentCustomerUser(Customer user) {
         this.currentCustomerUser = user;
     }
 
-    public void setCurrentAdminUser(Admin user){
+    public void setCurrentAdminUser(Admin user) {
         this.currentAdminUser = user;
     }
 
-    public void setCurrentUser(User user){
+    public void setCurrentUser(User user) {
         currentUser = user;
     }
 
-    public User getCurrentUser(){
+    public User getCurrentUser() {
         return currentUser;
     }
 
-    public Admin getCurrentAdminUser(){
+    public Admin getCurrentAdminUser() {
         return currentAdminUser;
     }
 
-    public Customer getCurrentCustomerUser(){
+    public Customer getCurrentCustomerUser() {
         return currentCustomerUser;
     }
 
-    public void DataLoad(){
-        try(ObjectInputStream in = new ObjectInputStream(new FileInputStream("Accounts.ser"))){
+    public void DataLoad() {
+        try (ObjectInputStream in = new ObjectInputStream(new FileInputStream("Accounts.ser"))) {
             Users = (List<User>) in.readObject();
-        }catch (ClassNotFoundException e) {
+        } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
-        }catch(IOException ioe){
+        } catch (IOException ioe) {
             System.out.println("There was a problem reading from the Accounts.ser file.");
         }
 
-        try(ObjectInputStream in = new ObjectInputStream(new FileInputStream("Products.ser"))){
+        try (ObjectInputStream in = new ObjectInputStream(new FileInputStream("Products.ser"))) {
             Products = (List<Product>) in.readObject();
-        }catch(ClassNotFoundException e){
+        } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
-        }catch(IOException ioe){
-            System.out.println("There was a problem reading from the products file."+ioe);
+        } catch (IOException ioe) {
+            System.out.println("There was a problem reading from the products file." + ioe);
         }
     }
 
@@ -144,23 +146,21 @@ public class Data {
         this.Users = users;
     }
 
-    public void DataSave(){
-        try(ObjectOutputStream ProductsOut = new ObjectOutputStream(new FileOutputStream("Products.ser"));
-            ObjectOutputStream UsersOut = new ObjectOutputStream(new FileOutputStream("Accounts.ser"))){
+    public void DataSave() {
+        try (ObjectOutputStream ProductsOut = new ObjectOutputStream(new FileOutputStream("Products.ser"));
+             ObjectOutputStream UsersOut = new ObjectOutputStream(new FileOutputStream("Accounts.ser"))) {
             ProductsOut.writeObject(Products);
             UsersOut.writeObject(Users);
-        }catch(IOException ioe){
-            System.out.println(ioe+"There was a problem with the writing of the Lists to the Products and Accounts files.");
+        } catch (IOException ioe) {
+            System.out.println(ioe + "There was a problem with the writing of the Lists to the Products and Accounts files.");
         }
         System.out.println("Data saved!");
     }
 
     public boolean productExists(String name) {
-        for (Product product : getProductsList())
-        {
+        for (Product product : getProductsList()) {
 
-            if (product.getTitle().equalsIgnoreCase(name))
-            {
+            if (product.getTitle().equalsIgnoreCase(name)) {
                 return true;
             }
         }
@@ -179,5 +179,24 @@ public class Data {
         return unavailableProductsBuilder.toString().trim();
     }
 
+    public Map<Product, Integer> getProductOrderCounts() {
+        Map<Product, Integer> productOrderCounts = new HashMap<>();
+        for (Product product : Products) {
+            productOrderCounts.put(product, product.getTimesOrdered());
+        }
+        return productOrderCounts;
+    }
+
+    public List<Product> getProductPopular() {
+        Map<Product, Integer> productOrderCounts=getProductOrderCounts();
+        int maxOrders = productOrderCounts.values().stream().max(Integer::compare).orElse(0);
+        List<Product> mostOrderedProducts = new ArrayList<>();
+        for (Map.Entry<Product, Integer> entry : productOrderCounts.entrySet()) {
+            if (entry.getValue() == maxOrders) {
+                mostOrderedProducts.add(entry.getKey());
+            }
+        }
+        return mostOrderedProducts;
+    }
 
 }

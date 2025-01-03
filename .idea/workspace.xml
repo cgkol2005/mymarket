@@ -4,65 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4962100c-d0a3-448f-8930-2e998309a824" name="Changes" comment="Customer browsing improved more. Add to cart functionality completed.">
-      <change afterPath="$PROJECT_DIR$/src/gui/EditWindow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gui/StatsWindow.java" afterDir="false" />
+    <list default="true" id="4962100c-d0a3-448f-8930-2e998309a824" name="Changes" comment="main1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/Accounts_Manager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/Accounts_Manager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/Admin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/Application_Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/Application_Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/Customer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/Data.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/Data.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/Order.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/OrderHistory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/OrderHistory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/PackagedProduct.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/PackagedProduct.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/Product.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/ShoppingCart.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/ShoppingCart.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/WeightedProduct.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/WeightedProduct.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/diabasma.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/diabasma.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/diabasma2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/diabasma2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/testing_class.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/testing_class.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/AdminWindow$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/AdminWindow$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/AdminWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/AdminWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/BasicFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/BasicFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/BrowseWindow$ButtonClickListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/BrowseWindow$ButtonClickListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/BrowseWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/BrowseWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/GUI_Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/GUI_Main$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/GUI_Main$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/GUI_Main$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/GUI_Main$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/GUI_Main$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/GUI_Main$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/GUI_Main$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/GUI_Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/GUI_Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/OrderWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/OrderWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/RegisterWindow$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/RegisterWindow$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/RegisterWindow$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/RegisterWindow$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/RegisterWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/RegisterWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/SearchWindow$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/SearchWindow$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/SearchWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/SearchWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/ShoppingCartWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/ShoppingCartWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/SignUpWindow$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/SignUpWindow$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/SignUpWindow$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/SignUpWindow$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/SignUpWindow$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/SignUpWindow$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/SignUpWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/SignUpWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/MyMarket/api/TestTODELETE.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/Data.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/PackagedProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/PackagedProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/Order.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/WeightedProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/WeightedProduct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/AdminWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/AdminWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/BrowseWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/BrowseWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/CustomerWindowOptions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/CustomerWindowOptions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/RegisterWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/RegisterWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/ShoppingCartWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/ShoppingCartWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/SignInWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/SignInWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/ViewProductWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/ViewProductWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/StatsWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/StatsWindow.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +29,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main-remote-check" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -141,48 +89,48 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.BasicFrame.executor": "Run",
-    "Application.BrowseWindow (1).executor": "Run",
-    "Application.BrowseWindow.executor": "Run",
-    "Application.CustomerWindow (1).executor": "Run",
-    "Application.CustomerWindow (2).executor": "Run",
-    "Application.CustomerWindow.executor": "Run",
-    "Application.CustomerWindowOptions.executor": "Run",
-    "Application.GUI_Main.executor": "Debug",
-    "Application.Main (1).executor": "Run",
-    "Application.Main.executor": "Run",
-    "Application.RegisterWindow.executor": "Run",
-    "Application.ShoppingCartWindow.executor": "Run",
-    "Application.SignInWindow.executor": "Run",
-    "Application.ViewProductWindow (1).executor": "Run",
-    "Application.ViewProductWindow (2).executor": "Run",
-    "Application.ViewProductWindow (3).executor": "Run",
-    "Application.ViewProductWindow (4).executor": "Run",
-    "Application.ViewProductWindow (5).executor": "Run",
-    "Application.ViewProductWindow.executor": "Run",
-    "Application.diabasma.executor": "Run",
-    "Application.diabasma2.executor": "Run",
-    "Application.gui.executor": "Run",
-    "Application.maingui.executor": "Run",
-    "Application.testing_class.executor": "Run",
-    "Downloaded.Files.Path.Enabled": "true",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit4",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4": "",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "editor.preferences.fonts.default"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.BasicFrame.executor&quot;: &quot;Run&quot;,
+    &quot;Application.BrowseWindow (1).executor&quot;: &quot;Run&quot;,
+    &quot;Application.BrowseWindow.executor&quot;: &quot;Run&quot;,
+    &quot;Application.CustomerWindow (1).executor&quot;: &quot;Run&quot;,
+    &quot;Application.CustomerWindow (2).executor&quot;: &quot;Run&quot;,
+    &quot;Application.CustomerWindow.executor&quot;: &quot;Run&quot;,
+    &quot;Application.CustomerWindowOptions.executor&quot;: &quot;Run&quot;,
+    &quot;Application.GUI_Main.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.Main (1).executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.RegisterWindow.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ShoppingCartWindow.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SignInWindow.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ViewProductWindow (1).executor&quot;: &quot;Run&quot;,
+    &quot;Application.ViewProductWindow (2).executor&quot;: &quot;Run&quot;,
+    &quot;Application.ViewProductWindow (3).executor&quot;: &quot;Run&quot;,
+    &quot;Application.ViewProductWindow (4).executor&quot;: &quot;Run&quot;,
+    &quot;Application.ViewProductWindow (5).executor&quot;: &quot;Run&quot;,
+    &quot;Application.ViewProductWindow.executor&quot;: &quot;Run&quot;,
+    &quot;Application.diabasma.executor&quot;: &quot;Run&quot;,
+    &quot;Application.diabasma2.executor&quot;: &quot;Run&quot;,
+    &quot;Application.gui.executor&quot;: &quot;Run&quot;,
+    &quot;Application.maingui.executor&quot;: &quot;Run&quot;,
+    &quot;Application.testing_class.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit4&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main__golfos&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\xaris\Desktop\Folders\Programming Files and Programs\JAVA\MyMarketRepository\mymarket-4573-4763\out\production\MyMarket\api" />
@@ -273,6 +221,13 @@
         <item itemvalue="Application.BasicFrame" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-5cd809f4" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -451,7 +406,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735843905329</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="main1">
+      <option name="closed" value="true" />
+      <created>1735908831044</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1735908831044</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -505,18 +468,10 @@
     <MESSAGE value="Customer window, logic, and options. Not finished yet." />
     <MESSAGE value="Log-Out of account functionality. Data Load method that loads the information from the files(same as constuctor)&#10;Back button on the browsing window that gets you to the Customer Options Window(with the options like shopping cart, order history etc..)" />
     <MESSAGE value="Customer browsing improved more. Add to cart functionality completed." />
-    <option name="LAST_COMMIT_MESSAGE" value="Customer browsing improved more. Add to cart functionality completed." />
+    <MESSAGE value="main1" />
+    <option name="LAST_COMMIT_MESSAGE" value="main1" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/api/Accounts_Manager.java</url>
-          <line>13</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="Program.CurrentUser" />

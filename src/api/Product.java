@@ -34,8 +34,8 @@ public class Product implements Serializable{
         }
     }
 
-    public void ProductOrdered() {
-        times_ordered++;
+    public void incrementTimesOrdered() {
+        this.times_ordered++;
     }
 
     public String getTitle()
@@ -57,9 +57,10 @@ public class Product implements Serializable{
     {
         return price;
     }
-    public int getTimes_ordered() {
+    public int getTimesOrdered() {
         return times_ordered;
     }
+
     public boolean getAvailability(){
         return isAvailable;
     }
