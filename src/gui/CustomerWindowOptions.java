@@ -122,7 +122,8 @@ public class CustomerWindowOptions {
         shoppingCartButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                customerFrame.setVisible(false);
+                new ShoppingCartWindow(data);
             }
         });
 
