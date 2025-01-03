@@ -6,13 +6,19 @@ import java.util.List;
 
 
 /**
- *
+ * The Application_Controller class is responsible for initializing the program
+ * managing data from files
  */
 public class Application_Controller {
     public Application_Controller(){
         Program_Initialization();
     }
 
+    /**
+     * Reads a text file containing product data and creates a list of Product objects.
+     *
+     * @return A list of Product objects created from the file data.
+     */
     public static List<Product> CreateProductsListFromTXT(){
         List<Product> products=new ArrayList<>();
 
@@ -58,6 +64,10 @@ public class Application_Controller {
         return products;
     }
 
+    /**
+     * Initializes the program by creating default user accounts and products
+     * track in "ProgramInitialized.txt" file.
+     */
     private void Program_Initialization(){
         String filename = "ProgramInitialized.txt";
         try(BufferedReader reader = new BufferedReader(new FileReader(filename))){
@@ -103,7 +113,9 @@ public class Application_Controller {
             System.out.println("Error reading the ProgramInitialized.txt file. : "+e);
         }
     }
-
+    /**
+     *  closes the program with a message and terminating the application.
+     */
     private void Program_Close(){
         System.out.println("Program closing. . .");
         System.exit(0);

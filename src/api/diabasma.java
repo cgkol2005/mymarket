@@ -3,6 +3,15 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
 import java.text.Normalizer;
+
+/**
+ * The diabasma class is console for searching and displaying products based on their title, category,or both of them.
+ * It demonstrates input handling, file processing,
+ * and string normalization for effective search functionality.
+ * Products are loaded into a list using an external utility method, and
+ * users can interact with the program via the console to search for
+ * products or display all available products.
+ */
 public class diabasma
 {
 

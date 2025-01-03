@@ -6,20 +6,34 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+/**
+ * The ShoppingCart class represents a shopping cart in a system.
+ * Contains a list of products their quantities and calculates the total cost of the cart.
+ * This class supports adding updating and removing products
+ */
 public class ShoppingCart implements Serializable {
 
     private HashMap<Product, Integer> ShoppingCartMap;
     private int productsCount; //counts the total products in the Cart
     private double CartTotalPrice;
 
+    /**
+     * Constructs an empty {@code ShoppingCart}.
+     */
     public ShoppingCart() {
         ShoppingCartMap = new HashMap<>();
         productsCount = 0;
         CartTotalPrice = 0;
     }
 
-    //the stock could be either in pieces or in grams.
+    /**
+     * Adds a product to the cart.
+     * Updates the product quantity
+     * @param product the product to add
+     * @param stock   the quantity of the product to add
+     * the stock could be either in pieces or in grams.
+     */
+
     public void addProduct(Product product,int stock){
         Integer stock2 = stock;
         if (product instanceof WeightedProduct){
@@ -46,8 +60,9 @@ public class ShoppingCart implements Serializable {
     }
 
     /**
-     * Method to update the quantity of a product that already exists in the Cart.
-     *
+     * Updates the quantity of a product already in the cart.
+     * @param product    the product to update
+     *@param moreStock  the quantity to add to the existing product quantity
      */
     public void UpdateProductQuantityInCart(Product product, int moreStock){
         Integer quantityInCart = ShoppingCartMap.get(product);
@@ -75,12 +90,19 @@ public class ShoppingCart implements Serializable {
         }
     }
 
-    //this is for overall replacement of the stock in cart.
+    /**
+     * @param product   the product to update
+     * @param new_stock the new quantity of the product
+     */
     public void ReplaceProductQuantityInCart(Product product, int new_stock){
             ShoppingCartMap.put(product,new_stock);
             System.out.println("Η ποσότητα ενημερώθηκε.");
     }
 
+    /**
+     * Removes a product from the cart
+     * @param product the product to remove
+     */
     public void removeProduct(Product product) {
         if (!ShoppingCartMap.containsKey(product))
         {
@@ -92,6 +114,9 @@ public class ShoppingCart implements Serializable {
         }
     }
 
+    /**
+     * Calculates and updates the total price of all products in the cart.
+     */
     public void CalculateAndUpdateTotalPrice(){
         BigDecimal total_price = BigDecimal.ZERO;
         for (Map.Entry<Product,Integer> entry : ShoppingCartMap.entrySet()){
@@ -108,22 +133,39 @@ public class ShoppingCart implements Serializable {
         CartTotalPrice = total_price.doubleValue();
     }
 
+    /**
+     * @return a list of all products in the cart
+     */
     public List<Product> createArrayListFromShoppingCart(){
         return new ArrayList<>(ShoppingCartMap.keySet());
     }
+    /**
+
+     * @param j the index of the product
+     * @return the product
+     */
     public Product getProductBasedOnListIndex(int j){
         return createArrayListFromShoppingCart().get(j);
     }
 
+    /**
+     * @return the total price of the cart
+     */
     public double getTotalPrice() {
         CalculateAndUpdateTotalPrice();
         return CartTotalPrice;
     }
 
+    /**
+     * @return the product count
+     */
     public int getProducts_count(){
         return productsCount;
     }
 
+    /**
+     * Prints the contents of the shopping cart.
+     */
     public void printShoppingCart() {
         if (ShoppingCartMap.isEmpty())
         {
@@ -147,6 +189,11 @@ public class ShoppingCart implements Serializable {
         }
     }
 
+    /**
+     *
+     * @param productTitle
+     * @return the product if exists else null
+     */
     public Product getProductInShoppingCart(String productTitle){
         for (Product product : ShoppingCartMap.keySet()){
             if (product.getTitle().equals(productTitle)){
@@ -156,6 +203,10 @@ public class ShoppingCart implements Serializable {
         return null;
     }
 
+    /**
+     * @param productName the name of the product
+     * @return the quantity of the product in the cart
+     */
     public int getProductQuantityInShoppingCart(String productName){
         for (Product product : ShoppingCartMap.keySet()){
             if (product.getTitle().equals(productName)){
