@@ -5,11 +5,7 @@ import api.*;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
-import java.util.List;
+import java.awt.event.*;
 
 /**
  * @author Golfos Christos, Charitwn Mavridis
@@ -19,7 +15,7 @@ public class SignInWindow {
     private JTextField usernameField;
     private JPasswordField passwordField;
 
-    public SignInWindow(Data data, Accounts_Manager AccManager, JFrame mainFrame) {
+    public SignInWindow(Data data, Accounts_Manager AccManager) {
         frame = new JFrame("Sign-In");
         frame.setLayout(new BorderLayout());
         frame.setSize(500, 500);
@@ -91,10 +87,10 @@ public class SignInWindow {
                 String Password = new String(passwordField.getPassword());
 
                 User user = AccManager.Sign_In(Username, Password, data.getUsersList());
-
                 if (user instanceof Customer) {
                     frame.dispose();
-                    new CustomerWindow(data);
+                    data.setCurrentCustomerUser((Customer) user);
+                    new CustomerWindowOptions(data);
                 } else if (user instanceof Admin) {
                     frame.dispose();
                     new AdminWindow(data,(Admin) user);
@@ -128,23 +124,28 @@ public class SignInWindow {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.dispose();
-                mainFrame.setVisible(true);
+                data.getFrameFromActiveFramesList("GUI_Main").setVisible(true);
+            }
+        });
+        submitButton.getInputMap(JPanel.WHEN_IN_FOCUSED_WINDOW).put(
+                javax.swing.KeyStroke.getKeyStroke("ENTER"), "submitAction"
+        );
+        submitButton.getActionMap().put("submitAction", new javax.swing.AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                submitButton.doClick();
             }
         });
 
         frame.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
-                mainFrame.setVisible(true);
+                data.getFrameFromActiveFramesList("GUI_Main").setVisible(true);
             }
         });
 
         frame.setVisible(true);
     }
-    /*
-    public static void main(String[] args) {
-        new SignInWindow(null, null, null);
-    }
 
-     */
+
 }

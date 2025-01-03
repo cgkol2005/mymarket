@@ -4,22 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4962100c-d0a3-448f-8930-2e998309a824" name="Changes" comment="merge">
+    <list default="true" id="4962100c-d0a3-448f-8930-2e998309a824" name="Changes" comment="Customer browsing improved more. Add to cart functionality completed.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/Accounts_Manager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/Accounts_Manager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/Data.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/Data.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/diabasma.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/diabasma.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/AdminWindow$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/AdminWindow$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/AdminWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/AdminWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/CustomerWindow$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/CustomerWindow$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/CustomerWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/CustomerWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/GUI_Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/GUI_Main$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/GUI_Main$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/GUI_Main$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/GUI_Main$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/GUI_Main$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/GUI_Main$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/GUI_Main$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/GUI_Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/GUI_Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/api/ShoppingCartTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/api/ShoppingCartTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/Kgs.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/Pieces.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/Quantity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/ShoppingCart.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/ShoppingCart.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/testing_class.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/testing_class.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products.txt" beforeDir="false" afterPath="$PROJECT_DIR$/products.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/Kgs.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/Pieces.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/Quantity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/ShoppingCart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/ShoppingCart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/BasicFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/BasicFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/CustomerWindowOptions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/CustomerWindowOptions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/ShoppingCartWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/ShoppingCartWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/ViewProductWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/ViewProductWindow.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,17 +32,24 @@
       <list>
         <option value="JUnit4 Test Class" />
         <option value="Class" />
+        <option value="Exception" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main_admin" />
+        <entry key="$PROJECT_DIR$" value="main-remote-check" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Charitwn&quot;
+  }
+}</component>
   <component name="GitToolBoxStore">
     <option name="recentBranches">
       <RecentBranches>
@@ -51,12 +59,16 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
-                    <option name="branchName" value="main_admin-to-merge" />
-                    <option name="lastUsedInstant" value="1735570802" />
+                    <option name="branchName" value="Customer" />
+                    <option name="lastUsedInstant" value="1735635368" />
                   </RecentBranch>
                   <RecentBranch>
-                    <option name="branchName" value="main_admin" />
-                    <option name="lastUsedInstant" value="1735570702" />
+                    <option name="branchName" value="main-remote-check" />
+                    <option name="lastUsedInstant" value="1735635353" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1735635254" />
                   </RecentBranch>
                 </list>
               </option>
@@ -67,6 +79,12 @@
       </RecentBranches>
     </option>
   </component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/auth-csd-oop-2024/mymarket-4573-4763.git&quot;,
+    &quot;accountId&quot;: &quot;6fb7e915-3246-47cf-be8a-566022a0c4e7&quot;
+  }
+}</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -83,10 +101,25 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.GUI_Main.executor": "Run",
+    "Application.BasicFrame.executor": "Run",
+    "Application.BrowseWindow (1).executor": "Run",
+    "Application.BrowseWindow.executor": "Run",
+    "Application.CustomerWindow (1).executor": "Run",
+    "Application.CustomerWindow (2).executor": "Run",
+    "Application.CustomerWindow.executor": "Run",
+    "Application.CustomerWindowOptions.executor": "Run",
+    "Application.GUI_Main.executor": "Debug",
     "Application.Main (1).executor": "Run",
     "Application.Main.executor": "Run",
     "Application.RegisterWindow.executor": "Run",
+    "Application.ShoppingCartWindow.executor": "Run",
+    "Application.SignInWindow.executor": "Run",
+    "Application.ViewProductWindow (1).executor": "Run",
+    "Application.ViewProductWindow (2).executor": "Run",
+    "Application.ViewProductWindow (3).executor": "Run",
+    "Application.ViewProductWindow (4).executor": "Run",
+    "Application.ViewProductWindow (5).executor": "Run",
+    "Application.ViewProductWindow.executor": "Run",
     "Application.diabasma.executor": "Run",
     "Application.diabasma2.executor": "Run",
     "Application.gui.executor": "Run",
@@ -100,11 +133,12 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit4",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4": "",
-    "git-widget-placeholder": "main__admin-to-merge",
+    "git-widget-placeholder": "Customer",
     "kotlin-language-version-configured": "true",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -114,6 +148,9 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\xaris\Desktop\Folders\Programming Files and Programs\JAVA\MyMarketRepository\mymarket-4573-4763" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="api" />
     </key>
@@ -121,9 +158,9 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main (1)">
-    <configuration name="GUI_Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="gui.GUI_Main" />
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="BasicFrame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="gui.BasicFrame" />
       <module name="MyMarket" />
       <extension name="coverage">
         <pattern>
@@ -135,28 +172,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="MyMarket" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="api.Main" />
-      <module name="MyMarket" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value=".*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RegisterWindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="gui.RegisterWindow" />
+    <configuration name="ShoppingCartWindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="gui.ShoppingCartWindow" />
       <module name="MyMarket" />
       <extension name="coverage">
         <pattern>
@@ -168,37 +192,39 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="All in MyMarket" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ViewProductWindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="gui.ViewProductWindow" />
       <module name="MyMarket" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="gui.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <list>
-      <item itemvalue="Application.RegisterWindow" />
-      <item itemvalue="Application.GUI_Main" />
-      <item itemvalue="Application.Main (1)" />
-      <item itemvalue="Application.Main" />
-      <item itemvalue="JUnit.All in MyMarket" />
-    </list>
+    <configuration name="ViewProductWindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="gui.ViewProductWindow" />
+      <module name="MyMarket" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="gui.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main (1)" />
-        <item itemvalue="Application.GUI_Main" />
-        <item itemvalue="Application.RegisterWindow" />
-        <item itemvalue="JUnit.All in MyMarket" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.ShoppingCartWindow" />
+        <item itemvalue="Application.BasicFrame" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-5cd809f4" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -337,15 +363,77 @@
       <option name="project" value="LOCAL" />
       <updated>1735571481937</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Customer window, logic and options. Not finished yet.">
+      <option name="closed" value="true" />
+      <created>1735659208390</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1735659208390</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Customer window, logic, and options. Not finished yet.">
+      <option name="closed" value="true" />
+      <created>1735660519644</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1735660519644</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Log-Out of account functionality. Data Load method that loads the information from the files(same as constuctor)&#10;Back button on the browsing window that gets you to the Customer Options Window(with the options like shopping cart, order history etc..)">
+      <option name="closed" value="true" />
+      <created>1735728922156</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1735728922156</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Customer browsing improved more. Add to cart functionality completed.">
+      <option name="closed" value="true" />
+      <created>1735843884064</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1735843884064</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Customer browsing improved more. Add to cart functionality completed.">
+      <option name="closed" value="true" />
+      <created>1735843905329</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1735843905329</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="8b9f6594-a3dc-4bc7-b72c-d8184785d689" value="TOOL_WINDOW" />
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
-        <entry key="MAIN">
+        <entry key="8b9f6594-a3dc-4bc7-b72c-d8184785d689">
           <value>
             <State />
+          </value>
+        </entry>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -365,13 +453,31 @@
     <MESSAGE value="30/12 admin3" />
     <MESSAGE value="30/12 admin4" />
     <MESSAGE value="merge" />
-    <option name="LAST_COMMIT_MESSAGE" value="merge" />
+    <MESSAGE value="Customer window, logic and options. Not finished yet." />
+    <MESSAGE value="Customer window, logic, and options. Not finished yet." />
+    <MESSAGE value="Log-Out of account functionality. Data Load method that loads the information from the files(same as constuctor)&#10;Back button on the browsing window that gets you to the Customer Options Window(with the options like shopping cart, order history etc..)" />
+    <MESSAGE value="Customer browsing improved more. Add to cart functionality completed." />
+    <option name="LAST_COMMIT_MESSAGE" value="Customer browsing improved more. Add to cart functionality completed." />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/api/Accounts_Manager.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="Program.CurrentUser" />
       </configuration>
     </watches-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/mymarket_4573_4763$GUI_Main.ic" NAME="GUI_Main Coverage Results" MODIFIED="1735815482319" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>gui.*</FILTER>
+    </SUITE>
   </component>
 </project>

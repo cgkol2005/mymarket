@@ -100,6 +100,9 @@ public class testing_class {
 
      */
     public static void main(String[] args) {
+        Customer customer = new Customer("Username", "Password", "Firstname","Lastname");
+        customer.getShoppingCart().addProduct(new WeightedProduct("Malakia","malakia","malakia","Malakia",4,3.0),2);
+        customer.getShoppingCart().printShoppingCart();
 
     }
 }
