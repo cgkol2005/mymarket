@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4962100c-d0a3-448f-8930-2e998309a824" name="Changes" comment="main1">
+    <list default="true" id="4962100c-d0a3-448f-8930-2e998309a824" name="Changes" comment="main me stats b">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/MyMarket/api/TestTODELETE.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/Data.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/StatsWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/StatsWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/Data.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/Data.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/Order.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/Product.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/Accounts_Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/Accounts_Manager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/Admin.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -414,7 +414,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735908831044</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="main me stats b">
+      <option name="closed" value="true" />
+      <created>1735918974287</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1735918974287</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -469,7 +477,8 @@
     <MESSAGE value="Log-Out of account functionality. Data Load method that loads the information from the files(same as constuctor)&#10;Back button on the browsing window that gets you to the Customer Options Window(with the options like shopping cart, order history etc..)" />
     <MESSAGE value="Customer browsing improved more. Add to cart functionality completed." />
     <MESSAGE value="main1" />
-    <option name="LAST_COMMIT_MESSAGE" value="main1" />
+    <MESSAGE value="main me stats b" />
+    <option name="LAST_COMMIT_MESSAGE" value="main me stats b" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
