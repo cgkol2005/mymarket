@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4962100c-d0a3-448f-8930-2e998309a824" name="Changes" comment="Customer browsing improved more. Add to cart functionality completed.">
-      <change afterPath="$PROJECT_DIR$/src/gui/EditWindow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gui/StatsWindow.java" afterDir="false" />
+    <list default="true" id="4962100c-d0a3-448f-8930-2e998309a824" name="Changes" comment="commit with the completed merging of admin and customer functionality">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MyMarket/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/Accounts_Manager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/Accounts_Manager.class" afterDir="false" />
@@ -51,17 +49,13 @@
       <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/SignUpWindow$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/SignUpWindow$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/SignUpWindow$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/SignUpWindow$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/SignUpWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/SignUpWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/MyMarket/api/TestTODELETE.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/Data.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/PackagedProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/PackagedProduct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/WeightedProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/WeightedProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/ShoppingCart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/ShoppingCart.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/AdminWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/AdminWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/BrowseWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/BrowseWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/CustomerWindowOptions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/CustomerWindowOptions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/RegisterWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/RegisterWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/EditWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/EditWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/OrderHistoryWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/OrderHistoryWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/ShoppingCartWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/ShoppingCartWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/SignInWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/SignInWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/ViewProductWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/ViewProductWindow.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -81,7 +75,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main-remote-check" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -101,12 +95,12 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
-                    <option name="branchName" value="Customer" />
-                    <option name="lastUsedInstant" value="1735635368" />
+                    <option name="branchName" value="main_Xaris" />
+                    <option name="lastUsedInstant" value="1735909285" />
                   </RecentBranch>
                   <RecentBranch>
-                    <option name="branchName" value="main-remote-check" />
-                    <option name="lastUsedInstant" value="1735635353" />
+                    <option name="branchName" value="Customer" />
+                    <option name="lastUsedInstant" value="1735635368" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="main" />
@@ -175,12 +169,12 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit4",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4": "",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "main__Xaris",
     "kotlin-language-version-configured": "true",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "editor.preferences.fonts.default"
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -511,15 +505,16 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/api/Accounts_Manager.java</url>
-          <line>13</line>
-          <option name="timeStamp" value="11" />
+          <url>file://$PROJECT_DIR$/src/gui/ViewProductWindow.java</url>
+          <line>417</line>
+          <option name="timeStamp" value="21" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="Program.CurrentUser" />
+        <watch expression="((Object[][])products)[6]" custom="java.lang.Object[][]" />
       </configuration>
     </watches-manager>
   </component>

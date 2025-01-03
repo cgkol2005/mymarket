@@ -421,6 +421,7 @@ public class ViewProductWindow{
                         //data.getCurrentCustomerUser().getShoppingCart().addProduct((PackagedProduct) product,slider.getValue());
                         //JOptionPane.showMessageDialog(null, "Product added to your shopping Cart!", "Product added!", JOptionPane.INFORMATION_MESSAGE);
                         // }
+
                         sliderFrame.dispose();
                     } else {
                         System.out.println("User chose NO");

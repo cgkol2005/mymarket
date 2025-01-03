@@ -22,27 +22,17 @@ public class ShoppingCart implements Serializable {
     //the stock could be either in pieces or in grams.
     public void addProduct(Product product,int stock){
         Integer stock2 = stock;
-        if (product instanceof WeightedProduct){
-            if (((WeightedProduct) product).getStock() * 1000 < stock){
-            System.out.println("! Product is out of stock. :( !");
-            }else if (ShoppingCartMap.containsKey(product)){
-            UpdateProductQuantityInCart(product, stock2);
-            }else{
+        boolean found = false;
+        for (Product product2 : ShoppingCartMap.keySet()){
+            if (product2.getTitle().equals(product.getTitle())){
+                UpdateProductQuantityInCart(product2, stock2);
+                return;
+            }
+        }
             ShoppingCartMap.put(product,stock2);
             productsCount++;
             System.out.println("Product Added!");
-            }
-        }else{
-            if (((PackagedProduct) product).getStock() < stock){
-                System.out.println("! Product is out of stock. :( !");
-            }else if (ShoppingCartMap.containsKey(product)){
-                UpdateProductQuantityInCart(product, stock2);
-            }else{
-                ShoppingCartMap.put(product,stock2);
-                productsCount++;
-                System.out.println("Product Added!");
-            }
-        }
+
     }
 
     /**
@@ -54,41 +44,28 @@ public class ShoppingCart implements Serializable {
         Integer moreStock2 = moreStock;
         if (product instanceof WeightedProduct) {
             Integer productStock = (int) ((WeightedProduct) product).getStock()*1000;
-            if (!ShoppingCartMap.containsKey(product)) {
-                System.out.println("Το προϊόν δεν υπάρχει στο καλάθι.");
-            } else if (productStock - quantityInCart < moreStock) {
-                System.out.println("Quantity not available!");
-            } else {
-                ShoppingCartMap.put(product,quantityInCart+moreStock2);
-                System.out.println("Η ποσότητα ενημερώθηκε.");
-            }
+            ShoppingCartMap.put(product,quantityInCart+moreStock2);
+            System.out.println("Η ποσότητα ενημερώθηκε.");
         } else if (product instanceof PackagedProduct) {
             Integer productStock = ((PackagedProduct) product).getStock();
-            if (!ShoppingCartMap.containsKey(product)) {
-                System.out.println("Το προϊόν δεν υπάρχει στο καλάθι.");
-            } else if (productStock - quantityInCart < moreStock) {
-                System.out.println("Quantity not available!");
-            } else {
-                ShoppingCartMap.put(product,quantityInCart+moreStock2);
-                System.out.println("Η ποσότητα ενημερώθηκε.");
-            }
+            ShoppingCartMap.put(product,quantityInCart+moreStock2);
+            System.out.println("Η ποσότητα ενημερώθηκε.");
         }
     }
 
-    //this is for overall replacement of the stock in cart.
+    //this is for overall replacement of the stock in the cart.
     public void ReplaceProductQuantityInCart(Product product, int new_stock){
             ShoppingCartMap.put(product,new_stock);
             System.out.println("Η ποσότητα ενημερώθηκε.");
     }
 
-    public void removeProduct(Product product) {
-        if (!ShoppingCartMap.containsKey(product))
-        {
-            System.out.println("Το προϊόν δεν υπάρχει στο καλάθι.");
-        }else{
-            ShoppingCartMap.remove(product);
-            System.out.println("Το προϊόν αφαιρέθηκε από το καλάθι.");
-            productsCount--;
+    public void removeProduct(String productName) {
+        for (Product product : ShoppingCartMap.keySet()){
+            if (product.getTitle().equals(productName)){
+                ShoppingCartMap.remove(product);
+                productsCount--;
+                break;
+            }
         }
     }
 
@@ -157,9 +134,9 @@ public class ShoppingCart implements Serializable {
     }
 
     public int getProductQuantityInShoppingCart(String productName){
-        for (Product product : ShoppingCartMap.keySet()){
-            if (product.getTitle().equals(productName)){
-                return ShoppingCartMap.get(product);
+        for (Map.Entry<Product, Integer> product : ShoppingCartMap.entrySet()){
+            if (product.getKey().getTitle().equals(productName)){
+                return product.getValue();
             }
         }
         return 0;

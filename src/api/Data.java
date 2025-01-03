@@ -138,6 +138,8 @@ public class Data {
         }catch(IOException ioe){
             System.out.println("There was a problem reading from the products file."+ioe);
         }
+
+        System.out.println("Data loaded!");
     }
 
     public void setUsersList(List<User> users) {
