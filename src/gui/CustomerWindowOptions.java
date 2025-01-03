@@ -18,7 +18,7 @@ public class CustomerWindowOptions {
         customerFrame.setLocationRelativeTo(null);
         customerFrame.setName("CustomerWindowOptions");
         data.addActiveFrame(customerFrame);
-        JLabel helloMessage = new JLabel("Hello "+data.getCurrentCustomerUser().getUsername()+"!");
+        JLabel helloMessage = new JLabel("Hello "+data.getCurrentUser().getUsername()+"!");
         helloMessage.setPreferredSize(new Dimension(0,80));
         helloMessage.setFont(new Font("Courier New",Font.BOLD,50));
         helloMessage.setHorizontalAlignment(SwingConstants.CENTER);
@@ -146,15 +146,15 @@ public class CustomerWindowOptions {
 
         //when closing the window:
 
-       customerFrame.addWindowListener(new WindowAdapter() {
-           @Override
-           public void windowClosing(WindowEvent e) {
-               customerFrame.dispose();
-               data.DataSave();
-               System.exit(0);
-           }
-       });
-       customerFrame.setVisible(true);
+        customerFrame.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                customerFrame.dispose();
+                data.DataSave();
+                System.exit(0);
+            }
+        });
+        customerFrame.setVisible(true);
     }
 
 }

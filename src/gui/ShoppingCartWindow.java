@@ -1,5 +1,6 @@
 package gui;
 
+import api.Customer;
 import api.Data;
 import api.Product;
 import api.ShoppingCart;
@@ -49,11 +50,12 @@ public class ShoppingCartWindow {
     }
 
     private Object[][] create2DArrayFromShoppingCart(){
-        Object[][] table = new Object[data.getCurrentCustomerUser().getShoppingCart().getProducts_count()][3];
+        Customer customer = (Customer) data.getCurrentUser();
+        Object[][] table = new Object[customer.getShoppingCart().getProducts_count()][3];
 
-        ShoppingCart cart = data.getCurrentCustomerUser().getShoppingCart();
+        ShoppingCart cart = customer.getShoppingCart();
 
-        for(int i = 0; i < data.getCurrentCustomerUser().getShoppingCart().getProducts_count(); i++){
+        for(int i = 0; i < customer.getShoppingCart().getProducts_count(); i++){
 
             Product product = cart.getProductBasedOnListIndex(i);
 
@@ -63,6 +65,5 @@ public class ShoppingCartWindow {
         }
         return table;
     }
-
 
 }

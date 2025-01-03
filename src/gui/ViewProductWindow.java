@@ -1,9 +1,6 @@
 package gui;
 
-import api.Data;
-import api.PackagedProduct;
-import api.Product;
-import api.WeightedProduct;
+import api.*;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -40,15 +37,38 @@ public class ViewProductWindow{
         Dimension buttonSize = new Dimension(200,100);
         Font buttonFont = new Font("Courier New", Font.PLAIN, 25);
 
-        JButton addToCartButton = new JButton("Add to Cart");
-        addToCartButton.setPreferredSize(buttonSize);
-        addToCartButton.setFont(buttonFont);
+        if (data.getCurrentUser() instanceof Customer){
+            JButton addToCartButton = new JButton("Add to Cart");
+            addToCartButton.setPreferredSize(buttonSize);
+            addToCartButton.setFont(buttonFont);
+            southButtonsPanel.add(addToCartButton);
+
+            addToCartButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    addToCartDialog(product, data);
+                }
+            });
+        }else {
+            JButton editButton = new JButton("Edit Product");
+            editButton.setPreferredSize(new Dimension(400,100));
+            editButton.setFont(buttonFont);
+            southButtonsPanel.add(editButton);
+
+            editButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    new EditWindow(data, product);
+                }
+            });
+        }
+
 
         JButton closeButton = new JButton("Close");
         closeButton.setPreferredSize(buttonSize);
         closeButton.setFont(buttonFont);
 
-        southButtonsPanel.add(addToCartButton);
+
         southButtonsPanel.add(closeButton);
 
         JPanel centerPanel = new JPanel();
@@ -138,16 +158,12 @@ public class ViewProductWindow{
             }
         });
 
-        addToCartButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                addToCartDialog(product, data);
-            }
-        });
+
         viewProductWindow.setVisible(true);
     }
 
     public static void addToCartDialog(Product product,Data data){
+        Customer customer = (Customer) data.getCurrentUser();
         if (product.getAvailability()) {
             JFrame sliderFrame = new JFrame("Quantity to be put in Shopping Cart");
             sliderFrame.setLayout(new BorderLayout());
@@ -171,14 +187,14 @@ public class ViewProductWindow{
             JSlider slider;
             if (product instanceof WeightedProduct) {
                 int max = (int) (((WeightedProduct) product).getStock()) * 100;
-                int quantityInCart = (int) data.getCurrentCustomerUser().getShoppingCart().getProductQuantityInShoppingCart(product.getTitle()) * 100;
+                int quantityInCart = data.getCurrentCustomerUser().getShoppingCart().getProductQuantityInShoppingCart(product.getTitle()) * 100;
                 if (quantityInCart > 0){
                     max = max - quantityInCart;
                 }
                 slider = new JSlider(0, max, max / 2);
             } else if(product instanceof PackagedProduct){
                 int max = ((PackagedProduct) product).getStock();
-                int quantityInCart = (int) data.getCurrentCustomerUser().getShoppingCart().getProductQuantityInShoppingCart(product.getTitle());
+                int quantityInCart = customer.getShoppingCart().getProductQuantityInShoppingCart(product.getTitle());
                 if (quantityInCart > 0){
                     max = max - quantityInCart;
                 }
@@ -399,12 +415,12 @@ public class ViewProductWindow{
                     if (choice == JOptionPane.YES_OPTION) {
                         System.out.println("User chose YES");
                         //if (product instanceof WeightedProduct){
-                            data.getCurrentCustomerUser().getShoppingCart().addProduct(product,slider.getValue());
-                            JOptionPane.showMessageDialog(null, "Product added to your shopping Cart!", "Product added!", JOptionPane.INFORMATION_MESSAGE);
+                        customer.getShoppingCart().addProduct(product,slider.getValue());
+                        JOptionPane.showMessageDialog(null, "Product added to your shopping Cart!", "Product added!", JOptionPane.INFORMATION_MESSAGE);
                         //}else if(product instanceof PackagedProduct){
-                            //data.getCurrentCustomerUser().getShoppingCart().addProduct((PackagedProduct) product,slider.getValue());
-                            //JOptionPane.showMessageDialog(null, "Product added to your shopping Cart!", "Product added!", JOptionPane.INFORMATION_MESSAGE);
-                       // }
+                        //data.getCurrentCustomerUser().getShoppingCart().addProduct((PackagedProduct) product,slider.getValue());
+                        //JOptionPane.showMessageDialog(null, "Product added to your shopping Cart!", "Product added!", JOptionPane.INFORMATION_MESSAGE);
+                        // }
                         sliderFrame.dispose();
                     } else {
                         System.out.println("User chose NO");

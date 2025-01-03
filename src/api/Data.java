@@ -1,9 +1,12 @@
 package api;
 
 import javax.swing.*;
+import api.WeightedProduct;
+import api.PackagedProduct;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Overview:
@@ -23,9 +26,13 @@ public class Data {
 
     private List<Product> Products;
 
+    private String unavailableProducts;
+
     private Customer currentCustomerUser;
 
     private Admin currentAdminUser;
+
+    private User currentUser;
 
     private List<JFrame> listOfActiveFrames;
 
@@ -95,6 +102,22 @@ public class Data {
         this.currentCustomerUser = user;
     }
 
+    public void setCurrentAdminUser(Admin user){
+        this.currentAdminUser = user;
+    }
+
+    public void setCurrentUser(User user){
+        currentUser = user;
+    }
+
+    public User getCurrentUser(){
+        return currentUser;
+    }
+
+    public Admin getCurrentAdminUser(){
+        return currentAdminUser;
+    }
+
     public Customer getCurrentCustomerUser(){
         return currentCustomerUser;
     }
@@ -117,6 +140,10 @@ public class Data {
         }
     }
 
+    public void setUsersList(List<User> users) {
+        this.Users = users;
+    }
+
     public void DataSave(){
         try(ObjectOutputStream ProductsOut = new ObjectOutputStream(new FileOutputStream("Products.ser"));
             ObjectOutputStream UsersOut = new ObjectOutputStream(new FileOutputStream("Accounts.ser"))){
@@ -127,5 +154,30 @@ public class Data {
         }
         System.out.println("Data saved!");
     }
+
+    public boolean productExists(String name) {
+        for (Product product : getProductsList())
+        {
+
+            if (product.getTitle().equalsIgnoreCase(name))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public String getUnavailableProducts() {
+        StringBuilder unavailableProductsBuilder = new StringBuilder();
+        for (Product product : Products) {
+            if (product instanceof PackagedProduct && ((PackagedProduct) product).getStock() == 0) {
+                unavailableProductsBuilder.append(product.getTitle()).append("\n");
+            } else if (product instanceof WeightedProduct && ((WeightedProduct) product).getStock() == 0.0) {
+                unavailableProductsBuilder.append(product.getTitle()).append("\n");
+            }
+        }
+        return unavailableProductsBuilder.toString().trim();
+    }
+
 
 }

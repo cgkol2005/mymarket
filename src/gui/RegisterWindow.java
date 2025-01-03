@@ -9,7 +9,7 @@ public class RegisterWindow {
     private JFrame registerFrame;
     private JTextField nameField, descriptionField, categoryField, subcategoryField, priceField,stockField;
 
-    public RegisterWindow(Data data,Admin admin) {
+    public RegisterWindow(Data data) {
         registerFrame = new JFrame("Καταχώρηση προιόντος");
         registerFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         registerFrame.setSize(500, 400);
@@ -80,7 +80,31 @@ public class RegisterWindow {
                     } else {
                         stock = Integer.parseInt(stockin);
                     }
+                    if (price <= 0)
+                    {
+                        JOptionPane.showMessageDialog(registerFrame,
+                                "Price must be greater than 0.",
+                                "Invalid Price",
+                                JOptionPane.WARNING_MESSAGE);
+                        return;
+                    }
 
+                    if ((stock instanceof Integer && (Integer) stock <= 0) || (stock instanceof Double && (Double) stock <= 0))
+                    {
+                        JOptionPane.showMessageDialog(registerFrame,
+                                "Stock must be greater than 0.",
+                                "Invalid Stock",
+                                JOptionPane.WARNING_MESSAGE);
+                        return;
+                    }
+                    if (data.productExists(name)) {
+                        JOptionPane.showMessageDialog(registerFrame,
+                                "A product with the same title already exists!",
+                                "Product Exists",
+                                JOptionPane.WARNING_MESSAGE);
+                        return;
+                    }
+                    Admin admin= (Admin) data.getCurrentUser();
                     admin.RegisterProduct(name, description, category, subCategory, price, stock,data);
 
                     JOptionPane.showMessageDialog(registerFrame,
@@ -120,7 +144,4 @@ public class RegisterWindow {
 
     }
 
-    public static void main(String[] args) {
-        new RegisterWindow(null,null);
-    }
 }

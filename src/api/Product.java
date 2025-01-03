@@ -1,8 +1,5 @@
 package api;
-
 import java.io.Serializable;
-
-
 public class Product implements Serializable{
     private String title;
     private String description;
@@ -13,14 +10,16 @@ public class Product implements Serializable{
     private boolean isAvailable;
 
     public Product (String title,String description,String category,String sub_category,double price,double stock) {
-            this.title = title;
-            this.description = description;
-            this.category = category;
-            this.sub_category = sub_category;
-            this.price = price;
-            if(stock > 0){
-                isAvailable = true;
-            }
+        this.title = title;
+        this.description = description;
+        this.category = category;
+        this.sub_category = sub_category;
+        this.price = price;
+        if(stock > 0){
+            isAvailable = true;
+        }else{
+            isAvailable = false;
+        }
     }
     public Product (String title,String description,String category,String sub_category,double price,int stock) {
         this.title = title;
@@ -30,6 +29,8 @@ public class Product implements Serializable{
         this.price = price;
         if (stock > 0){
             isAvailable = true;
+        }else{
+            isAvailable = false;
         }
     }
 
@@ -52,8 +53,7 @@ public class Product implements Serializable{
     public String getSub_category()
     {
         return sub_category;
-    }
-    public double getPrice()
+    }public double getPrice()
     {
         return price;
     }
@@ -63,6 +63,11 @@ public class Product implements Serializable{
     public boolean getAvailability(){
         return isAvailable;
     }
+
+    public void setTitle(String newTitle){
+        this.title = newTitle;
+    }
+
     public void setDescription(String description)
     {
         this.description=description;
@@ -79,22 +84,7 @@ public class Product implements Serializable{
     {
         this.price=price;
     }
-
-
-
-
-    @Override
-    public String toString()
-    {
-        return "Product{" +
-                "title='" + title + '\'' +
-                ", description='" + description + '\'' +
-                ", category='" + category + '\'' +
-                ", sub_category='" + sub_category + '\'' +
-                ", price=" + price +
-                '}';
+    public void setAvailable(boolean available) {
+        isAvailable = available;
     }
-
-
-
 }

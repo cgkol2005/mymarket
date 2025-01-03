@@ -10,4 +10,10 @@ public class PackagedProduct extends Product{
     public int getStock(){
         return stock;
     }
+    public void setStock(int stock) {
+        if (stock < 0) {
+            throw new IllegalArgumentException("Το απόθεμα δεν μπορεί να είναι αρνητικό.");
+        }
+        this.stock = stock;
+    }
 }

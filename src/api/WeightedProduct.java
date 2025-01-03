@@ -10,4 +10,10 @@ public class WeightedProduct extends Product{
     public double getStock(){
         return stock;
     }
+    public void setStock(double stock) {
+        if (stock < 0) {
+            throw new IllegalArgumentException("Το απόθεμα δεν μπορεί να είναι αρνητικό.");
+        }
+        this.stock = stock;
+    }
 }
