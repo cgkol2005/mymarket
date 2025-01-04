@@ -4,21 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4962100c-d0a3-448f-8930-2e998309a824" name="Changes" comment="Shopping Cart, edit products, delete, refresh window, fix bugs">
+    <list default="true" id="4962100c-d0a3-448f-8930-2e998309a824" name="Changes" comment="order history window, view previous order window, fixed couple of bugs....">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/Customer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/Order.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/OrderHistory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/OrderHistory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/ShoppingCart.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/ShoppingCart.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/OrderWindow.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/ShoppingCartWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/ShoppingCartWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/OrderHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/OrderHistory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/ShoppingCart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/ShoppingCart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/OrderHistoryWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/OrderHistoryWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/OrderWindow.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/ShoppingCartWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/ShoppingCartWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/Admin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/Data.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/Data.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/BrowseWindow$ButtonClickListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/BrowseWindow$ButtonClickListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/BrowseWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/BrowseWindow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/Data.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/BrowseWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/BrowseWindow.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +103,7 @@
     "Application.ViewOrderWindow.executor": "Run",
     "git-widget-placeholder": "main__Xaris__Search__and__History",
     "kotlin-language-version-configured": "true",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -352,7 +346,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735982145451</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="order history window, view previous order window, fixed couple of bugs....">
+      <option name="closed" value="true" />
+      <created>1735999676208</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1735999676208</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -402,7 +404,8 @@
     <MESSAGE value="Log-Out of account functionality. Data Load method that loads the information from the files(same as constuctor)&#10;Back button on the browsing window that gets you to the Customer Options Window(with the options like shopping cart, order history etc..)" />
     <MESSAGE value="Customer browsing improved more. Add to cart functionality completed." />
     <MESSAGE value="Shopping Cart, edit products, delete, refresh window, fix bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Shopping Cart, edit products, delete, refresh window, fix bugs" />
+    <MESSAGE value="order history window, view previous order window, fixed couple of bugs...." />
+    <option name="LAST_COMMIT_MESSAGE" value="order history window, view previous order window, fixed couple of bugs...." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -417,6 +420,16 @@
           <line>21</line>
           <option name="timeStamp" value="27" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/api/Data.java</url>
+          <line>311</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/gui/EditWindow.java</url>
+          <line>104</line>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
@@ -424,6 +437,7 @@
         <watch expression="Program.CurrentUser" />
         <watch expression="((Object[][])products)[6]" custom="java.lang.Object[][]" />
         <watch expression="((ShoppingCart)this).shoppingCartMap" custom="api.ShoppingCart" />
+        <watch expression="searchResults" />
       </configuration>
     </watches-manager>
   </component>

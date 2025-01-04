@@ -84,8 +84,7 @@ public class Admin extends User implements Serializable {
                     }
                 } else if (product instanceof WeightedProduct) {
                     ((WeightedProduct) product).setStock((Double) newStock);
-                    int i = (int) newStock;
-                    if (i == 0){
+                    if (((WeightedProduct) product).getStock() <= 0){
                         product.setAvailable(false);
                     }
                 } else {

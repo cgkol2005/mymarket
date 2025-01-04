@@ -300,4 +300,15 @@ public class Data {
         }
         return mostOrderedProducts;
     }
+
+    public List<Product> getProductsFromSearch(String search) {
+        List<Product> searchResults = new ArrayList<>();
+        for (Product product : Products){
+            String productNormalizedTitle = BrowseWindow.removeAccents(product.getTitle());
+            if(productNormalizedTitle.toLowerCase().contains(search.toLowerCase())){
+                searchResults.add(product);
+            }
+        }
+        return searchResults;
+    }
 }
