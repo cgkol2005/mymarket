@@ -5,33 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4962100c-d0a3-448f-8930-2e998309a824" name="Changes" comment="Shopping Cart, edit products, delete, refresh window, fix bugs">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_12_2024_8_34_____Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_12_2024_8_34_____Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/Customer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/Data.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/Data.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/Order.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/OrderHistory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/OrderHistory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/PackagedProduct.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/PackagedProduct.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/ShoppingCart.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/ShoppingCart.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/WeightedProduct.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/WeightedProduct.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/BrowseWindow$ButtonClickListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/BrowseWindow$ButtonClickListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/BrowseWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/BrowseWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/ShoppingCartWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/ShoppingCartWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/Data.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/OrderHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/OrderHistory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/PackagedProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/PackagedProduct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/ShoppingCart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/ShoppingCart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/WeightedProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/WeightedProduct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/BrowseWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/BrowseWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/CustomerWindowOptions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/CustomerWindowOptions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/EditWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/EditWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/OrderHistoryWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/OrderHistoryWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/ShoppingCartWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/ShoppingCartWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/SignInWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/SignInWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/ViewProductWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/ViewProductWindow.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -414,7 +389,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735921681678</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Shopping Cart, edit products, delete, refresh window, fix bugs">
+      <option name="closed" value="true" />
+      <created>1735982145451</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1735982145451</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
