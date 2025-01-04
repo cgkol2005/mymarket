@@ -2,6 +2,10 @@ package api;
 
 import java.io.Serializable;
 import java.util.List;
+
+/**
+ * admin class extends user and do methods registering,editing and list unavailable products
+ */
 public class Admin extends User implements Serializable {
     private Data data;
 
@@ -21,6 +25,7 @@ public class Admin extends User implements Serializable {
      * @param price       Price of the product (as String to allow for validation)
      * @param stock       Stock quantity of the product (as String to allow for validation)
      * @param data        The Data instance managing the system's data
+     *  @throws IllegalArgumentException If the stock type is not Integer or Double.
      */
 
     public void RegisterProduct(String name,String description,String category,String subcategory,double price,Object stock,Data data) {
@@ -48,6 +53,18 @@ public class Admin extends User implements Serializable {
         data.DataSave();
         System.out.println("Product successfully registered.");
     }
+    /**
+     * Edits product
+     *
+     * @param productName    The name of the product
+     * @param newTitle       The title of the product.
+     * @param newDescription The description of the product.
+     * @param newCategory    The category of the product.
+     * @param newSubcategory The subcategory of the product.
+     * @param newPrice       The price of the product.
+     * @param newStock       The new stock quantity of the product (Integer for packaged products, Double for weighted products).
+     * @param data           The {@link Data} for data
+     */
     public void EditProducts(String productName, String newTitle, String newDescription, String newCategory, String newSubcategory, double newPrice, Object newStock, Data data) {
         List<Product> productList = data.getProductsList();
         boolean productFound = false;
@@ -86,6 +103,11 @@ public class Admin extends User implements Serializable {
             System.out.println("Product name was not found.");
         }
     }
+    /**
+     * Do a list of unavailable products
+     *
+     * @return A string containing the titles of unavailable products
+     */
     public String getUnavailableProducts() {
         List<Product> productList=data.getProductsList();
         StringBuilder unavailable=new StringBuilder();
