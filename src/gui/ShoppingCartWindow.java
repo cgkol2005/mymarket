@@ -125,10 +125,15 @@ public class ShoppingCartWindow {
         completeOrderButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                data.getCurrentCustomerUser().CompleteOrder(data);
-                JOptionPane.showMessageDialog(null, "Order Completed!", "Order info", JOptionPane.INFORMATION_MESSAGE);
-                shoppingCartFrame.dispose();
-                data.getFrameFromActiveFramesList("CustomerWindowOptions").setVisible(true);
+                if (cart.getShoppingCartMap().isEmpty()){
+                    JOptionPane.showMessageDialog(null, "You can't complete your order, you cart is still empty!", "you serious?", JOptionPane.ERROR_MESSAGE);
+
+                }else {
+                    data.getCurrentCustomerUser().CompleteOrder(data);
+                    JOptionPane.showMessageDialog(null, "Order Completed!", "Order info", JOptionPane.INFORMATION_MESSAGE);
+                    shoppingCartFrame.dispose();
+                    data.getFrameFromActiveFramesList("CustomerWindowOptions").setVisible(true);
+                }
             }
         });
 
@@ -315,6 +320,8 @@ public class ShoppingCartWindow {
 
         removeButton.setBackground(Color.green);
         cancelButton.setBackground(Color.red);
+
+
 
         if (product instanceof WeightedProduct) {
             buttonPanel.add(minusHundred);

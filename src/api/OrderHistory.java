@@ -49,6 +49,15 @@ public class OrderHistory implements Serializable {
         return OrdersList;
     }
 
+    public Order getOrderBasedOnOrderDate(String date){
+        for (int i = 0; i < OrdersList.size(); i++){
+            if (OrdersList.get(i).getOrderDate().equals(date)){
+                return OrdersList.get(i);
+            }
+        }
+        return null;
+    }
+
     public int getTotalNumberOfOrders(){
         return OrdersList.size();
     }

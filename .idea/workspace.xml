@@ -6,23 +6,19 @@
   <component name="ChangeListManager">
     <list default="true" id="4962100c-d0a3-448f-8930-2e998309a824" name="Changes" comment="Shopping Cart, edit products, delete, refresh window, fix bugs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/Accounts_Manager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/Accounts_Manager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/Admin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/Application_Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/Application_Controller.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/Customer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/Data.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/Data.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/Order.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/OrderHistory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/OrderHistory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/PackagedProduct.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/PackagedProduct.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/Product.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/ShoppingCart.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/ShoppingCart.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/WeightedProduct.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/WeightedProduct.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/diabasma.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/diabasma.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/diabasma2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/diabasma2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/Data.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/OrderWindow.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/ShoppingCartWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/ShoppingCartWindow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/Customer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/OrderHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/OrderHistory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/ShoppingCart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/ShoppingCart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/OrderHistoryWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/OrderHistoryWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/OrderWindow.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/ShoppingCartWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/ShoppingCartWindow.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +37,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main_golfos" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -60,6 +56,10 @@
             <RecentBranchesForRepo>
               <option name="branches">
                 <list>
+                  <RecentBranch>
+                    <option name="branchName" value="main_Xaris_Search_and_History" />
+                    <option name="lastUsedInstant" value="1735990707" />
+                  </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="main_Xaris" />
                     <option name="lastUsedInstant" value="1735909285" />
@@ -102,15 +102,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.OrderHistoryWindow.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main__Xaris&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "Application.OrderHistoryWindow.executor": "Run",
+    "Application.ViewOrderWindow.executor": "Run",
+    "git-widget-placeholder": "main__Xaris__Search__and__History",
+    "kotlin-language-version-configured": "true",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
       <recent name="" />
@@ -128,20 +129,7 @@
       <recent name="C:\Users\xaris\Desktop\Folders\Programming Files and Programs\JAVA\MyMarketRepository\mymarket-4573-4763\out\production\MyMarket\api" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="BasicFrame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="gui.BasicFrame" />
-      <module name="MyMarket" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="gui.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="MyMarket" />
@@ -149,32 +137,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OrderHistoryWindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="gui.OrderHistoryWindow" />
-      <module name="MyMarket" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="gui.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ShoppingCartWindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="gui.ShoppingCartWindow" />
-      <module name="MyMarket" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="gui.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ViewProductWindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="gui.ViewProductWindow" />
       <module name="MyMarket" />
@@ -188,32 +150,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ViewProductWindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="gui.ViewProductWindow" />
-      <module name="MyMarket" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="gui.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <list>
-      <item itemvalue="Application.OrderHistoryWindow" />
-      <item itemvalue="Application.BasicFrame" />
-      <item itemvalue="Application.ShoppingCartWindow" />
-      <item itemvalue="Application.ViewProductWindow" />
-      <item itemvalue="Application.Main" />
-    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.OrderHistoryWindow" />
-        <item itemvalue="Application.ShoppingCartWindow" />
-        <item itemvalue="Application.BasicFrame" />
       </list>
     </recent_temporary>
   </component>
@@ -472,6 +411,11 @@
           <url>file://$PROJECT_DIR$/src/gui/CustomerWindowOptions.java</url>
           <line>125</line>
           <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/gui/ViewOrderWindow.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="27" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

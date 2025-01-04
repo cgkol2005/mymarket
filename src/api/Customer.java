@@ -69,6 +69,9 @@ public class Customer extends User implements Serializable {
     public ShoppingCart getShoppingCart(){
         return ShoppingCart;
     }
+    public Order getOrderBasedOnOrderDate(String date){
+        return OrderHistory.getOrderBasedOnOrderDate(date);
+    }
     /**
      * @return The first name of the customer.
      */

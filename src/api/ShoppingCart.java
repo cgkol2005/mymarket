@@ -25,6 +25,12 @@ public class ShoppingCart implements Serializable {
         productsCount = 0;
         CartTotalPrice = 0;
     }
+    public ShoppingCart(HashMap<Product, Integer> map, int productsCount, double CartTotalPrice){
+        this.shoppingCartMap = new HashMap<>();
+        shoppingCartMap.putAll(map);
+        this.productsCount = productsCount;
+        this.CartTotalPrice = CartTotalPrice;
+    }
 
     /**
      * Adds a product to the cart.
@@ -211,6 +217,9 @@ public class ShoppingCart implements Serializable {
             }
         }
         return 0;
+    }
+    public double getCartTotalPrice(){
+        return CartTotalPrice;
     }
 
     public HashMap<Product, Integer> getShoppingCartMap(){

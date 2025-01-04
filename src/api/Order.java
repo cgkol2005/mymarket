@@ -26,7 +26,7 @@ import java.util.Map;
      * @param NumberOfProductsBought the number of products purchased in the order
      */
     public Order(ShoppingCart Cart, double OrderPrice, int NumberOfProductsBought, Data data) {
-        this.Cart = Cart;
+        this.Cart = new ShoppingCart(Cart.getShoppingCartMap(),NumberOfProductsBought, OrderPrice);
         this.OrderPrice = OrderPrice;
         this.NumberOfProductsBought = NumberOfProductsBought;
 
@@ -76,6 +76,10 @@ import java.util.Map;
      */
     public void setOrderPrice(double price) {
         OrderPrice = price;
+    }
+
+    public ShoppingCart getOrderShoppingCart(){
+        return Cart;
     }
 
 }

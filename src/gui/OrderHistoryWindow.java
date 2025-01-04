@@ -6,10 +6,14 @@ import api.Order;
 import api.OrderHistory;
 
 import javax.swing.*;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.util.List;
 
 public class OrderHistoryWindow {
@@ -39,27 +43,30 @@ public class OrderHistoryWindow {
 
         JPanel rightPanel = new JPanel();
         rightPanel.setPreferredSize(new Dimension(280,0));
-        rightPanel.setBackground(Color.red);
         historyFrame.add(rightPanel,BorderLayout.EAST);
 
 
         JPanel leftPanel = new JPanel();
         leftPanel.setPreferredSize(new Dimension(280,0));
-        leftPanel.setBackground(Color.blue);
 
         historyFrame.add(leftPanel, BorderLayout.WEST);
 
-
+        historyFrame.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                data.DataSave();
+                historyFrame.dispose();
+                System.exit(0);
+            }
+        });
 
         JPanel southPanel = new JPanel();
         southPanel.setPreferredSize(new Dimension(0,80));
-        southPanel.setBackground(Color.yellow);
         southPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
         historyFrame.add(southPanel,BorderLayout.SOUTH);
 
         JPanel centerPanel = new JPanel();
         centerPanel.setPreferredSize(new Dimension(50,50));
-        centerPanel.setBackground(Color.green);
         historyFrame.add(centerPanel,BorderLayout.CENTER);
 
         JButton viewOrderButton = new JButton("View Order");
@@ -105,11 +112,32 @@ public class OrderHistoryWindow {
 
         historyFrame.add(scrollPane);
 
+        orderHistoryTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+
+        ListSelectionModel selecionModel = orderHistoryTable.getSelectionModel();
+
+        selecionModel.addListSelectionListener(new ListSelectionListener() {
+            @Override
+            public void valueChanged(ListSelectionEvent e) {
+                if (!e.getValueIsAdjusting()){
+                    if (orderHistoryTable.getSelectedRow()!=-1){
+                        viewOrderButton.setEnabled(true);
+                    }else{
+                        viewOrderButton.setEnabled(false);
+                    }
+                }
+            }
+        });
+
         viewOrderButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if (orderHistoryTable.getSelectedRow() != -1){
-
+                int selectedRow = orderHistoryTable.getSelectedRow();
+                if (selectedRow != -1){
+                    String orderDate = orderHistoryTable.getValueAt(selectedRow,0).toString();
+                    new ViewOrderWindow(data, orderDate);
+                }else{
+                    JOptionPane.showMessageDialog(null, "Please select an order to view details.");
                 }
             }
         });
@@ -117,6 +145,8 @@ public class OrderHistoryWindow {
         historyFrame.setVisible(true);
 
     }
+
+
 
     private Object[][] create2DArrayForOrders(){
         customer = data.getCurrentCustomerUser();
