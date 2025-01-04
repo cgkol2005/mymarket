@@ -3,6 +3,9 @@ package api;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * The {@code Order} class represents an order in a system.
  * * It contains details about the shopping cart, the total price of the order,
@@ -15,7 +18,6 @@ import java.time.format.DateTimeFormatter;
     private int NumberOfProductsBought;
     private String OrderDate;
     private Data data;
-    public Order(ShoppingCart Cart, double OrderPrice, int NumberOfProductsBought, Data data){
     /**
      * This constructor initializes the shopping cart, total order price,
      * number of products bought, and sets the order date to the current time.
@@ -23,8 +25,7 @@ import java.time.format.DateTimeFormatter;
      * @param OrderPrice the total price of the order
      * @param NumberOfProductsBought the number of products purchased in the order
      */
-
-    public Order(ShoppingCart Cart, double OrderPrice, int NumberOfProductsBought){
+    public Order(ShoppingCart Cart, double OrderPrice, int NumberOfProductsBought, Data data) {
         this.Cart = Cart;
         this.OrderPrice = OrderPrice;
         this.NumberOfProductsBought = NumberOfProductsBought;
@@ -35,6 +36,15 @@ import java.time.format.DateTimeFormatter;
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         // Format the LocalDateTime object to a string
         this.OrderDate = now.format(formatter);
+
+        for (Map.Entry<Product , Integer> product : Cart.getShoppingCartMap().entrySet()){
+
+            for (Product product1 : data.getProductsList()){
+                if (product.getKey().getTitle().equals(product1.getTitle())){
+                    product1.incrementTimesOrdered();
+                }
+            }
+        }
 
         data.updateProductsStockInShop(Cart.getShoppingCartMap());
     }

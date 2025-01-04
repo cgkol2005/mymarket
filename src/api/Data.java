@@ -76,35 +76,29 @@ public class Data {
             }
         }
     }
-
-    public void removeActiveFrame(String frameName){
-        for (int i = 0;i<listOfActiveFrames.size();i++){
-            if (listOfActiveFrames.get(i).getName().equals(frameName)){
     /**
      * Removes a frame from the list by its name.
      *
      * @param frameName The name of the frame to remove.
      */
-    public void removeActiveFrame(String frameName) {
+    public void removeActiveFrame (String frameName){
         for (int i = 0; i < listOfActiveFrames.size(); i++) {
             if (listOfActiveFrames.get(i).getName().equals(frameName)) {
                 listOfActiveFrames.remove(i);
             }
         }
     }
-
     /**
      * @return A list of active frames.
      */
-    public List<JFrame> getListOfActiveFrames() {
+    public List<JFrame> getListOfActiveFrames () {
         return listOfActiveFrames;
     }
-
     /**
      * @param frameName The name of the frame to retrieve.
      * @return The frame if found, or null
      */
-    public JFrame getFrameFromActiveFramesList(String frameName) {
+    public JFrame getFrameFromActiveFramesList (String frameName){
         for (JFrame frame2 : listOfActiveFrames) {
             if (frame2.getName().equals(frameName)) {
                 return frame2;
@@ -112,12 +106,11 @@ public class Data {
         }
         return null; //return null if the frame wasn't found.
     }
-
     /**
      * Overwrites the current list of users with a new list.
      * @param UsersList The new list of users.
      */
-    public void OverWriteUsersList(List<User> UsersList) {
+    public void OverWriteUsersList (List < User > UsersList) {
         Users = UsersList;
     }
 
@@ -125,7 +118,7 @@ public class Data {
      * Overwrites the current list of products with a new list.
      * @param ProductsList The new list of products.
      */
-    public void OverWriteProductsList(List<Product> ProductsList) {
+    public void OverWriteProductsList (List < Product > ProductsList) {
         Products = ProductsList;
     }
 
@@ -133,29 +126,28 @@ public class Data {
      * Adds a user to the list of users.
      * @param user The user to add.
      */
-    public void AddUser(User user) {
+    public void AddUser (User user){
         Users.add(user);
     }
 
     /**
      * @return The list of products.
      */
-    public List<Product> getProductsList() {
+    public List<Product> getProductsList () {
         return Products;
     }
 
     /**
      * @return The list of users.
      */
-    public List<User> getUsersList() {
+    public List<User> getUsersList () {
         return Users;
     }
-
     /**
      * @param productName The name of the product to retrieve.
      * @return The product if found or null
      */
-    public Product getProductFromProductsList(String productName) {
+    public Product getProductFromProductsList (String productName){
         for (Product product : Products) {
             if (product.getTitle().equals(productName)) {
                 return product;
@@ -168,7 +160,7 @@ public class Data {
      * Sets the current logged-in customer
      * @param user customer
      */
-    public void setCurrentCustomerUser(Customer user) {
+    public void setCurrentCustomerUser (Customer user){
         this.currentCustomerUser = user;
     }
 
@@ -177,7 +169,7 @@ public class Data {
      * @param user  admin
      */
 
-    public void setCurrentAdminUser(Admin user) {
+    public void setCurrentAdminUser (Admin user){
         this.currentAdminUser = user;
     }
 
@@ -185,7 +177,7 @@ public class Data {
      * Sets the current logged-in user.
      * @param user user
      */
-    public void setCurrentUser(User user) {
+    public void setCurrentUser (User user){
         currentUser = user;
     }
 
@@ -193,7 +185,7 @@ public class Data {
      * Retrieves the current logged-in user
      * @return The current user
      */
-    public User getCurrentUser() {
+    public User getCurrentUser () {
         return currentUser;
     }
 
@@ -201,18 +193,18 @@ public class Data {
      * Retrieves the current logged-in admin
      * @return The current admin
      */
-    public Admin getCurrentAdminUser() {
+    public Admin getCurrentAdminUser () {
         return currentAdminUser;
     }
 
-    public Customer getCurrentCustomerUser() {
+    public Customer getCurrentCustomerUser () {
         return currentCustomerUser;
     }
 
     /**
      * Loads data from the database files.
      */
-    public void DataLoad() {
+    public void DataLoad () {
         try (ObjectInputStream in = new ObjectInputStream(new FileInputStream("Accounts.ser"))) {
             Users = (List<User>) in.readObject();
         } catch (ClassNotFoundException e) {
@@ -232,14 +224,14 @@ public class Data {
         System.out.println("Data loaded!");
     }
 
-    public void setUsersList(List<User> users) {
+    public void setUsersList (List < User > users) {
         this.Users = users;
     }
 
     /**
      * Saves data to the database files.
      */
-    public void DataSave() {
+    public void DataSave () {
         try (ObjectOutputStream ProductsOut = new ObjectOutputStream(new FileOutputStream("Products.ser"));
              ObjectOutputStream UsersOut = new ObjectOutputStream(new FileOutputStream("Accounts.ser"))) {
             ProductsOut.writeObject(Products);
@@ -255,7 +247,7 @@ public class Data {
      * @param name The name of the product to check.
      * @return True if the product exists else false.
      */
-    public boolean productExists(String name) {
+    public boolean productExists (String name){
         for (Product product : getProductsList()) {
 
             if (product.getTitle().equalsIgnoreCase(name)) {
@@ -269,7 +261,7 @@ public class Data {
      * Retrieves a string of all unavailable products.
      * @return A string of unavailable product names
      */
-    public String getUnavailableProducts() {
+    public String getUnavailableProducts () {
         StringBuilder unavailableProductsBuilder = new StringBuilder();
         for (Product product : Products) {
             if (product instanceof PackagedProduct && ((PackagedProduct) product).getStock() == 0) {
@@ -285,7 +277,7 @@ public class Data {
      * Retrieves a map of products and their order counts.
      * @return A map where keys are products and values are the number of times each product was ordered.
      */
-    public Map<Product, Integer> getProductOrderCounts() {
+    public Map<Product, Integer> getProductOrderCounts () {
         Map<Product, Integer> productOrderCounts = new HashMap<>();
         for (Product product : Products) {
             productOrderCounts.put(product, product.getTimesOrdered());
@@ -297,8 +289,8 @@ public class Data {
      * Retrieves the most popular products based on the number of orders.
      * @return A list of the most popular products.
      */
-    public List<Product> getProductPopular() {
-        Map<Product, Integer> productOrderCounts=getProductOrderCounts();
+    public List<Product> getProductPopular () {
+        Map<Product, Integer> productOrderCounts = getProductOrderCounts();
         int maxOrders = productOrderCounts.values().stream().max(Integer::compare).orElse(0);
         List<Product> mostOrderedProducts = new ArrayList<>();
         for (Map.Entry<Product, Integer> entry : productOrderCounts.entrySet()) {
@@ -308,5 +300,4 @@ public class Data {
         }
         return mostOrderedProducts;
     }
-
 }

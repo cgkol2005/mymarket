@@ -76,7 +76,10 @@ public class ShoppingCart implements Serializable {
             shoppingCartMap.put(product,new_stock);
             System.out.println("Η ποσότητα ενημερώθηκε.");
     }
-
+    /**
+     * Removes a product from the cart
+     * @param productName the name of the product to be removed
+     */
     public void removeProduct(String productName) {
         for (Product product : shoppingCartMap.keySet()){
             if (product.getTitle().equals(productName)){
@@ -84,20 +87,10 @@ public class ShoppingCart implements Serializable {
                 productsCount--;
                 break;
             }
-    /**
-     * Removes a product from the cart
-     * @param product the product to remove
-     */
-    public void removeProduct(Product product) {
-        if (!ShoppingCartMap.containsKey(product))
-        {
-            System.out.println("Το προϊόν δεν υπάρχει στο καλάθι.");
-        }else{
-            ShoppingCartMap.remove(product);
-            System.out.println("Το προϊόν αφαιρέθηκε από το καλάθι.");
-            productsCount--;
         }
     }
+
+
 
     /**
      * Calculates and updates the total price of all products in the cart.
