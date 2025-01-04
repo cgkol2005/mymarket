@@ -106,9 +106,9 @@ public class ViewProductWindow{
         JLabel price;
 
         if (product instanceof WeightedProduct){
-            String[] words = product.getTitle().split("\\s+");
-            String lastWord = words[words.length - 1];
-            price = new JLabel("Price: "+ String.valueOf(product.getPrice())+"€ per "+lastWord);
+            //String[] words = product.getTitle().split("\\s+");
+            //String lastWord = words[words.length - 1];
+            price = new JLabel("Price: "+ String.valueOf(product.getPrice())+"€ per kg");//+lastWord);
         }else{
             price = new JLabel("Price: "+ String.valueOf(product.getPrice())+"€ per piece");
         }
@@ -421,6 +421,7 @@ public class ViewProductWindow{
                         //data.getCurrentCustomerUser().getShoppingCart().addProduct((PackagedProduct) product,slider.getValue());
                         //JOptionPane.showMessageDialog(null, "Product added to your shopping Cart!", "Product added!", JOptionPane.INFORMATION_MESSAGE);
                         // }
+
                         sliderFrame.dispose();
                     } else {
                         System.out.println("User chose NO");

@@ -115,6 +115,7 @@ public class EditWindow {
     }
 
 
+
     private Object parseStock(String stockText) {
         try {
             if (stockText.contains(".")) {
@@ -128,41 +129,4 @@ public class EditWindow {
     }
 
 
-
-
-    /* JLabel label=new JLabel("Πληκτρολογήστε τον τίτλο του προϊόντος που θέλετε να ενημερώσετε");
-        label.setBounds(20, 20, 450, 25);
-        editframe.add(label);
-
-        JTextField textField=new JTextField();
-        textField.setBounds(20, 50, 250, 25);
-        editframe.add(textField);
-
-        JButton searchButton = new JButton("Αναζήτηση");
-        searchButton.setBounds(280, 50, 120, 25);
-        editframe.add(searchButton);
-
-        searchButton.addActionListener(e -> {
-            String title=textField.getText();
-            if (productExists(title)) {
-                openEditProductWindow(title);
-            } else
-            {
-                JOptionPane.showMessageDialog(editframe, "Το προϊόν δεν βρέθηκε!", "Σφάλμα", JOptionPane.ERROR_MESSAGE);
-            }
-        });
-
-
-
-    private boolean productExists(String title) {
-        List<Product> productList=data.getProductsList();
-        for (Product product : productList)
-        {
-            if (product.getTitle().equalsIgnoreCase(title)) {
-                return true;
-            }
-        }
-        return false;
-    }
-     */
 }

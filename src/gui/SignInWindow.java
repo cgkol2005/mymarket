@@ -89,13 +89,13 @@ public class SignInWindow {
                 User user = AccManager.Sign_In(Username, Password, data.getUsersList());
                 if (user instanceof Customer) {
                     frame.dispose();
-                    //data.setCurrentCustomerUser((Customer) user);
+                    data.setCurrentCustomerUser((Customer) user);
                     data.setCurrentUser(user);
                     new CustomerWindowOptions(data);
                 } else if (user instanceof Admin) {
                     frame.dispose();
                     data.setCurrentUser(user);
-                    //data.setCurrentAdminUser((Admin) user);
+                    data.setCurrentAdminUser((Admin) user);
                     new AdminWindow(data);
                 } else {
                     JOptionPane.showMessageDialog(frame, "Invalid username or password!", "Error", JOptionPane.ERROR_MESSAGE);

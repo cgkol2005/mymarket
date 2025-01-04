@@ -6,6 +6,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * The {@code diabasma2} class is a console-based application that reads
+ * a file containing categories and subcategories, the data and
+ * displays it in a structured format.
+ * The input file is expected to follow a specific format where categories and
+ * their subcategories are listed in a structured manner. According to the exercise
+ * and file categories_subcategories.txt
+ * </p>
+ * @author Golfos Christos,Mavridis Xaris
+ */
 public class diabasma2
 {
 

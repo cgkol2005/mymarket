@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4962100c-d0a3-448f-8930-2e998309a824" name="Changes" comment="Customer browsing improved more. Add to cart functionality completed.">
-      <change afterPath="$PROJECT_DIR$/src/gui/EditWindow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gui/StatsWindow.java" afterDir="false" />
+    <list default="true" id="4962100c-d0a3-448f-8930-2e998309a824" name="Changes" comment="Shopping Cart, edit products, delete, refresh window, fix bugs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/Accounts_Manager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/Accounts_Manager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/Admin.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/Application_Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/Application_Controller.class" afterDir="false" />
@@ -23,46 +20,9 @@
       <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/WeightedProduct.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/WeightedProduct.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/diabasma.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/diabasma.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/diabasma2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/diabasma2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/testing_class.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/testing_class.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/AdminWindow$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/AdminWindow$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/AdminWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/AdminWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/BasicFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/BasicFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/BrowseWindow$ButtonClickListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/BrowseWindow$ButtonClickListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/BrowseWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/BrowseWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/GUI_Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/GUI_Main$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/GUI_Main$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/GUI_Main$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/GUI_Main$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/GUI_Main$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/GUI_Main$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/GUI_Main$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/GUI_Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/GUI_Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/OrderWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/OrderWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/RegisterWindow$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/RegisterWindow$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/RegisterWindow$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/RegisterWindow$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/RegisterWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/RegisterWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/SearchWindow$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/SearchWindow$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/SearchWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/SearchWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/ShoppingCartWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/ShoppingCartWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/SignUpWindow$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/SignUpWindow$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/SignUpWindow$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/SignUpWindow$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/SignUpWindow$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/SignUpWindow$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/SignUpWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/SignUpWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/Admin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/Data.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/PackagedProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/PackagedProduct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/WeightedProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/WeightedProduct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/AdminWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/AdminWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/BrowseWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/BrowseWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/CustomerWindowOptions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/CustomerWindowOptions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/RegisterWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/RegisterWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/ShoppingCartWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/ShoppingCartWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/SignInWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/SignInWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/ViewProductWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/ViewProductWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/ShoppingCart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/ShoppingCart.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +41,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main-remote-check" />
+        <entry key="$PROJECT_DIR$" value="main_golfos" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -101,12 +61,12 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
-                    <option name="branchName" value="Customer" />
-                    <option name="lastUsedInstant" value="1735635368" />
+                    <option name="branchName" value="main_Xaris" />
+                    <option name="lastUsedInstant" value="1735909285" />
                   </RecentBranch>
                   <RecentBranch>
-                    <option name="branchName" value="main-remote-check" />
-                    <option name="lastUsedInstant" value="1735635353" />
+                    <option name="branchName" value="Customer" />
+                    <option name="lastUsedInstant" value="1735635368" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="main" />
@@ -131,6 +91,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 1
 }</component>
   <component name="ProjectId" id="2XVC4ip36KyWLXXhPKCRj0t46sa" />
@@ -141,53 +102,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.BasicFrame.executor": "Run",
-    "Application.BrowseWindow (1).executor": "Run",
-    "Application.BrowseWindow.executor": "Run",
-    "Application.CustomerWindow (1).executor": "Run",
-    "Application.CustomerWindow (2).executor": "Run",
-    "Application.CustomerWindow.executor": "Run",
-    "Application.CustomerWindowOptions.executor": "Run",
-    "Application.GUI_Main.executor": "Debug",
-    "Application.Main (1).executor": "Run",
-    "Application.Main.executor": "Run",
-    "Application.RegisterWindow.executor": "Run",
-    "Application.ShoppingCartWindow.executor": "Run",
-    "Application.SignInWindow.executor": "Run",
-    "Application.ViewProductWindow (1).executor": "Run",
-    "Application.ViewProductWindow (2).executor": "Run",
-    "Application.ViewProductWindow (3).executor": "Run",
-    "Application.ViewProductWindow (4).executor": "Run",
-    "Application.ViewProductWindow (5).executor": "Run",
-    "Application.ViewProductWindow.executor": "Run",
-    "Application.diabasma.executor": "Run",
-    "Application.diabasma2.executor": "Run",
-    "Application.gui.executor": "Run",
-    "Application.maingui.executor": "Run",
-    "Application.testing_class.executor": "Run",
-    "Downloaded.Files.Path.Enabled": "true",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit4",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4": "",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "editor.preferences.fonts.default"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.OrderHistoryWindow.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main__Xaris&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\xaris\Desktop\Folders\Programming Files and Programs\JAVA\MyMarketRepository\mymarket-4573-4763\out\production\MyMarket\api" />
-    </key>
-    <key name="CreateTestDialog.Recents.Supers">
+    <key name="CreateTestDialog.RecentsKey">
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -196,8 +121,11 @@
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="api" />
     </key>
-    <key name="CreateTestDialog.RecentsKey">
+    <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\xaris\Desktop\Folders\Programming Files and Programs\JAVA\MyMarketRepository\mymarket-4573-4763\out\production\MyMarket\api" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
@@ -217,6 +145,19 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="MyMarket" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrderHistoryWindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="gui.OrderHistoryWindow" />
+      <module name="MyMarket" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="gui.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -261,6 +202,7 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.OrderHistoryWindow" />
       <item itemvalue="Application.BasicFrame" />
       <item itemvalue="Application.ShoppingCartWindow" />
       <item itemvalue="Application.ViewProductWindow" />
@@ -269,12 +211,16 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.OrderHistoryWindow" />
         <item itemvalue="Application.ShoppingCartWindow" />
         <item itemvalue="Application.BasicFrame" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="4962100c-d0a3-448f-8930-2e998309a824" name="Changes" comment="" />
@@ -451,15 +397,26 @@
       <option name="project" value="LOCAL" />
       <updated>1735843905329</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Shopping Cart, edit products, delete, refresh window, fix bugs">
+      <option name="closed" value="true" />
+      <created>1735921681678</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1735921681678</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Shopping Cart, edit products, delete, refresh window, fix bugs">
+      <option name="closed" value="true" />
+      <created>1735982145451</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1735982145451</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
-    <option name="OPEN_GENERIC_TABS">
-      <map>
-        <entry key="8b9f6594-a3dc-4bc7-b72c-d8184785d689" value="TOOL_WINDOW" />
-      </map>
-    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="8b9f6594-a3dc-4bc7-b72c-d8184785d689">
@@ -505,21 +462,24 @@
     <MESSAGE value="Customer window, logic, and options. Not finished yet." />
     <MESSAGE value="Log-Out of account functionality. Data Load method that loads the information from the files(same as constuctor)&#10;Back button on the browsing window that gets you to the Customer Options Window(with the options like shopping cart, order history etc..)" />
     <MESSAGE value="Customer browsing improved more. Add to cart functionality completed." />
-    <option name="LAST_COMMIT_MESSAGE" value="Customer browsing improved more. Add to cart functionality completed." />
+    <MESSAGE value="Shopping Cart, edit products, delete, refresh window, fix bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Shopping Cart, edit products, delete, refresh window, fix bugs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/api/Accounts_Manager.java</url>
-          <line>13</line>
-          <option name="timeStamp" value="11" />
+          <url>file://$PROJECT_DIR$/src/gui/CustomerWindowOptions.java</url>
+          <line>125</line>
+          <option name="timeStamp" value="25" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="Program.CurrentUser" />
+        <watch expression="((Object[][])products)[6]" custom="java.lang.Object[][]" />
+        <watch expression="((ShoppingCart)this).shoppingCartMap" custom="api.ShoppingCart" />
       </configuration>
     </watches-manager>
   </component>

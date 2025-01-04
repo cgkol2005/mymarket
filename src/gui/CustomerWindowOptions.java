@@ -130,7 +130,8 @@ public class CustomerWindowOptions {
         orderHistoryButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                customerFrame.setVisible(false);
+                new OrderHistoryWindow(data);
             }
         });
 
