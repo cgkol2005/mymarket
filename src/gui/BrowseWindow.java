@@ -19,6 +19,8 @@ public class BrowseWindow {
 
     private JPanel centerPanel;
 
+    BasicFrame browseWindow;
+
 
     public BrowseWindow(Data data){
         this.data = data;
@@ -27,7 +29,7 @@ public class BrowseWindow {
 
     private void buildUI() {
 
-        BasicFrame browseWindow = new BasicFrame(new BorderLayout(3, 3));
+        browseWindow = new BasicFrame(new BorderLayout(3, 3));
 
         browseWindow.setName("BrowseWindow");
         data.addActiveFrame(browseWindow);
@@ -103,7 +105,15 @@ public class BrowseWindow {
         greenPanel_BottomRight.add(backButton);
         backButton.setVerticalAlignment(SwingConstants.CENTER);
 
+        JButton refreshButton = new JButton("Refresh Window");
+        refreshButton.setPreferredSize(buttonDimension);
+        refreshButton.setFont(buttonFont);
 
+        greenPanel_BottomRight.add(refreshButton);
+
+
+
+        southPanel.add(greenPanel_BottomRight);
         southPanel.add(greenPanel_BottomRight);
 
         //finally, adding the mainBottom panel that holds the other 3 to the main Frame
@@ -119,6 +129,12 @@ public class BrowseWindow {
             }
         });
 
+        refreshButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                reloadFrame();
+            }
+        });
         backButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -139,6 +155,12 @@ public class BrowseWindow {
 
 
     }
+    public void reloadFrame(){
+        browseWindow.dispose();
+        new BrowseWindow(data);
+    }
+
+
 
     private class ButtonClickListener implements ActionListener {
         @Override
@@ -199,4 +221,6 @@ public class BrowseWindow {
             }
         }
     }
+
+
 }

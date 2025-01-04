@@ -20,10 +20,10 @@ public class Customer extends User implements Serializable {
 
         ShoppingCart = new ShoppingCart();
     }
-    public void CompleteOrder(){
-        order = new Order(ShoppingCart, ShoppingCart.getTotalPrice(),ShoppingCart.getProducts_count());
+    public void CompleteOrder(Data data){
+        order = new Order(ShoppingCart, ShoppingCart.getTotalPrice(),ShoppingCart.getProducts_count(),data);
         OrderHistory.addOrderToHistoy(order);
-        //Υλοποιηση: Οταν ολοκληρώνεται μια παραγγελία, πρεπει το stock των προϊόντων να μειώνεται ανάλογα.
+        ShoppingCart.clear();
     }
     public void setFirstname(String Firstname){
         this.Firstname = Firstname;
@@ -32,6 +32,9 @@ public class Customer extends User implements Serializable {
         Lastname = lastname;
     }
 
+    public OrderHistory getOrderHistory(){
+        return OrderHistory;
+    }
     public ShoppingCart getShoppingCart(){
         return ShoppingCart;
     }

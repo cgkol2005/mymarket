@@ -9,12 +9,12 @@ import java.util.Map;
 
 public class ShoppingCart implements Serializable {
 
-    private HashMap<Product, Integer> ShoppingCartMap;
+    private HashMap<Product, Integer> shoppingCartMap;
     private int productsCount; //counts the total products in the Cart
     private double CartTotalPrice;
 
     public ShoppingCart() {
-        ShoppingCartMap = new HashMap<>();
+        shoppingCartMap = new HashMap<>();
         productsCount = 0;
         CartTotalPrice = 0;
     }
@@ -23,13 +23,13 @@ public class ShoppingCart implements Serializable {
     public void addProduct(Product product,int stock){
         Integer stock2 = stock;
         boolean found = false;
-        for (Product product2 : ShoppingCartMap.keySet()){
+        for (Product product2 : shoppingCartMap.keySet()){
             if (product2.getTitle().equals(product.getTitle())){
                 UpdateProductQuantityInCart(product2, stock2);
                 return;
             }
         }
-            ShoppingCartMap.put(product,stock2);
+            shoppingCartMap.put(product,stock2);
             productsCount++;
             System.out.println("Product Added!");
 
@@ -40,29 +40,29 @@ public class ShoppingCart implements Serializable {
      *
      */
     public void UpdateProductQuantityInCart(Product product, int moreStock){
-        Integer quantityInCart = ShoppingCartMap.get(product);
+        Integer quantityInCart = shoppingCartMap.get(product);
         Integer moreStock2 = moreStock;
         if (product instanceof WeightedProduct) {
             Integer productStock = (int) ((WeightedProduct) product).getStock()*1000;
-            ShoppingCartMap.put(product,quantityInCart+moreStock2);
+            shoppingCartMap.put(product,quantityInCart+moreStock2);
             System.out.println("Η ποσότητα ενημερώθηκε.");
         } else if (product instanceof PackagedProduct) {
             Integer productStock = ((PackagedProduct) product).getStock();
-            ShoppingCartMap.put(product,quantityInCart+moreStock2);
+            shoppingCartMap.put(product,quantityInCart+moreStock2);
             System.out.println("Η ποσότητα ενημερώθηκε.");
         }
     }
 
     //this is for overall replacement of the stock in the cart.
     public void ReplaceProductQuantityInCart(Product product, int new_stock){
-            ShoppingCartMap.put(product,new_stock);
+            shoppingCartMap.put(product,new_stock);
             System.out.println("Η ποσότητα ενημερώθηκε.");
     }
 
     public void removeProduct(String productName) {
-        for (Product product : ShoppingCartMap.keySet()){
+        for (Product product : shoppingCartMap.keySet()){
             if (product.getTitle().equals(productName)){
-                ShoppingCartMap.remove(product);
+                shoppingCartMap.remove(product);
                 productsCount--;
                 break;
             }
@@ -71,10 +71,11 @@ public class ShoppingCart implements Serializable {
 
     public void CalculateAndUpdateTotalPrice(){
         BigDecimal total_price = BigDecimal.ZERO;
-        for (Map.Entry<Product,Integer> entry : ShoppingCartMap.entrySet()){
+        for (Map.Entry<Product,Integer> entry : shoppingCartMap.entrySet()){
             if (entry.getKey() instanceof WeightedProduct) {
                 BigDecimal one = BigDecimal.valueOf(entry.getKey().getPrice());
                 BigDecimal two = new BigDecimal(entry.getValue());
+                two = two.divide(BigDecimal.valueOf(1000));
                 total_price = total_price.add(one.multiply(two));
             } else if (entry.getKey() instanceof PackagedProduct) {
                 BigDecimal one = BigDecimal.valueOf(entry.getKey().getPrice());
@@ -85,8 +86,26 @@ public class ShoppingCart implements Serializable {
         CartTotalPrice = total_price.doubleValue();
     }
 
+    public Integer getQuantityInShoppingCart(String productName){
+        for (Map.Entry<Product, Integer> product : shoppingCartMap.entrySet()){
+            if (product.getKey().getTitle().equals(productName)){
+                return product.getValue();
+            }
+        }
+        return null;
+    }
+
+    public void removeQuantityFromShoppingCart(Product product, int quantity){
+        for (Map.Entry<Product, Integer> product2 : shoppingCartMap.entrySet()){
+            if (product2.getKey().getTitle().equals(product.getTitle())){
+                int oldQuantity = product2.getValue();
+                Integer newQuantity = oldQuantity - quantity;
+                product2.setValue(newQuantity);
+            }
+        }
+    }
     public List<Product> createArrayListFromShoppingCart(){
-        return new ArrayList<>(ShoppingCartMap.keySet());
+        return new ArrayList<>(shoppingCartMap.keySet());
     }
     public Product getProductBasedOnListIndex(int j){
         return createArrayListFromShoppingCart().get(j);
@@ -102,12 +121,12 @@ public class ShoppingCart implements Serializable {
     }
 
     public void printShoppingCart() {
-        if (ShoppingCartMap.isEmpty())
+        if (shoppingCartMap.isEmpty())
         {
             System.out.println("Το καλάθι είναι άδειο.");
         }else{
             System.out.println("Περιεχόμενα καλαθιού:");
-            for (HashMap.Entry<Product,Integer> entry : ShoppingCartMap.entrySet()) {
+            for (HashMap.Entry<Product,Integer> entry : shoppingCartMap.entrySet()) {
                 Product product=entry.getKey();
                 if (entry.getKey() instanceof PackagedProduct){
                     int stock=entry.getValue();
@@ -125,7 +144,7 @@ public class ShoppingCart implements Serializable {
     }
 
     public Product getProductInShoppingCart(String productTitle){
-        for (Product product : ShoppingCartMap.keySet()){
+        for (Product product : shoppingCartMap.keySet()){
             if (product.getTitle().equals(productTitle)){
                 return product;
             }
@@ -134,12 +153,22 @@ public class ShoppingCart implements Serializable {
     }
 
     public int getProductQuantityInShoppingCart(String productName){
-        for (Map.Entry<Product, Integer> product : ShoppingCartMap.entrySet()){
+        for (Map.Entry<Product, Integer> product : shoppingCartMap.entrySet()){
             if (product.getKey().getTitle().equals(productName)){
                 return product.getValue();
             }
         }
         return 0;
+    }
+
+    public HashMap<Product, Integer> getShoppingCartMap(){
+        return shoppingCartMap;
+    }
+
+    public void clear(){
+        shoppingCartMap.clear();
+        productsCount = 0;
+        this.CartTotalPrice = 0;
     }
 
     /**
@@ -152,12 +181,12 @@ public class ShoppingCart implements Serializable {
     public double CalculateTotalPriceOfAProductInCart(Product product){
         BigDecimal Total_Price;
         if (product instanceof WeightedProduct){
-            BigDecimal dec1 = BigDecimal.valueOf(ShoppingCartMap.get(product));
+            BigDecimal dec1 = BigDecimal.valueOf(shoppingCartMap.get(product));
             BigDecimal dec2 = BigDecimal.valueOf(product.getPrice());
             Total_Price = dec1.multiply(dec2);
             Total_Price = Total_Price.divide(BigDecimal.valueOf(1000));
         }else{
-            BigDecimal dec1 = new BigDecimal(String.valueOf(ShoppingCartMap.get(product)));
+            BigDecimal dec1 = new BigDecimal(String.valueOf(shoppingCartMap.get(product)));
             BigDecimal dec2 = new BigDecimal(String.valueOf(product.getPrice()));
             Total_Price = dec1.multiply(dec2);
         }

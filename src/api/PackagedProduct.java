@@ -16,4 +16,11 @@ public class PackagedProduct extends Product{
         }
         this.stock = stock;
     }
+    public void reduceStock(int stock){
+        this.stock -= stock;
+        System.out.println("Removed "+stock+" stock for the product "+this.getTitle()+"! Now the remaining stock is: "+this.stock+".");
+        if (this.stock <= 0){
+            this.setAvailable(false);
+        }
+    }
 }

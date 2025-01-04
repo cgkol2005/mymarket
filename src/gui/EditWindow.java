@@ -115,6 +115,7 @@ public class EditWindow {
     }
 
 
+
     private Object parseStock(String stockText) {
         try {
             if (stockText.contains(".")) {

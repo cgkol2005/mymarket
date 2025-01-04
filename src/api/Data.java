@@ -3,8 +3,12 @@ package api;
 import javax.swing.*;
 import api.WeightedProduct;
 import api.PackagedProduct;
+import gui.BrowseWindow;
+
 import java.io.*;
+import java.net.Inet4Address;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -46,6 +50,25 @@ public class Data {
 
     public void addActiveFrame(JFrame frame){
         listOfActiveFrames.add(frame);
+    }
+
+    public void updateProductsStockInShop(HashMap<Product, Integer> Cart){
+        for (Map.Entry<Product, Integer> entry : Cart.entrySet()){
+            for (Product product : Products){
+                if (entry.getKey().getTitle().equals(product.getTitle())){
+                    if (product instanceof WeightedProduct){
+                        int quantityBought = entry.getValue();
+                        ((WeightedProduct) product).reduceStock(quantityBought);
+                        break;
+                    } else if (product instanceof PackagedProduct) {
+                        int quantityBought = entry.getValue();
+                        ((PackagedProduct) product).reduceStock(quantityBought);
+                        break;
+                    }
+
+                }
+            }
+        }
     }
 
     public void removeActiveFrame(String frameName){

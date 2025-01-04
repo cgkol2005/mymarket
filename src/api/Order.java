@@ -9,8 +9,8 @@ public class Order implements Serializable {
     private double OrderPrice;
     private int NumberOfProductsBought;
     private String OrderDate;
-
-    public Order(ShoppingCart Cart, double OrderPrice, int NumberOfProductsBought){
+    private Data data;
+    public Order(ShoppingCart Cart, double OrderPrice, int NumberOfProductsBought, Data data){
         this.Cart = Cart;
         this.OrderPrice = OrderPrice;
         this.NumberOfProductsBought = NumberOfProductsBought;
@@ -21,6 +21,16 @@ public class Order implements Serializable {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         // Format the LocalDateTime object to a string
         this.OrderDate = now.format(formatter);
+
+        data.updateProductsStockInShop(Cart.getShoppingCartMap());
+    }
+
+    public String getOrderDate(){
+        return OrderDate;
+    }
+
+    public int getNumberOfProductsBought(){
+        return NumberOfProductsBought;
     }
 
     public double getOrderPrice(){
@@ -29,10 +39,6 @@ public class Order implements Serializable {
 
     public void setCart(ShoppingCart cart) {
         Cart = cart;
-    }
-
-    public void setOrderPrice(double price) {
-        OrderPrice = price;
     }
 }
 

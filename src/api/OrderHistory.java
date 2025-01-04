@@ -26,7 +26,14 @@ public class OrderHistory implements Serializable {
         }
         TotalOrdersCost = sum.doubleValue();
     }
-    
+
+    public List<Order> getOrdersList(){
+        return OrdersList;
+    }
+
+    public int getTotalNumberOfOrders(){
+        return OrdersList.size();
+    }
     public double getTotalPriceOfAllOrders(){
         CalculateAndUpdateTotalOrdersCost();
         return TotalOrdersCost;
