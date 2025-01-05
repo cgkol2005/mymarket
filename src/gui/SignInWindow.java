@@ -15,7 +15,7 @@ public class SignInWindow {
     private JTextField usernameField;
     private JPasswordField passwordField;
 
-    public SignInWindow(Data data, Accounts_Manager AccManager) {
+    public SignInWindow(Data data, AccountsManager AccManager) {
         frame = new JFrame("Sign-In");
         frame.setLayout(new BorderLayout());
         frame.setSize(500, 500);
@@ -86,7 +86,7 @@ public class SignInWindow {
                 String Username = usernameField.getText();
                 String Password = new String(passwordField.getPassword());
 
-                User user = AccManager.Sign_In(Username, Password, data.getUsersList());
+                User user = AccManager.signIn(Username, Password, data.getUsersList());
                 if (user instanceof Customer) {
                     frame.dispose();
                     data.setCurrentCustomerUser((Customer) user);
@@ -95,7 +95,6 @@ public class SignInWindow {
                 } else if (user instanceof Admin) {
                     frame.dispose();
                     data.setCurrentUser(user);
-                    data.setCurrentAdminUser((Admin) user);
                     new AdminWindow(data);
                 } else {
                     JOptionPane.showMessageDialog(frame, "Invalid username or password!", "Error", JOptionPane.ERROR_MESSAGE);
@@ -117,7 +116,7 @@ public class SignInWindow {
                 );
                 if (confirm == JOptionPane.YES_OPTION) {
                     frame.dispose();
-                    data.DataSave();
+                    data.dataSave();
                     System.exit(0);
                 }
             }

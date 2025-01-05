@@ -54,7 +54,7 @@ public class OrderHistoryWindow {
         historyFrame.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
-                data.DataSave();
+                data.dataSave();
                 historyFrame.dispose();
                 System.exit(0);
             }
@@ -89,7 +89,7 @@ public class OrderHistoryWindow {
         backButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                data.DataSave();
+                data.dataSave();
                 historyFrame.dispose();
                 data.getFrameFromActiveFramesList("CustomerWindowOptions").setVisible(true);
             }

@@ -1,6 +1,5 @@
 package gui;
 
-import api.Customer;
 import api.Data;
 
 import javax.swing.*;
@@ -151,7 +150,7 @@ public class CustomerWindowOptions {
             @Override
             public void windowClosing(WindowEvent e) {
                 customerFrame.dispose();
-                data.DataSave();
+                data.dataSave();
                 System.exit(0);
             }
         });

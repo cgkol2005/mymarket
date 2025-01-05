@@ -13,8 +13,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.math.BigDecimal;
-import java.util.HashMap;
 import java.util.Map;
 
 public class ShoppingCartWindow {
@@ -117,7 +115,7 @@ public class ShoppingCartWindow {
         shoppingCartFrame.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
-                data.DataSave();
+                data.dataSave();
                 shoppingCartFrame.dispose();
                 System.exit(0);
             }
@@ -152,7 +150,7 @@ public class ShoppingCartWindow {
                 if (cart.getShoppingCartMap().isEmpty()){
                     JOptionPane.showMessageDialog(null, "You can't complete your order, you cart is still empty!", "you serious?", JOptionPane.ERROR_MESSAGE);
                 } else if(!somethingOutOfStock){
-                    data.getCurrentCustomerUser().CompleteOrder(data);
+                    data.getCurrentCustomerUser().completeOrder(data);
                     JOptionPane.showMessageDialog(null, "Order Completed!", "Order info", JOptionPane.INFORMATION_MESSAGE);
                     shoppingCartFrame.dispose();
                     data.getFrameFromActiveFramesList("CustomerWindowOptions").setVisible(true);
@@ -204,7 +202,7 @@ public class ShoppingCartWindow {
             @Override
             public void actionPerformed(ActionEvent e) {
                 data.getFrameFromActiveFramesList("CustomerWindowOptions").setVisible(true);
-                data.DataSave();
+                data.dataSave();
                 shoppingCartFrame.dispose();
             }
         });

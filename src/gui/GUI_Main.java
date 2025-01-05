@@ -1,7 +1,7 @@
 package gui;
 
-import api.Accounts_Manager;
-import api.Application_Controller;
+import api.AccountsManager;
+import api.ApplicationController;
 import api.Data;
 
 import javax.swing.*;
@@ -24,14 +24,14 @@ public class GUI_Main {
 
     private Data data;//same as above
 
-    private Accounts_Manager AccManager;//same as above
+    private AccountsManager AccManager;//same as above
 
-    Application_Controller AppController;
+    ApplicationController AppController;
 
     public GUI_Main() {
-        AppController = new Application_Controller();
+        AppController = new ApplicationController();
         data = new Data();
-        AccManager = new Accounts_Manager();
+        AccManager = new AccountsManager();
         buildUI();
 
         signInButton.addActionListener(new ActionListener() {
@@ -53,7 +53,7 @@ public class GUI_Main {
         exitButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                data.DataSave();
+                data.dataSave();
                 System.exit(0);
             }
         });
@@ -62,7 +62,7 @@ public class GUI_Main {
         mainFrame.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
-                data.DataSave();
+                data.dataSave();
                 System.exit(0);
             }
         });

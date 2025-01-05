@@ -228,7 +228,7 @@ public class BrowseWindow {
         browseWindow.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
-                data.DataSave();
+                data.dataSave();
                 System.exit(0);
             }
         });

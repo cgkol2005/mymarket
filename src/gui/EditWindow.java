@@ -96,13 +96,13 @@ public class EditWindow {
                 if (product2 instanceof PackagedProduct){
                     int newStock = Integer.parseInt(stockField.getText());
                     Admin admin = (Admin) data.getCurrentUser();
-                    admin.EditProducts(productTitle,newTitle, newDescription, newCategory, newSubcategory, newPrice, newStock, data);
+                    admin.editProducts(productTitle,newTitle, newDescription, newCategory, newSubcategory, newPrice, newStock, data);
                     JOptionPane.showMessageDialog(updateFrame, "Οι αλλαγές αποθηκεύτηκαν!", "Επιτυχία", JOptionPane.INFORMATION_MESSAGE);
                     updateFrame.dispose();
                 }else {
                     double newStock = Double.parseDouble(stockField.getText());
                     Admin admin = (Admin) data.getCurrentUser();
-                    admin.EditProducts(productTitle,newTitle, newDescription, newCategory, newSubcategory, newPrice, newStock, data);
+                    admin.editProducts(productTitle,newTitle, newDescription, newCategory, newSubcategory, newPrice, newStock, data);
                     JOptionPane.showMessageDialog(updateFrame, "Οι αλλαγές αποθηκεύτηκαν!", "Επιτυχία", JOptionPane.INFORMATION_MESSAGE);
                     updateFrame.dispose();
                 }

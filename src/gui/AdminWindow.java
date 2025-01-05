@@ -54,7 +54,7 @@ public class AdminWindow {
         adminFrame.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
-                data.DataSave();
+                data.dataSave();
                 System.exit(0);
             }
         });

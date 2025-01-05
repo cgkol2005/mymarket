@@ -270,7 +270,7 @@ public class RegisterWindow {
                     if (stock instanceof Double && !isWeighted){
                         JOptionPane.showMessageDialog(null,"You can't enter a decimal value on a packaged product!","Error", JOptionPane.ERROR_MESSAGE);
                     }else{
-                        admin.RegisterProduct(name, description, categorytext, subCategory, price, stock,data, isWeighted);
+                        admin.registerProduct(name, description, categorytext, subCategory, price, stock,data, isWeighted);
                     }
 
                     JOptionPane.showMessageDialog(registerFrame,
@@ -313,7 +313,7 @@ public class RegisterWindow {
         registerFrame.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
-                data.DataSave();
+                data.dataSave();
                 registerFrame.dispose();
                 System.exit(0);
             }
