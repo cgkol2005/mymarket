@@ -4,10 +4,16 @@ import api.Data;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 public class RegisterWindow {
     private JFrame registerFrame;
-    private JTextField nameField, descriptionField, categoryField, subcategoryField, priceField,stockField;
+    private JTextField nameField, descriptionField, priceField,stockField;
+    private JComboBox category, subcategory;
+    private JRadioButton weighted;
+    private JRadioButton packaged;
+    private boolean isWeighted;
 
     public RegisterWindow(Data data) {
         registerFrame = new JFrame("Καταχώρηση προιόντος");
@@ -30,20 +36,141 @@ public class RegisterWindow {
         descriptionField.setBounds(200, 70, 200, 25);
         registerFrame.add(descriptionField);
 
-        JLabel categoryLabel=new JLabel("Category");
+
+        String[] categories = {
+                "Φρέσκα τρόφιμα",
+                "Κατεψυγμένα τρόφιμα",
+                "Προϊόντα ψυγείου",
+                "Αλλαντικά",
+                "Αλκοολούχα ποτά",
+                "Μη αλκοολούχα ποτά",
+                "Καθαριστικά για το σπίτι",
+                "Απορρυπαντικά ρούχων",
+                "Καλλυντικά",
+                "Προϊόντα στοματικής υγιεινής",
+                "Πάνες",
+                "Δημητριακά",
+                "Ζυμαρικά",
+                "Σνακ",
+                "Έλαια",
+                "Κονσέρβες",
+                "Χαρτικά"
+        };
+
+        JComboBox<String> category = new JComboBox<>(categories);
+        JComboBox<String> subcategory = new JComboBox<>();
+
+        JLabel categoryLabel = new JLabel("Category");
         categoryLabel.setBounds(50, 110, 150, 25);
         registerFrame.add(categoryLabel);
-        categoryField=new JTextField();
-        categoryField.setBounds(200, 110, 200, 25);
-        registerFrame.add(categoryField);
+
+        category.setBounds(200, 110, 200, 25);
+        registerFrame.add(category);
 
         JLabel subCategoryLabel = new JLabel("Subcategory");
         subCategoryLabel.setBounds(50, 150, 150, 25);
         registerFrame.add(subCategoryLabel);
 
-        subcategoryField = new JTextField();
-        subcategoryField.setBounds(200, 150, 200, 25);
-        registerFrame.add(subcategoryField);
+        subcategory.setBounds(200, 150, 200, 25);
+        registerFrame.add(subcategory);
+
+        category.addActionListener(e -> {
+            String selectedCategory = (String) category.getSelectedItem();
+            subcategory.removeAllItems(); // Clear existing subcategories
+
+            switch (selectedCategory) {
+                case "Φρέσκα τρόφιμα":
+                    String[] freshFoodSubcategories = {"Φρούτα", "Λαχανικά", "Ψάρια", "Κρέατα"};
+                    for (String item : freshFoodSubcategories) subcategory.addItem(item);
+                    break;
+
+                case "Κατεψυγμένα τρόφιμα":
+                    String[] frozenFoodSubcategories = {"Κατεψυγμένα λαχανικά", "Κατεψυγμένα κρέατα", "Κατεψυγμένες πίτσες", "Κατεψυγμένα γεύματα"};
+                    for (String item : frozenFoodSubcategories) subcategory.addItem(item);
+                    break;
+
+                case "Προϊόντα ψυγείου":
+                    String[] refrigeratedProductsSubcategories = {"Τυριά", "Γιαούρτια", "Γάλα", "Βούτυρο"};
+                    for (String item : refrigeratedProductsSubcategories) subcategory.addItem(item);
+                    break;
+
+                case "Αλλαντικά":
+                    String[] coldCutsSubcategories = {"Ζαμπόν", "Σαλάμι", "Μπέικον"};
+                    for (String item : coldCutsSubcategories) subcategory.addItem(item);
+                    break;
+
+                case "Αλκοολούχα ποτά":
+                    String[] alcoholicDrinksSubcategories = {"Μπύρα", "Κρασί", "Ούζο", "Τσίπουρο"};
+                    for (String item : alcoholicDrinksSubcategories) subcategory.addItem(item);
+                    break;
+
+                case "Μη αλκοολούχα ποτά":
+                    String[] nonAlcoholicDrinksSubcategories = {"Χυμοί", "Αναψυκτικά", "Νερό", "Ενεργειακά ποτά"};
+                    for (String item : nonAlcoholicDrinksSubcategories) subcategory.addItem(item);
+                    break;
+
+                case "Καθαριστικά για το σπίτι":
+                    String[] cleaningProductsSubcategories = {"Καθαριστικά για το πάτωμα", "Καθαριστικά για τα τζάμια", "Καθαριστικά κουζίνας"};
+                    for (String item : cleaningProductsSubcategories) subcategory.addItem(item);
+                    break;
+
+                case "Απορρυπαντικά ρούχων":
+                    String[] laundryDetergentsSubcategories = {"Σκόνες πλυντηρίου", "Υγρά πλυντηρίου", "Μαλακτικά"};
+                    for (String item : laundryDetergentsSubcategories) subcategory.addItem(item);
+                    break;
+
+                case "Καλλυντικά":
+                    String[] cosmeticsSubcategories = {"Κρέμες προσώπου", "Μακιγιάζ", "Λοσιόν σώματος"};
+                    for (String item : cosmeticsSubcategories) subcategory.addItem(item);
+                    break;
+
+                case "Προϊόντα στοματικής υγιεινής":
+                    String[] oralHygieneSubcategories = {"Οδοντόκρεμες", "Οδοντόβουρτσες", "Στοματικά διαλύματα"};
+                    for (String item : oralHygieneSubcategories) subcategory.addItem(item);
+                    break;
+
+                case "Πάνες":
+                    String[] diapersSubcategories = {"Πάνες για μωρά", "Πάνες ενηλίκων"};
+                    for (String item : diapersSubcategories) subcategory.addItem(item);
+                    break;
+
+                case "Δημητριακά":
+                    String[] cerealsSubcategories = {"Νιφάδες καλαμποκιού", "Μούσλι", "Βρώμη"};
+                    for (String item : cerealsSubcategories) subcategory.addItem(item);
+                    break;
+
+                case "Ζυμαρικά":
+                    String[] pastaSubcategories = {"Μακαρόνια", "Κριθαράκι", "Ταλιατέλες"};
+                    for (String item : pastaSubcategories) subcategory.addItem(item);
+                    break;
+
+                case "Σνακ":
+                    String[] snacksSubcategories = {"Πατατάκια", "Κράκερς", "Μπάρες δημητριακών"};
+                    for (String item : snacksSubcategories) subcategory.addItem(item);
+                    break;
+
+                case "Έλαια":
+                    String[] oilsSubcategories = {"Ελαιόλαδο", "Ηλιέλαιο", "Σογιέλαιο"};
+                    for (String item : oilsSubcategories) subcategory.addItem(item);
+                    break;
+
+                case "Κονσέρβες":
+                    String[] cannedProductsSubcategories = {"Κονσέρβες ψαριών", "Κονσέρβες λαχανικών", "Κονσέρβες φρούτων"};
+                    for (String item : cannedProductsSubcategories) subcategory.addItem(item);
+                    break;
+
+                case "Χαρτικά":
+                    String[] paperProductsSubcategories = {"Χαρτί υγείας", "Χαρτοπετσέτες", "Χαρτομάντηλα"};
+                    for (String item : paperProductsSubcategories) subcategory.addItem(item);
+                    break;
+
+                default:
+                    // No subcategories for this category
+                    break;
+            }
+        });
+
+
 
         JLabel priceLabel = new JLabel("Price");
         priceLabel.setBounds(50, 190, 150, 25);
@@ -63,16 +190,51 @@ public class RegisterWindow {
         JButton submitButton=new JButton("Submit");
         submitButton.setBounds(100, 300, 100, 30);
         registerFrame.add(submitButton);
+
+        weighted = new JRadioButton("Weighted Product");
+        packaged = new JRadioButton("Packaged Product");
+
+        weighted.setBounds(50,270,150,30);
+        registerFrame.add(weighted);
+
+        packaged.setBounds(300,270,150,30);
+        registerFrame.add(packaged);
+
+        ButtonGroup group = new ButtonGroup();
+
+        group.add(weighted);
+        group.add(packaged);
+
+        weighted.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                isWeighted = true;
+                System.out.println("isWeighted = true;");
+            }
+        });
+
+        packaged.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                isWeighted = false;
+                System.out.println("isWeighted = false;");
+            }
+        });
+
+
+
         submitButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
+
                     String name = nameField.getText();
                     String description = descriptionField.getText();
-                    String category = categoryField.getText();
-                    String subCategory = subcategoryField.getText();
+                    String categorytext = category.getSelectedItem().toString();
+                    String subCategory = subcategory.getSelectedItem().toString();
                     double price = Double.parseDouble(priceField.getText());
                     String stockin = stockField.getText();
+
 
                     Object stock;
                     if (stockin.contains(".")) {
@@ -105,7 +267,11 @@ public class RegisterWindow {
                         return;
                     }
                     Admin admin= (Admin) data.getCurrentUser();
-                    admin.RegisterProduct(name, description, category, subCategory, price, stock,data);
+                    if (stock instanceof Double && !isWeighted){
+                        JOptionPane.showMessageDialog(null,"You can't enter a decimal value on a packaged product!","Error", JOptionPane.ERROR_MESSAGE);
+                    }else{
+                        admin.RegisterProduct(name, description, categorytext, subCategory, price, stock,data, isWeighted);
+                    }
 
                     JOptionPane.showMessageDialog(registerFrame,
                             "Product successfully registered!",
@@ -139,8 +305,19 @@ public class RegisterWindow {
             }
         });
 
+
+
         registerFrame.setLocationRelativeTo(null);
         registerFrame.setVisible(true);
+
+        registerFrame.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                data.DataSave();
+                registerFrame.dispose();
+                System.exit(0);
+            }
+        });
 
     }
 

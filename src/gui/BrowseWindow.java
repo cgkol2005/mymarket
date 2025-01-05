@@ -259,12 +259,11 @@ public class BrowseWindow {
 
 
     }
+
     public void reloadFrame(){
         browseWindow.dispose();
         new BrowseWindow(data);
     }
-
-
 
     private class ButtonClickListener implements ActionListener {
         @Override

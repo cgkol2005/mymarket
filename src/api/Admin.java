@@ -28,13 +28,13 @@ public class Admin extends User implements Serializable {
      *  @throws IllegalArgumentException If the stock type is not Integer or Double.
      */
 
-    public void RegisterProduct(String name,String description,String category,String subcategory,double price,Object stock,Data data) {
+    public void RegisterProduct(String name,String description,String category,String subcategory,double price,Object stock,Data data,boolean isWeighted) {
         Product newproduct;
 
-        if (stock instanceof Integer) {
+        if (stock instanceof Integer && !isWeighted) {
             int finalStock = (Integer) stock;
             newproduct=new PackagedProduct(name, description, category, subcategory, price, finalStock);
-        } else if (stock instanceof Double) {
+        } else if (stock instanceof Double && isWeighted) {
             double finalStock = (Double) stock;
             newproduct=new WeightedProduct(name, description, category, subcategory, price, finalStock);
         } else {
