@@ -1,0 +1,35 @@
+Index: src/api/User.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package api;\r\n\r\nimport java.io.IOException;\r\n\r\npublic class User {\r\n    protected String Username;\r\n    protected String Password;\r\n\r\n    public User(String Username, String Password) throws IOException {\r\n        this.Username = Username;\r\n        this.Password = Password;\r\n    }\r\n\r\n\r\n    public void searchProduct() {\r\n    }\r\n\r\n    public String getPassword() {\r\n        return Password;\r\n    }\r\n\r\n    public String getUsername() {\r\n        return Username;\r\n    }\r\n\r\n}\r\n
+===================================================================
+diff --git a/src/api/User.java b/src/api/User.java
+--- a/src/api/User.java	
++++ b/src/api/User.java	
+@@ -12,7 +12,9 @@
+     }
+ 
+ 
+-    public void searchProduct() {
++    public void searchProduct()
++    {
++
+     }
+ 
+     public String getPassword() {
+Index: src/api/Admin.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package api;\r\n\r\nimport java.io.Serializable;\r\nimport java.io.IOException;\r\npublic class Admin extends User implements Serializable {\r\n    public Admin(String Username, String Password)\r\n    {\r\n        super(Username, Password);\r\n    }\r\n    public void RegisterProduct(){}\r\n    public void EditProducts(){}\r\n    public void Statistics(){}\r\n}\r\n
+===================================================================
+diff --git a/src/api/Admin.java b/src/api/Admin.java
+--- a/src/api/Admin.java	
++++ b/src/api/Admin.java	
+@@ -1,7 +1,6 @@
+ package api;
+ 
+ import java.io.Serializable;
+-import java.io.IOException;
+ public class Admin extends User implements Serializable {
+     public Admin(String Username, String Password)
+     {
