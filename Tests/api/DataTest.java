@@ -10,6 +10,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -190,13 +191,38 @@ class DataTest {
 
     @Test
     void getProductOrderCounts() {
+        boolean works = false;
+        Customer customer = new Customer("username", "password", "Firstname","Lastname");
+        customer.getShoppingCart().addProduct(data.getProductFromProductsList("Πορτοκάλια 1kg"),4000);
+        customer.completeOrder(data);
+        HashMap<Product, Integer> map = (HashMap<Product, Integer>) data.getProductOrderCounts();
+        if (map.get(data.getProductFromProductsList("Πορτοκάλια 1kg")) == 1){
+            works = true;
+        }
+        assertTrue(works);
     }
 
     @Test
     void getProductPopular() {
+        boolean works = false;
+        Customer customer = new Customer("username", "password", "Firstname","Lastname");
+        customer.getShoppingCart().addProduct(data.getProductFromProductsList("Καρότα 1kg"),4000);
+        customer.completeOrder(data);
+        List<Product> popularProducts = data.getProductPopular();
+        if (popularProducts.get(0) == data.getProductFromProductsList("Καρότα 1kg")){
+            works = true;
+        }
+        assertTrue(works);
     }
 
     @Test
     void getProductsFromSearch() {
+        boolean works = false;
+        List<Product> products = data.getProductsFromSearch("πορτοκαλι");
+        if (products.get(0) == data.getProductFromProductsList("Πορτοκάλια 1kg")){
+            works = true;
+        }
+        assertTrue(works);
+
     }
 }

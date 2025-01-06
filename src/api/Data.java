@@ -252,8 +252,8 @@ public class Data {
     }
 
     /**
-     * Retrieves a map of products and their order counts.
-     * @return A map where keys are products and values are the number of times each product was ordered.
+     * Returns a map of products and their order counts.
+     * @return A map where keys are products, and the values are the number of times each product was ordered.
      */
     public Map<Product, Integer> getProductOrderCounts () {
         Map<Product, Integer> productOrderCounts = new HashMap<>();
@@ -264,7 +264,7 @@ public class Data {
     }
 
     /**
-     * Retrieves the most popular products based on the number of orders.
+     * Returns the most popular products based on the number of orders that included them.
      * @return A list of the most popular products.
      */
     public List<Product> getProductPopular () {
