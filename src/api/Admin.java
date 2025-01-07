@@ -7,14 +7,15 @@ import java.util.List;
  * admin class extends user and do methods registering,editing and list unavailable products
  */
 public class Admin extends User implements Serializable {
-    private Data data;
+    /**
+     * The class' constructor. Gives the superclass the username and password of the Admin account that needs to be created.
+     * @param username, the username of the Admin's account.
+     * @param password, the password of the admin's account.
+     */
+    public Admin(String username, String password){
+        super(username, password);
+    }
 
-    public Admin(){
-        super();
-    }
-    public Admin(String Username, String Password){
-        super(Username, Password);
-    }
     /**
      * Register a new product into the system's product list.
      *
@@ -27,14 +28,13 @@ public class Admin extends User implements Serializable {
      * @param data        The Data instance managing the system's data
      *  @throws IllegalArgumentException If the stock type is not Integer or Double.
      */
-
-    public void RegisterProduct(String name,String description,String category,String subcategory,double price,Object stock,Data data) {
+    public void registerProduct(String name, String description, String category, String subcategory, double price, Object stock, Data data, boolean isWeighted) {
         Product newproduct;
 
-        if (stock instanceof Integer) {
+        if (stock instanceof Integer && !isWeighted) {
             int finalStock = (Integer) stock;
             newproduct=new PackagedProduct(name, description, category, subcategory, price, finalStock);
-        } else if (stock instanceof Double) {
+        } else if (stock instanceof Double && isWeighted) {
             double finalStock = (Double) stock;
             newproduct=new WeightedProduct(name, description, category, subcategory, price, finalStock);
         } else {
@@ -49,10 +49,11 @@ public class Admin extends User implements Serializable {
             }
         }
         productList.add(newproduct);
-        data.OverWriteProductsList(productList);
-        data.DataSave();
+        data.overWriteProductsList(productList);
+        data.dataSave();
         System.out.println("Product successfully registered.");
     }
+
     /**
      * Edits product
      *
@@ -65,7 +66,7 @@ public class Admin extends User implements Serializable {
      * @param newStock       The new stock quantity of the product (Integer for packaged products, Double for weighted products).
      * @param data           The {@link Data} for data
      */
-    public void EditProducts(String productName, String newTitle, String newDescription, String newCategory, String newSubcategory, double newPrice, Object newStock, Data data) {
+    public void editProducts(String productName, String newTitle, String newDescription, String newCategory, String newSubcategory, double newPrice, Object newStock, Data data) {
         List<Product> productList = data.getProductsList();
         boolean productFound = false;
         for (Product product : productList) {
@@ -84,16 +85,15 @@ public class Admin extends User implements Serializable {
                     }
                 } else if (product instanceof WeightedProduct) {
                     ((WeightedProduct) product).setStock((Double) newStock);
-                    int i = (int) newStock;
-                    if (i == 0){
+                    if (((WeightedProduct) product).getStock() <= 0){
                         product.setAvailable(false);
                     }
                 } else {
                     System.out.println("Invalid stock type for the product type.");
                     return;
                 }
-                data.OverWriteProductsList(productList);
-                data.DataSave();
+                data.overWriteProductsList(productList);
+                data.dataSave();
                 System.out.println("Product successfully updated.");
                 break;
             }
@@ -103,26 +103,6 @@ public class Admin extends User implements Serializable {
             System.out.println("Product name was not found.");
         }
     }
-    /**
-     * Do a list of unavailable products
-     *
-     * @return A string containing the titles of unavailable products
-     */
-    public String getUnavailableProducts() {
-        List<Product> productList=data.getProductsList();
-        StringBuilder unavailable=new StringBuilder();
-
-        for (Product product : productList) {
-            boolean isUnavailable= (product instanceof PackagedProduct && ((PackagedProduct) product).getStock() <= 0) ||
-                    (product instanceof WeightedProduct && ((WeightedProduct) product).getStock() <= 0);
-
-            if (isUnavailable) {
-                unavailable.append(product.getTitle()).append("\n");
-            }
-        }
-        return unavailable.length() > 0 ? unavailable.toString()  : "Δεν υπάρχουν μη διαθέσιμα προϊόντα.";
-    }
-
 
 }
 

@@ -17,7 +17,6 @@ import java.util.Map;
     private double OrderPrice;
     private int NumberOfProductsBought;
     private String OrderDate;
-    private Data data;
     /**
      * This constructor initializes the shopping cart, total order price,
      * number of products bought, and sets the order date to the current time.
@@ -26,7 +25,7 @@ import java.util.Map;
      * @param NumberOfProductsBought the number of products purchased in the order
      */
     public Order(ShoppingCart Cart, double OrderPrice, int NumberOfProductsBought, Data data) {
-        this.Cart = Cart;
+        this.Cart = new ShoppingCart(Cart.getShoppingCartMap(),NumberOfProductsBought, OrderPrice);
         this.OrderPrice = OrderPrice;
         this.NumberOfProductsBought = NumberOfProductsBought;
 
@@ -64,18 +63,8 @@ import java.util.Map;
         return OrderPrice;
     }
 
-    /**
-     * @param cart the {@code ShoppingCart} cart associated with this order
-     */
-    public void setCart(ShoppingCart cart) {
-        Cart = cart;
-    }
-
-    /**
-     * @param price the total price to set for the order
-     */
-    public void setOrderPrice(double price) {
-        OrderPrice = price;
+    public ShoppingCart getOrderShoppingCart(){
+        return Cart;
     }
 
 }

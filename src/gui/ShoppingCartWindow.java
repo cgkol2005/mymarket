@@ -13,7 +13,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.math.BigDecimal;
+import java.util.Map;
 
 public class ShoppingCartWindow {
     private BasicFrame shoppingCartFrame;
@@ -115,7 +115,7 @@ public class ShoppingCartWindow {
         shoppingCartFrame.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
-                data.DataSave();
+                data.dataSave();
                 shoppingCartFrame.dispose();
                 System.exit(0);
             }
@@ -123,12 +123,38 @@ public class ShoppingCartWindow {
 
 
         completeOrderButton.addActionListener(new ActionListener() {
+
             @Override
             public void actionPerformed(ActionEvent e) {
-                data.getCurrentCustomerUser().CompleteOrder(data);
-                JOptionPane.showMessageDialog(null, "Order Completed!", "Order info", JOptionPane.INFORMATION_MESSAGE);
-                shoppingCartFrame.dispose();
-                data.getFrameFromActiveFramesList("CustomerWindowOptions").setVisible(true);
+                boolean somethingOutOfStock = false;
+                for (Map.Entry<Product, Integer> entry : cart.getShoppingCartMap().entrySet()){
+                    Product product = entry.getKey();
+                    if (product instanceof WeightedProduct) {
+                        if (((WeightedProduct) product).getStock() == 0) {
+                            somethingOutOfStock = true;
+                            JOptionPane.showMessageDialog(null, "The product: " + product.getTitle() + " has gone out of stock before you buy it!", "We're sorry. :(", JOptionPane.INFORMATION_MESSAGE);
+                            cart.removeProduct(product.getTitle());
+                            refreshButton.doClick();
+                            //reloadFrame();
+                        }
+                    }else if (product instanceof PackagedProduct){
+                        if (((PackagedProduct) product).getStock() == 0){
+                            somethingOutOfStock = true;
+                            JOptionPane.showMessageDialog(null, "The product: " + product.getTitle() + " has gone out of stock before you buy it!", "We're sorry. :(", JOptionPane.INFORMATION_MESSAGE);
+                            cart.removeProduct(product.getTitle());
+                            refreshButton.doClick();
+                            //reloadFrame();
+                        }
+                    }
+                }
+                if (cart.getShoppingCartMap().isEmpty()){
+                    JOptionPane.showMessageDialog(null, "You can't complete your order, you cart is still empty!", "you serious?", JOptionPane.ERROR_MESSAGE);
+                } else if(!somethingOutOfStock){
+                    data.getCurrentCustomerUser().completeOrder(data);
+                    JOptionPane.showMessageDialog(null, "Order Completed!", "Order info", JOptionPane.INFORMATION_MESSAGE);
+                    shoppingCartFrame.dispose();
+                    data.getFrameFromActiveFramesList("CustomerWindowOptions").setVisible(true);
+                }
             }
         });
 
@@ -176,7 +202,7 @@ public class ShoppingCartWindow {
             @Override
             public void actionPerformed(ActionEvent e) {
                 data.getFrameFromActiveFramesList("CustomerWindowOptions").setVisible(true);
-                data.DataSave();
+                data.dataSave();
                 shoppingCartFrame.dispose();
             }
         });
@@ -315,6 +341,8 @@ public class ShoppingCartWindow {
 
         removeButton.setBackground(Color.green);
         cancelButton.setBackground(Color.red);
+
+
 
         if (product instanceof WeightedProduct) {
             buttonPanel.add(minusHundred);

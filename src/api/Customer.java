@@ -7,78 +7,68 @@ import java.io.Serializable;
  * A customer has personal details, a shopping cart, an order history,complete orders.
  */
 public class Customer extends User implements Serializable {
+
     /** The first name of the customer. */
-    protected String Firstname;
+    protected String firstname;
+
     /** The last name of the customer. */
-    protected String Lastname;
-    /** The current order of the customer. */
-    private Order order;
+    protected String lastname;
+
     /** The order history of the customer. */
-    private OrderHistory OrderHistory;
+    private final OrderHistory orderHistory;
+
     /** The shopping cart of the customer. */
-    private ShoppingCart ShoppingCart;
+    private final ShoppingCart shoppingCart;
+
     /**
-     * @param Username  The username of the customer.
-     * @param Password  The password of the customer.
-     * @param Firstname The first name of the customer.
-     * @param Lastname  The last name of the customer.
+     * @param username  The username of the customer.
+     * @param password  The password of the customer.
+     * @param firstname The first name of the customer.
+     * @param lastname  The last name of the customer.
      */
-
-    public Customer(String Username, String Password,String Firstname, String Lastname){
-
-        super(Username, Password);
-        this.Firstname = Firstname;
-        this.Lastname = Lastname;
-
-        //Order = new Order();
-        OrderHistory = new OrderHistory();
-
-        ShoppingCart = new ShoppingCart();
+    public Customer(String username, String password,String firstname, String lastname){
+        super(username, password);
+        this.firstname = firstname;
+        this.lastname = lastname;
+        orderHistory = new OrderHistory();
+        shoppingCart = new ShoppingCart();
     }
+
     /**
      * Completes the current order for the customer.
-     * The shopping cart converted into an order and the order is add to order history.
-     * the stock reduce
+     * The shopping cart is converted into an order, and the order is added to the order history.
+     * The stock will be reduced inside the Order class.
+     * @param data, the object with all the data of the program. (Products List, Users List)
      */
+    public void completeOrder(Data data){
+        Order order = new Order(shoppingCart, shoppingCart.getTotalPrice(), shoppingCart.getProducts_count(), data);
+        orderHistory.addOrderToHistoy(order);
+        shoppingCart.clear();
+    }
 
-    public void CompleteOrder(Data data){
-        order = new Order(ShoppingCart, ShoppingCart.getTotalPrice(),ShoppingCart.getProducts_count(),data);
-        OrderHistory.addOrderToHistoy(order);
-        ShoppingCart.clear();
-    }
     /**
-     * Sets the first name of the customer.
-     *@param Firstname The new first name of the customer.
+     * Return the OrderHistory class, which represents all the orders that the customer made.
+     * @return OrderHistory, the order history of the current Customer.
      */
-    public void setFirstname(String Firstname){
-        this.Firstname = Firstname;
-    }
-    /**
-     * @param lastname The new last name of the customer.
-     */
-    public void setLastname(String lastname) {
-        Lastname = lastname;
-    }
     public OrderHistory getOrderHistory(){
-        return OrderHistory;
+        return orderHistory;
     }
+
     /**
      @return The customer's shopping cart.
      */
-
     public ShoppingCart getShoppingCart(){
-        return ShoppingCart;
+        return shoppingCart;
     }
+
     /**
-     * @return The first name of the customer.
+     * Returns an order based in the date given.
+     * If the date given matches the date that the order has been,
+     * then that order will be returned by this method.
+     * @param date, the Exact date of the order to be returned.
+     * @return </Order>
      */
-    public String getFirstname() {
-        return Firstname;
-    }
-    /**
-     * @return The last name of the customer.
-     */
-    public String getLastname() {
-        return Lastname;
+    public Order getOrderBasedOnOrderDate(String date){
+        return orderHistory.getOrderBasedOnOrderDate(date);
     }
 }

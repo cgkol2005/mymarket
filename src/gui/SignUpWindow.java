@@ -1,6 +1,6 @@
 package gui;
 
-import api.Accounts_Manager;
+import api.AccountsManager;
 import api.Data;
 
 import javax.swing.*;
@@ -16,7 +16,7 @@ public class SignUpWindow {
     private JTextField firstnameField, lastnameField, usernameField;
     private JPasswordField passwordField;
 
-    public SignUpWindow(Data data, Accounts_Manager AccManager, JFrame mainFrame) {
+    public SignUpWindow(Data data, AccountsManager AccManager, JFrame mainFrame) {
         frame = new JFrame("Sign-Up");
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.setSize(800,800);
@@ -62,7 +62,7 @@ public class SignUpWindow {
                 String password = new String(passwordField.getPassword());
                 String firstname = firstnameField.getText();
                 String lastname = lastnameField.getText();
-               boolean AccCreated = AccManager.Sign_Up(username,password,firstname,lastname,data);
+               boolean AccCreated = AccManager.signUp(username,password,firstname,lastname,data);
                if (AccCreated){
                    JOptionPane.showMessageDialog(frame, "Account successfully created!", "Success", JOptionPane.INFORMATION_MESSAGE);
                    frame.dispose();
@@ -96,7 +96,7 @@ public class SignUpWindow {
                 );
                 if (confirm == JOptionPane.YES_OPTION) {
                     frame.dispose();
-                    data.DataSave();
+                    data.dataSave();
                     System.exit(0);
                 }
             }

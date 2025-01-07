@@ -1,12 +1,8 @@
 package api;
 
 import javax.swing.*;
-import api.WeightedProduct;
-import api.PackagedProduct;
 import gui.BrowseWindow;
-
 import java.io.*;
-import java.net.Inet4Address;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -28,18 +24,22 @@ import java.util.Map;
 public class Data {
     /** List of all users in the system. */
     private List<User> Users;
+
     /** List of all products in the system. */
     private List<Product> Products;
-    /** List of frames */
-    private String unavailableProducts;
+
     /** The logged-in customer. */
     private Customer currentCustomerUser;
-    /** The logged-in admin  */
-    private Admin currentAdminUser;
 
+    /**
+     * The current user that uses the application. This Object is used to determine if
+     * the User is a customer, or an Admin.
+     */
     private User currentUser;
 
-    private List<JFrame> listOfActiveFrames;
+    /** List of frames
+     * */
+    private final List<JFrame> listOfActiveFrames;
 
 
     /**
@@ -47,17 +47,22 @@ public class Data {
      */
     public Data() {
         listOfActiveFrames = new ArrayList<>();
-        DataLoad();
+        dataLoad();
     }
+
     /**
      * Adds a frame to the list of active frames.
      * @param frame the frame add
      */
-
     public void addActiveFrame(JFrame frame) {
         listOfActiveFrames.add(frame);
     }
 
+    /**
+     * This method uses the current shopping cart map of a customer that has completed his order
+     * and reduces the stock of the products that he bought in the Shop.
+     * @param Cart, the Shopping Cart hashmap of the Customer
+     */
     public void updateProductsStockInShop(HashMap<Product, Integer> Cart){
         for (Map.Entry<Product, Integer> entry : Cart.entrySet()){
             for (Product product : Products){
@@ -76,6 +81,7 @@ public class Data {
             }
         }
     }
+
     /**
      * Removes a frame from the list by its name.
      *
@@ -88,12 +94,7 @@ public class Data {
             }
         }
     }
-    /**
-     * @return A list of active frames.
-     */
-    public List<JFrame> getListOfActiveFrames () {
-        return listOfActiveFrames;
-    }
+
     /**
      * @param frameName The name of the frame to retrieve.
      * @return The frame if found, or null
@@ -106,19 +107,12 @@ public class Data {
         }
         return null; //return null if the frame wasn't found.
     }
-    /**
-     * Overwrites the current list of users with a new list.
-     * @param UsersList The new list of users.
-     */
-    public void OverWriteUsersList (List < User > UsersList) {
-        Users = UsersList;
-    }
 
     /**
      * Overwrites the current list of products with a new list.
      * @param ProductsList The new list of products.
      */
-    public void OverWriteProductsList (List < Product > ProductsList) {
+    public void overWriteProductsList(List < Product > ProductsList) {
         Products = ProductsList;
     }
 
@@ -126,7 +120,7 @@ public class Data {
      * Adds a user to the list of users.
      * @param user The user to add.
      */
-    public void AddUser (User user){
+    public void addUser(User user){
         Users.add(user);
     }
 
@@ -143,6 +137,7 @@ public class Data {
     public List<User> getUsersList () {
         return Users;
     }
+
     /**
      * @param productName The name of the product to retrieve.
      * @return The product if found or null
@@ -165,15 +160,6 @@ public class Data {
     }
 
     /**
-     * Sets the current logged-in admin.
-     * @param user  admin
-     */
-
-    public void setCurrentAdminUser (Admin user){
-        this.currentAdminUser = user;
-    }
-
-    /**
      * Sets the current logged-in user.
      * @param user user
      */
@@ -190,13 +176,9 @@ public class Data {
     }
 
     /**
-     * Retrieves the current logged-in admin
-     * @return The current admin
+     * returns the current Customer user that uses the application.
+     * @return Customer, the current customer user.
      */
-    public Admin getCurrentAdminUser () {
-        return currentAdminUser;
-    }
-
     public Customer getCurrentCustomerUser () {
         return currentCustomerUser;
     }
@@ -204,7 +186,7 @@ public class Data {
     /**
      * Loads data from the database files.
      */
-    public void DataLoad () {
+    public void dataLoad() {
         try (ObjectInputStream in = new ObjectInputStream(new FileInputStream("Accounts.ser"))) {
             Users = (List<User>) in.readObject();
         } catch (ClassNotFoundException e) {
@@ -224,18 +206,14 @@ public class Data {
         System.out.println("Data loaded!");
     }
 
-    public void setUsersList (List < User > users) {
-        this.Users = users;
-    }
-
     /**
      * Saves data to the database files.
      */
-    public void DataSave () {
-        try (ObjectOutputStream ProductsOut = new ObjectOutputStream(new FileOutputStream("Products.ser"));
-             ObjectOutputStream UsersOut = new ObjectOutputStream(new FileOutputStream("Accounts.ser"))) {
-            ProductsOut.writeObject(Products);
-            UsersOut.writeObject(Users);
+    public void dataSave() {
+        try (ObjectOutputStream productsOut = new ObjectOutputStream(new FileOutputStream("Products.ser"));
+             ObjectOutputStream usersOut = new ObjectOutputStream(new FileOutputStream("Accounts.ser"))) {
+            productsOut.writeObject(Products);
+            usersOut.writeObject(Users);
         } catch (IOException ioe) {
             System.out.println(ioe + "There was a problem with the writing of the Lists to the Products and Accounts files.");
         }
@@ -274,8 +252,8 @@ public class Data {
     }
 
     /**
-     * Retrieves a map of products and their order counts.
-     * @return A map where keys are products and values are the number of times each product was ordered.
+     * Returns a map of products and their order counts.
+     * @return A map where keys are products, and the values are the number of times each product was ordered.
      */
     public Map<Product, Integer> getProductOrderCounts () {
         Map<Product, Integer> productOrderCounts = new HashMap<>();
@@ -286,7 +264,7 @@ public class Data {
     }
 
     /**
-     * Retrieves the most popular products based on the number of orders.
+     * Returns the most popular products based on the number of orders that included them.
      * @return A list of the most popular products.
      */
     public List<Product> getProductPopular () {
@@ -299,5 +277,23 @@ public class Data {
             }
         }
         return mostOrderedProducts;
+    }
+
+    /**
+     * Uses the text that a customer(or admin) inputs in the search textField on the browsing window, and returns
+     * a list with all the results of the search.
+     * (results = products with titles that match the user's search words)
+     * @param search, The String that comes from the search text-field in the browsing window.
+     * @return List</Product>, the resulted list of products.
+     */
+    public List<Product> getProductsFromSearch(String search) {
+        List<Product> searchResults = new ArrayList<>();
+        for (Product product : Products){
+            String productNormalizedTitle = BrowseWindow.removeAccents(product.getTitle());
+            if(productNormalizedTitle.toLowerCase().contains(search.toLowerCase())){
+                searchResults.add(product);
+            }
+        }
+        return searchResults;
     }
 }

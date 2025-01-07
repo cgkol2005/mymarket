@@ -25,6 +25,12 @@ public class ShoppingCart implements Serializable {
         productsCount = 0;
         CartTotalPrice = 0;
     }
+    public ShoppingCart(HashMap<Product, Integer> map, int productsCount, double CartTotalPrice){
+        this.shoppingCartMap = new HashMap<>();
+        shoppingCartMap.putAll(map);
+        this.productsCount = productsCount;
+        this.CartTotalPrice = CartTotalPrice;
+    }
 
     /**
      * Adds a product to the cart.
@@ -69,14 +75,6 @@ public class ShoppingCart implements Serializable {
     }
 
     /**
-     * @param product   the product to update
-     * @param new_stock the new quantity of the product
-     */
-    public void ReplaceProductQuantityInCart(Product product, int new_stock){
-            shoppingCartMap.put(product,new_stock);
-            System.out.println("Η ποσότητα ενημερώθηκε.");
-    }
-    /**
      * Removes a product from the cart
      * @param productName the name of the product to be removed
      */
@@ -110,18 +108,6 @@ public class ShoppingCart implements Serializable {
             }
         }
         CartTotalPrice = total_price.doubleValue();
-    }
-
-    /**
-     * @return a list of all products in the cart
-     */
-    public Integer getQuantityInShoppingCart(String productName){
-        for (Map.Entry<Product, Integer> product : shoppingCartMap.entrySet()){
-            if (product.getKey().getTitle().equals(productName)){
-                return product.getValue();
-            }
-        }
-        return null;
     }
 
     public void removeQuantityFromShoppingCart(Product product, int quantity){
@@ -158,46 +144,6 @@ public class ShoppingCart implements Serializable {
      */
     public int getProducts_count(){
         return productsCount;
-    }
-
-    /**
-     * Prints the contents of the shopping cart.
-     */
-    public void printShoppingCart() {
-        if (shoppingCartMap.isEmpty())
-        {
-            System.out.println("Το καλάθι είναι άδειο.");
-        }else{
-            System.out.println("Περιεχόμενα καλαθιού:");
-            for (HashMap.Entry<Product,Integer> entry : shoppingCartMap.entrySet()) {
-                Product product=entry.getKey();
-                if (entry.getKey() instanceof PackagedProduct){
-                    int stock=entry.getValue();
-                    System.out.printf("Προϊόν: %s, Ποσότητα: %d, Συνολικό κόστος: %.2f%n",product.getTitle(), stock, CalculateTotalPriceOfAProductInCart(product));
-                } else if (entry.getKey() instanceof WeightedProduct) {
-                    double stock = entry.getValue(); //this is in grams
-                    BigDecimal stock2 = BigDecimal.valueOf(stock);
-                    stock2 = stock2.divide(BigDecimal.valueOf(1000)); //this is in Kgs now
-                    System.out.printf("Προϊόν: %s, Ποσότητα: %.2f, Συνολικό κόστος: %.2f%n",product.getTitle(), stock2.doubleValue(), CalculateTotalPriceOfAProductInCart(product));
-                }
-            }
-            CalculateAndUpdateTotalPrice();
-            System.out.printf("Συνολικό κόστος καλαθιού: %.2f%n", CartTotalPrice);
-        }
-    }
-
-    /**
-     *
-     * @param productTitle
-     * @return the product if exists else null
-     */
-    public Product getProductInShoppingCart(String productTitle){
-        for (Product product : shoppingCartMap.keySet()){
-            if (product.getTitle().equals(productTitle)){
-                return product;
-            }
-        }
-        return null;
     }
 
     /**
