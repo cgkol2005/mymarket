@@ -37,8 +37,10 @@ public class Admin extends User implements Serializable {
         } else if (stock instanceof Double && isWeighted) {
             double finalStock = (Double) stock;
             newproduct=new WeightedProduct(name, description, category, subcategory, price, finalStock);
-        } else {
-            throw new IllegalArgumentException("Stock must be of type Integer or Double");
+        } else if(isWeighted){
+            throw new IllegalArgumentException("Stock must be a decimal value!");
+        }else {
+            throw new IllegalArgumentException("Stock must be an integer number!");
         }
         List<Product> productList = data.getProductsList();
         for (Product product : productList) {

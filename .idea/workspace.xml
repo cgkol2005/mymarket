@@ -5,87 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4962100c-d0a3-448f-8930-2e998309a824" name="Changes" comment="Started testing">
-      <change afterPath="$PROJECT_DIR$/Tests/api/AccountsManagerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tests/api/AdminTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tests/api/ApplicationControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tests/api/CustomerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tests/api/DataTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tests/api/OrderHistoryTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tests/api/OrderTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tests/api/PackagedProductTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tests/api/ProductTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tests/api/UserTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tests/api/WeightedProductTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/BrowseWindow$4.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/BrowseWindow$5.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/OrderHistoryWindow$5.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/OrderHistoryWindow$6.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/RegisterWindow$3.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/RegisterWindow$4.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/RegisterWindow$5.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/ViewOrderWindow$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/ViewOrderWindow$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/ViewOrderWindow.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/test/MyMarket/api/AccountsManagerTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/test/MyMarket/api/AdminTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/test/MyMarket/api/ApplicationControllerTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/test/MyMarket/api/CustomerTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/test/MyMarket/api/DataTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/test/MyMarket/api/OrderHistoryTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/test/MyMarket/api/OrderTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/test/MyMarket/api/PackagedProductTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/test/MyMarket/api/ProductTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/test/MyMarket/api/UserTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/test/MyMarket/api/WeightedProductTest.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/gui/ViewOrderWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_12_2024_8_34_____Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_23_12_2024_8_34_____Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Accounts.ser" beforeDir="false" afterPath="$PROJECT_DIR$/Accounts.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Products.ser" beforeDir="false" afterPath="$PROJECT_DIR$/Products.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/api/Accounts_ManagerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/api/Admin_Test.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/api/Application_Controller_Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProgramInitialized.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProgramInitialized.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/api/DataTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/api/DataTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/api/OrderHistoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/api/OrderHistoryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/api/OrderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/api/OrderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/api/PackagedProductTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/api/PackagedProductTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/api/ProductTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/api/ProductTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tests/api/ShoppingCartTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/api/ShoppingCartTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/Accounts_Manager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/AccountsManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/Admin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/Admin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/Application_Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/ApplicationController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/Customer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/Data.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/Data.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/Order.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/Order.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/OrderHistory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/OrderHistory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/ShoppingCart.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/ShoppingCart.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/api/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/diabasma.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/diabasma2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/api/testing_class.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/AdminWindow$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/AdminWindow$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/AdminWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/AdminWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/BasicFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/BasicFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/BrowseWindow$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/BrowseWindow$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/BrowseWindow$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/BrowseWindow$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/BrowseWindow$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/BrowseWindow$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/BrowseWindow$ButtonClickListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/BrowseWindow$ButtonClickListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/BrowseWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/BrowseWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/CustomerWindowOptions$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/CustomerWindowOptions$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/CustomerWindowOptions$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/CustomerWindowOptions$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/CustomerWindowOptions$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/CustomerWindowOptions$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/CustomerWindowOptions$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/CustomerWindowOptions$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/CustomerWindowOptions$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/CustomerWindowOptions$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/CustomerWindowOptions.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/CustomerWindowOptions.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/api/UserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/api/UserTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/api/WeightedProductTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/api/WeightedProductTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/EditWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/EditWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/GUI_Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/GUI_Main$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/GUI_Main$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/GUI_Main$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/GUI_Main$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/GUI_Main$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/GUI_Main$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/GUI_Main$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/GUI_Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/GUI_Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/OrderHistoryWindow$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/OrderHistoryWindow$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/OrderHistoryWindow$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/OrderHistoryWindow$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/OrderHistoryWindow$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/OrderHistoryWindow$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/OrderHistoryWindow$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/OrderHistoryWindow$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/OrderHistoryWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/OrderHistoryWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/OrderWindow.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/RegisterWindow$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/RegisterWindow$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/RegisterWindow$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/RegisterWindow$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/RegisterWindow$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/RegisterWindow$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/RegisterWindow$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/RegisterWindow$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/RegisterWindow$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/RegisterWindow$5.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/RegisterWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/RegisterWindow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/ShoppingCartWindow$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/ShoppingCartWindow$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/ShoppingCartWindow$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/ShoppingCartWindow$10.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/ShoppingCartWindow$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/ShoppingCartWindow$11.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/ShoppingCartWindow$12.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/ShoppingCartWindow$12.class" afterDir="false" />
@@ -96,6 +34,7 @@
       <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/ShoppingCartWindow$17.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/ShoppingCartWindow$17.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/ShoppingCartWindow$18.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/ShoppingCartWindow$18.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/ShoppingCartWindow$19.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/ShoppingCartWindow$19.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/ShoppingCartWindow$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/ShoppingCartWindow$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/ShoppingCartWindow$20.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/ShoppingCartWindow$20.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/ShoppingCartWindow$21.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/ShoppingCartWindow$21.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/ShoppingCartWindow$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/ShoppingCartWindow$3.class" afterDir="false" />
@@ -106,17 +45,13 @@
       <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/ShoppingCartWindow$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/ShoppingCartWindow$8.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/ShoppingCartWindow$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/ShoppingCartWindow$9.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/ShoppingCartWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/ShoppingCartWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/SignInWindow.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/SignUpWindow$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/SignUpWindow$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/SignUpWindow$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/SignUpWindow$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/SignUpWindow$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/SignUpWindow$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/SignUpWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/SignUpWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/StatsWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/StatsWindow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/ViewOrderWindow$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/ViewOrderWindow$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/ViewOrderWindow$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/ViewOrderWindow$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/ViewOrderWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/ViewOrderWindow.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/ViewProductWindow$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/ViewProductWindow$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/ViewProductWindow$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/ViewProductWindow$10.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/ViewProductWindow$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/ViewProductWindow$11.class" afterDir="false" />
@@ -135,30 +70,14 @@
       <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/ViewProductWindow$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/ViewProductWindow$9.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MyMarket/gui/ViewProductWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MyMarket/gui/ViewProductWindow.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/test/MyMarket/api/ShoppingCartTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/MyMarket/api/ShoppingCartTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/Accounts_Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/AccountsManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/Application_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/ApplicationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/Customer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/Data.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/OrderHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/OrderHistory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/ShoppingCart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/ShoppingCart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/diabasma.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/diabasma2.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/testing_class.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/AdminWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/AdminWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/BasicFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/BasicFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/BrowseWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/BrowseWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/CustomerWindowOptions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/CustomerWindowOptions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/EditWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/EditWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/GUI_Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/GUI_Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/OrderHistoryWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/OrderHistoryWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/OrderWindow.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/RegisterWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/RegisterWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/ShoppingCartWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/ShoppingCartWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gui/SignInWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/SignInWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/gui/SignUpWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/SignUpWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/ViewOrderWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/ViewOrderWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/ViewProductWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/gui/ViewProductWindow.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -306,12 +225,11 @@
     &quot;JUnit.ShoppingCartTest.removeProduct.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.WeightedProductTest.getStock.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.api in MyMarket.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Merging main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main__Xaris__Search__and__History&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
@@ -337,26 +255,18 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in MyMarket">
-    <configuration name="All in MyMarket" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="MyMarket" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ShoppingCartTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="All in MyMarket" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="MyMarket" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="api.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="api" />
-      <option name="MAIN_CLASS_NAME" value="api.ShoppingCartTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -408,13 +318,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="JUnit.WeightedProductTest" />
+      <item itemvalue="JUnit.WeightedProductTest.getStock" />
+      <item itemvalue="JUnit.WeightedProductTest.reduceStock" />
+      <item itemvalue="JUnit.All in MyMarket" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.All in MyMarket" />
         <item itemvalue="JUnit.WeightedProductTest.reduceStock" />
         <item itemvalue="JUnit.WeightedProductTest" />
         <item itemvalue="JUnit.WeightedProductTest.getStock" />
-        <item itemvalue="JUnit.ShoppingCartTest" />
       </list>
     </recent_temporary>
   </component>
@@ -752,15 +669,6 @@
           <line>124</line>
           <option name="timeStamp" value="25" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/api/Admin.java</url>
-          <line>30</line>
-          <properties class="api.Admin">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="35" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
@@ -773,6 +681,9 @@
     </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/mymarket_4573_4763$CustomerTest_getOrderBasedOnOrderDate.ic" NAME="CustomerTest.getOrderBasedOnOrderDate Coverage Results" MODIFIED="1736080885436" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>api.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/mymarket_4573_4763$GUI_Main.ic" NAME="GUI_Main Coverage Results" MODIFIED="1735815482319" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>gui.*</FILTER>
     </SUITE>
@@ -783,9 +694,6 @@
       <FILTER>api.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/mymarket_4573_4763$AccountsManagerTest.ic" NAME="AccountsManagerTest Coverage Results" MODIFIED="1736075028757" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
-      <FILTER>api.*</FILTER>
-    </SUITE>
-    <SUITE FILE_PATH="coverage/mymarket_4573_4763$CustomerTest_getOrderBasedOnOrderDate.ic" NAME="CustomerTest.getOrderBasedOnOrderDate Coverage Results" MODIFIED="1736080885436" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
       <FILTER>api.*</FILTER>
     </SUITE>
   </component>

@@ -234,51 +234,55 @@ public class RegisterWindow {
                     String subCategory = subcategory.getSelectedItem().toString();
                     double price = Double.parseDouble(priceField.getText());
                     String stockin = stockField.getText();
+                    if (!weighted.isSelected() && !packaged.isSelected()){
+                        JOptionPane.showMessageDialog(null, "You need to select if the product is weighted or packaged!","Error!",JOptionPane.ERROR_MESSAGE);
+                    }else {
+
+                        Object stock;
+                        if (stockin.contains(".")) {
+                            stock = Double.parseDouble(stockin);
+                        } else {
+                            stock = Integer.parseInt(stockin);
+                        }
+                        if (price <= 0) {
+                            JOptionPane.showMessageDialog(registerFrame,
+                                    "Price must be greater than 0.",
+                                    "Invalid Price",
+                                    JOptionPane.WARNING_MESSAGE);
+                            return;
+                        }
+
+                        if ((stock instanceof Integer && (Integer) stock <= 0) || (stock instanceof Double && (Double) stock <= 0)) {
+                            JOptionPane.showMessageDialog(registerFrame,
+                                    "Stock must be greater than 0.",
+                                    "Invalid Stock",
+                                    JOptionPane.WARNING_MESSAGE);
+                            return;
+                        }
+                        if (data.productExists(name)) {
+                            JOptionPane.showMessageDialog(registerFrame,
+                                    "A product with the same title already exists!",
+                                    "Product Exists",
+                                    JOptionPane.WARNING_MESSAGE);
+                            return;
+                        }
+                        Admin admin = (Admin) data.getCurrentUser();
+                        if (stock instanceof Double && !isWeighted) {
+                            JOptionPane.showMessageDialog(null, "You can't enter a decimal value on a packaged product!", "Error", JOptionPane.ERROR_MESSAGE);
+
+                        } else {
+                            admin.registerProduct(name, description, categorytext, subCategory, price, stock, data, isWeighted);
+                            JOptionPane.showMessageDialog(registerFrame,
+                                    "Product successfully registered!",
+                                    "Success",
+                                    JOptionPane.INFORMATION_MESSAGE);
+                                    registerFrame.dispose();
+
+                        }
+                    }
 
 
-                    Object stock;
-                    if (stockin.contains(".")) {
-                        stock = Double.parseDouble(stockin);
-                    } else {
-                        stock = Integer.parseInt(stockin);
-                    }
-                    if (price <= 0)
-                    {
-                        JOptionPane.showMessageDialog(registerFrame,
-                                "Price must be greater than 0.",
-                                "Invalid Price",
-                                JOptionPane.WARNING_MESSAGE);
-                        return;
-                    }
 
-                    if ((stock instanceof Integer && (Integer) stock <= 0) || (stock instanceof Double && (Double) stock <= 0))
-                    {
-                        JOptionPane.showMessageDialog(registerFrame,
-                                "Stock must be greater than 0.",
-                                "Invalid Stock",
-                                JOptionPane.WARNING_MESSAGE);
-                        return;
-                    }
-                    if (data.productExists(name)) {
-                        JOptionPane.showMessageDialog(registerFrame,
-                                "A product with the same title already exists!",
-                                "Product Exists",
-                                JOptionPane.WARNING_MESSAGE);
-                        return;
-                    }
-                    Admin admin= (Admin) data.getCurrentUser();
-                    if (stock instanceof Double && !isWeighted){
-                        JOptionPane.showMessageDialog(null,"You can't enter a decimal value on a packaged product!","Error", JOptionPane.ERROR_MESSAGE);
-                    }else{
-                        admin.registerProduct(name, description, categorytext, subCategory, price, stock,data, isWeighted);
-                    }
-
-                    JOptionPane.showMessageDialog(registerFrame,
-                            "Product successfully registered!",
-                            "Success",
-                            JOptionPane.INFORMATION_MESSAGE);
-
-                    registerFrame.dispose();
 
                 } catch (NumberFormatException ex) {
                     JOptionPane.showMessageDialog(registerFrame,
