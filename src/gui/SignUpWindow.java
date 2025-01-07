@@ -124,43 +124,4 @@ public class SignUpWindow {
         panel.add(textField, gbc);
     }
 
-    public static void main(String[] args) {
-        new SignUpWindow(null, null, null);
-    }
-
-
-/*
-    public List<User> SignUp(JFrame mainFrame){
-        frame.setVisible(true);
-        JButton completeButton = new JButton("Ολοκλήρωση");
-        frame.add(completeButton);
-
-        List<User> Users = data.getUsersList();
-
-        completeButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-                String Username = usernameField.getText();
-                String Password = new String(passwordField.getPassword());
-                String Firstname = firstnameField.getText();
-                String Lastname = lastnameField.getText();
-
-                List<User> UsersUpdated = AccManager.Sign_Up(Username,Password,Firstname,Lastname, Users);
-                data.UpdateUserData(UsersUpdated);
-                if (UsersUpdated == null){
-                    JOptionPane.showMessageDialog(frame, "Ο λογαριασμος δεν δημιουργηθηκε επειδη το username yparxei hdh.", "Εγγραφή", JOptionPane.INFORMATION_MESSAGE);
-                }else{
-                    JOptionPane.showMessageDialog(frame, "Επιτυχής δημιουργία λογαριασμού!", "Εγγραφή", JOptionPane.INFORMATION_MESSAGE);
-                    frame.dispose();
-                    mainFrame.setVisible(true);
-                    data.DataSave();
-                }
-
-            }
-        });
-        return data.getUsersList();
-    }
-
- */
 }

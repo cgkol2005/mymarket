@@ -186,8 +186,8 @@ public class ViewProductWindow{
             sliderPanel.setPreferredSize(new Dimension(100, 50));
             JSlider slider;
             if (product instanceof WeightedProduct) {
-                int max = (int) (((WeightedProduct) product).getStock()) * 100;
-                int quantityInCart = data.getCurrentCustomerUser().getShoppingCart().getProductQuantityInShoppingCart(product.getTitle()) * 100;
+                int max = (int) (((WeightedProduct) product).getStock()) * 1000;
+                int quantityInCart = data.getCurrentCustomerUser().getShoppingCart().getProductQuantityInShoppingCart(product.getTitle());
                 if (quantityInCart > 0){
                     max = max - quantityInCart;
                 }
@@ -205,19 +205,17 @@ public class ViewProductWindow{
 
             slider.setSize(100, 50);
             slider.setPaintTicks(true);
-            slider.setMinorTickSpacing(1);
-
-            slider.setPaintTrack(true);
-            slider.setPaintLabels(true);
-            if (product instanceof WeightedProduct) {
-                slider.setMajorTickSpacing((int) (((WeightedProduct) product).getStock() *1000) / 10);
-            } else if (product instanceof PackagedProduct){
-                slider.setMajorTickSpacing(((PackagedProduct) product).getStock() / 10);
+            if (product instanceof PackagedProduct){
+                slider.setMinorTickSpacing(1);
             }
 
+            if (product instanceof PackagedProduct){
+                slider.setMajorTickSpacing(((PackagedProduct) product).getStock() / 10);
+            }
+            slider.setPaintTrack(true);
+            slider.setPaintLabels(true);
 
 
-            //JLabel quantity = new JLabel(String.valueOf(slider.getValue())+" grams");
             JLabel quantity = new JLabel();
             quantity.setFont(new Font("MV Boli", Font.BOLD, 18));
             quantity.setVerticalAlignment(SwingConstants.CENTER);
@@ -265,6 +263,12 @@ public class ViewProductWindow{
             JButton minusHundred = new JButton("-100");
             minusHundred.setPreferredSize(new Dimension(60,30));
             minusHundred.setFont(new Font("Cascadia mono", Font.ITALIC,11));
+            JButton thousand = new JButton("+1000");
+            thousand.setPreferredSize(new Dimension(70,30));
+            thousand.setFont(new Font("Cascadia mono", Font.ITALIC,11));
+            JButton minusthousand = new JButton("-1000");
+            minusthousand.setPreferredSize(new Dimension(70,30));
+            minusthousand.setFont(new Font("Cascadia mono", Font.ITALIC,11));
 
             //Buttons for packaged:
             JButton five = new JButton("+5");
@@ -284,6 +288,7 @@ public class ViewProductWindow{
             cancelButton.setBackground(Color.red);
 
             if (product instanceof WeightedProduct){
+                buttonPanel.add(minusthousand);
                 buttonPanel.add(minusHundred);
                 buttonPanel.add(minusFifty);
             }else{
@@ -297,6 +302,7 @@ public class ViewProductWindow{
             if (product instanceof WeightedProduct){
                 buttonPanel.add(fifty);
                 buttonPanel.add(hundred);
+                buttonPanel.add(thousand);
             }else{
                 buttonPanel.add(five);
                 buttonPanel.add(ten);
@@ -309,7 +315,9 @@ public class ViewProductWindow{
                 @Override
                 public void stateChanged(ChangeEvent e) {
                     if(product instanceof WeightedProduct) {
-                        quantity.setText(String.valueOf(slider.getValue()) + " grams");
+                        BigDecimal sliderValueinKgs = BigDecimal.valueOf(slider.getValue());
+                        sliderValueinKgs = sliderValueinKgs.divide(BigDecimal.valueOf(1000));
+                        quantity.setText(String.valueOf(slider.getValue()) + " grams("+ sliderValueinKgs.doubleValue()+"kgs)");
                     }else{
                         quantity.setText(String.valueOf(slider.getValue()) + " pieces");
                     }
@@ -321,6 +329,18 @@ public class ViewProductWindow{
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     slider.setValue(slider.getValue() - 100);
+                }
+            });
+            thousand.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    slider.setValue(slider.getValue() + 1000);
+                }
+            });
+            minusthousand.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    slider.setValue(slider.getValue() - 1000);
                 }
             });
 

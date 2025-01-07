@@ -13,6 +13,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.util.ConcurrentModificationException;
 import java.util.Map;
 
 public class ShoppingCartWindow {
@@ -38,7 +39,8 @@ public class ShoppingCartWindow {
         title.setFont(new Font("Times New Roman", Font.ITALIC, 70));
 
         priceOfCart = cart.getTotalPrice();
-        totalPriceLabel = new JLabel("<html>Total price:<br>" +priceOfCart+"<html>");
+        String price = String.format("%.2f", priceOfCart);
+        totalPriceLabel = new JLabel("<html>Total price:<br>" +price+"<html>");
         totalPriceLabel.setFont(new Font("Courier New", Font.BOLD, 25));
         shoppingCartFrame.east.setLayout(new BorderLayout());
         shoppingCartFrame.east.add(totalPriceLabel);
@@ -127,28 +129,31 @@ public class ShoppingCartWindow {
             @Override
             public void actionPerformed(ActionEvent e) {
                 boolean somethingOutOfStock = false;
-                for (Map.Entry<Product, Integer> entry : cart.getShoppingCartMap().entrySet()){
-                    Product product = entry.getKey();
-                    if (product instanceof WeightedProduct) {
-                        if (((WeightedProduct) product).getStock() == 0) {
-                            somethingOutOfStock = true;
-                            JOptionPane.showMessageDialog(null, "The product: " + product.getTitle() + " has gone out of stock before you buy it!", "We're sorry. :(", JOptionPane.INFORMATION_MESSAGE);
-                            cart.removeProduct(product.getTitle());
-                            refreshButton.doClick();
-                            //reloadFrame();
-                        }
-                    }else if (product instanceof PackagedProduct){
-                        if (((PackagedProduct) product).getStock() == 0){
-                            somethingOutOfStock = true;
-                            JOptionPane.showMessageDialog(null, "The product: " + product.getTitle() + " has gone out of stock before you buy it!", "We're sorry. :(", JOptionPane.INFORMATION_MESSAGE);
-                            cart.removeProduct(product.getTitle());
-                            refreshButton.doClick();
-                            //reloadFrame();
+                try {
+                    for (Map.Entry<Product, Integer> entry : cart.getShoppingCartMap().entrySet()) {
+                        Product product = entry.getKey();
+                        if (product instanceof WeightedProduct) {
+                            if (((WeightedProduct) product).getStock() == 0) {
+                                somethingOutOfStock = true;
+                                JOptionPane.showMessageDialog(null, "The product: " + product.getTitle() + " has gone out of stock before you buy it!", "We're sorry. :(", JOptionPane.INFORMATION_MESSAGE);
+                                cart.removeProduct(product.getTitle());
+                                refreshButton.doClick();
+                            }
+                        } else if (product instanceof PackagedProduct) {
+                            if (((PackagedProduct) product).getStock() == 0) {
+                                somethingOutOfStock = true;
+                                JOptionPane.showMessageDialog(null, "The product: " + product.getTitle() + " has gone out of stock before you buy it!", "We're sorry. :(", JOptionPane.INFORMATION_MESSAGE);
+                                cart.removeProduct(product.getTitle());
+                                refreshButton.doClick();
+                                //reloadFrame();
+                            }
                         }
                     }
+                }catch(ConcurrentModificationException cmme){
+                    System.out.println(cmme);
                 }
                 if (cart.getShoppingCartMap().isEmpty()){
-                    JOptionPane.showMessageDialog(null, "You can't complete your order, you cart is still empty!", "you serious?", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "You can't complete your order, you cart is still empty!", "Empty cart!", JOptionPane.ERROR_MESSAGE);
                 } else if(!somethingOutOfStock){
                     data.getCurrentCustomerUser().completeOrder(data);
                     JOptionPane.showMessageDialog(null, "Order Completed!", "Order info", JOptionPane.INFORMATION_MESSAGE);
@@ -254,7 +259,7 @@ public class ShoppingCartWindow {
         sliderPanel.setPreferredSize(new Dimension(100, 50));
         JSlider slider;
         if (product instanceof WeightedProduct) {
-            int max = data.getCurrentCustomerUser().getShoppingCart().getProductQuantityInShoppingCart(product.getTitle()) * 100;
+            int max = data.getCurrentCustomerUser().getShoppingCart().getProductQuantityInShoppingCart(product.getTitle());
             slider = new JSlider(0, max, max / 2);
         } else if (product instanceof PackagedProduct) {
             int max = customer.getShoppingCart().getProductQuantityInShoppingCart(product.getTitle());
@@ -374,7 +379,7 @@ public class ShoppingCartWindow {
                 } else {
                     quantity.setText(String.valueOf(slider.getValue()) + " pieces");
                 }
-                removeButton.setEnabled(slider.getValue() != 0);
+                removeButton.setEnabled(slider.getValue() != 0 && slider.getValue() != cart.getProductQuantityInShoppingCart(product.getTitle()));
             }
         });
 

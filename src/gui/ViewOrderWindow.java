@@ -33,8 +33,10 @@ public class ViewOrderWindow {
 
         frame.add(orderDate, BorderLayout.NORTH);
 
-        String orderPrice = String.valueOf(order.getOrderPrice());
-        JLabel orderPriceLabel = new JLabel("<html>Order's price: <br>"+orderPrice+"<html>");
+       // String orderPrice = String.valueOf(order.getOrderPrice());
+        double price = order.getOrderPrice();
+        String price2 = String.format("%.2f",price);
+        JLabel orderPriceLabel = new JLabel("<html>Order's price: <br>"+price2+"<html>");
         orderPriceLabel.setFont(new Font("Courier New", Font.BOLD, 29));
 
         JLabel message = new JLabel("<html>These are all<br>the products<br>you bought: <html>");
